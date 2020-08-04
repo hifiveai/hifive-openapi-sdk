@@ -1,0 +1,8 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hifive.log.starter.loger.ServiceAnnotationAspect,\
+com.hifive.log.starter.handler.ParamInterceptor,\
+com.hifive.log.starter.config.LogAutoConfiguration,\
+com.hifive.log.starter.loger.ControllerReponseAdvice,\
+com.hifive.log.starter.loger.ServiceAspect\
+
