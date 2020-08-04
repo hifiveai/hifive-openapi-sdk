@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hifive</groupId>
-    <artifactId>hifive-sign</artifactId>
-    <name>hifive-sign</name>
+    <artifactId>hifive-openapi-sdk</artifactId>
+    <name>hifive-openapi-sdk</name>
     <version>1.0.0</version>
     <description>Starter of log recorder.</description>
     <packaging>jar</packaging>
