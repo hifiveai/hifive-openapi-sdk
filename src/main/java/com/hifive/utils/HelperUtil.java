@@ -1,11 +1,15 @@
 package com.hifive.utils;
 
 
+import com.hifive.api.internal.util.RequestParametersHolder;
+import com.hifive.exception.ApplicationException;
+import com.hifive.model.constant.ServerEnum;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
@@ -22,7 +26,7 @@ public class HelperUtil {
      * @param input
      * @return
      */
-    public static String md5(byte[] input) {
+    public static String md5Hex(byte[] input) {
         return DigestUtils.md5Hex(input);
     }
 
@@ -44,6 +48,45 @@ public class HelperUtil {
 
         return new byte[0];
     }
+
+    /**
+     * 给TOP请求签名。
+     *
+     * @param requestHolder 所有字符型的TOP请求参数
+     * @param secret        签名密钥
+     * @return 签名
+     * @throws IOException
+     */
+    public static String signTopRequestNew(RequestParametersHolder requestHolder, String secret) throws IOException {
+        // 第一步：检查参数是否已经排序
+        String headerBase64 = headersBase64(requestHolder.getMethod(), requestHolder.getApplicationHeaders());
+        String param = buildParam(requestHolder.getAllParams());
+        param = StringUtils.isEmpty(param) ? headerBase64 : param + "&" + headerBase64;
+        String base64String = HelperUtil.base64(param);
+        byte[] hmacSha1byte = HelperUtil.hmacSha1(base64String, secret);
+        if (1 > hmacSha1byte.length) {
+            throw new ApplicationException(ServerEnum.SIGN_MISMATCH);
+        }
+        return HelperUtil.md5Hex(hmacSha1byte).toUpperCase();
+    }
+
+
+
+
+    public static String headersBase64(String method,Map<String, String> headers) {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(method).append(" ");
+        buffer.append(headers.get("X-HF-Action")).append(" ");
+        buffer.append(headers.get("X-HF-Version")).append(" ");
+        buffer.append(headers.get("X-HF-AppId")).append(" ");
+        buffer.append(headers.get("X-HF-Nonce")).append(" ");
+        buffer.append(headers.get("X-HF-ClientId")).append(" ");
+        buffer.append(headers.get("Authorization")).append(" ");
+        buffer.append(headers.get("X-HF-Timestamp"));
+        return HelperUtil.base64(buffer.toString());
+
+    }
+
 
     /**
      * base64编码
@@ -71,7 +114,7 @@ public class HelperUtil {
         List<String> result = new ArrayList<>();
 
         for (String key : keys) {
-            if (StringUtils.isNotBlank(key) || StringUtils.isNotEmpty( param.get(key))) {
+            if (StringUtils.isNotBlank(key) || StringUtils.isNotEmpty(param.get(key))) {
                 result.add(key + "=" + param.get(key));
             }
         }

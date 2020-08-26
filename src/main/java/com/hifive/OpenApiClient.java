@@ -154,7 +154,7 @@ public class OpenApiClient {
             throw new ApplicationException(ServerEnum.SIGN_MISMATCH);
         }
 
-        String sign = HelperUtil.md5(hmacSha1byte).toUpperCase();
+        String sign = HelperUtil.md5Hex(hmacSha1byte).toUpperCase();
         headers.put("Authorization", headers.get("Authorization") + " " + "Signature=" + sign);
         String res = null;
         if (method.equals("GET")) {
