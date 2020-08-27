@@ -1,10 +1,10 @@
 package com.hifive.api;
 
 /**
- * API前置检查异常。
- * 
- * @author fengsheng
- * @since 1.0, May 23, 2012
+ * 基于REST的TOP客户端。
+ *
+ * @author yong.huang
+ * @since 1.0, Sep 13, 2009
  */
 public class ApiRuleException extends ApiException {
 

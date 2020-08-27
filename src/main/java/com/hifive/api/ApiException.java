@@ -1,10 +1,10 @@
 package com.hifive.api;
 
 /**
- * Hifive客户端异常。
- * 
- * @author carver.gu
- * @since 1.0, Apr 11, 2010
+ * 基于REST的TOP客户端。
+ *
+ * @author yong.huang
+ * @since 1.0, Sep 13, 2009
  */
 public class ApiException extends Exception {
 

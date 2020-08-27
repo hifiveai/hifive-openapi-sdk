@@ -1,12 +1,9 @@
 package com.hifive.api;
 
 
-import com.alibaba.fastjson.JSON;
 import com.hifive.api.internal.parser.json.ObjectJsonParser;
 import com.hifive.api.internal.parser.xml.ObjectXmlParser;
 import com.hifive.api.internal.util.*;
-import com.hifive.api.request.HifiveUserGetRequest;
-import com.hifive.api.response.HifiveUserGetResponse;
 import com.hifive.utils.HttpClientUtils;
 
 import java.io.IOException;
@@ -16,7 +13,7 @@ import java.util.Map;
 /**
  * 基于REST的TOP客户端。
  *
- * @author carver.gu
+ * @author yong.huang
  * @since 1.0, Sep 13, 2009
  */
 public class DefaultHifiveClient implements HifiveClient {
