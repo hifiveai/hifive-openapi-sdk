@@ -1,7 +1,6 @@
 package com.hifive.api.domain.ai;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.hifive.api.domain.common.HifiveMusicVersion;
 import com.hifive.api.domain.common.es.EsCover;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
@@ -12,8 +11,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@JsonIgnoreProperties({"artistName", "authorName", "composerName", "arrangerName", "coverUrl"})
-public class RecommendHifiveMusicDetail extends RecommendHifiveMusic {
+public class HifiveRecommendMusicDetail extends HifiveRecommendMusic {
 
     /**
      * 歌曲介绍
@@ -41,6 +39,6 @@ public class RecommendHifiveMusicDetail extends RecommendHifiveMusic {
      * 版本
      */
     @ApiListField("version")
-    private List version;
+    private List<HifiveMusicVersion> version;
 
 }

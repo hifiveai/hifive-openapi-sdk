@@ -94,9 +94,4 @@ public class HifiveMusicInfo extends HifiveBaseMusicInfo {
     @ApiListField("tag")
     private List<Tag> tag;
 
-    /**
-     * 版本
-     */
-    @ApiListField("version")
-    private List<HifiveBaseVersion> version;
 }

@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class RecommendHifiveMusic extends HifiveMusicInfo {
+public class HifiveRecommendMusic extends HifiveMusicInfo {
     /**
      * 歌曲匹配度
      */
