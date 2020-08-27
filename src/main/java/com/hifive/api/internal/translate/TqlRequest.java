@@ -84,6 +84,11 @@ public class TqlRequest<T extends HifiveResponse> implements HifiveRequest<T> {
 		return null;
 	}
 
+	@Override
+	public String getToken() {
+		return null;
+	}
+
 	public Class<T> getResponseClass() {
 		return rspClass;
 	}

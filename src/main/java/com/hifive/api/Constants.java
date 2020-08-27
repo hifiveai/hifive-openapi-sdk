@@ -63,6 +63,8 @@ public abstract class Constants {
 	 * 获取appid
 	 **/
 	public static final String X_HF_APP_ID = "X-HF-AppId";
+
+	public static final String X_HF_TOKEN = "X-HF-Token";
 	/**
 	 * 获取随机数
 	 **/

@@ -28,14 +28,6 @@ public class JsonConverter implements Converter {
 		JSONReader reader = new JSONValidatingReader(new ExceptionErrorListener());
 		Object rootObj = reader.read(rsp);
 		if (rootObj instanceof Map<?, ?>) {
-		/*	Map<?, ?> rootJson = (Map<?, ?>) rootObj;
-			Collection<?> values = rootJson.values();
-			for (Object rspObj : values) {
-				if (rspObj instanceof Map<?, ?>) {
-					Map<?, ?> rspJson = (Map<?, ?>) rspObj;
-					return fromJson(rspJson, clazz);
-				}
-			}*/
 			Map<?, ?> rootJson = (Map<?, ?>) rootObj;
 			return fromJson(rootJson, clazz);
 		}

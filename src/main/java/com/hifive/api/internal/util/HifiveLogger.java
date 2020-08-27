@@ -205,17 +205,17 @@ public class HifiveLogger {
         sb.append(osName);
         sb.append("^_^");
         sb.append(df.format(new Date()));
-        if (rt.get("protocalMustParams") == null) {
+        if (rt.get("protocalMustParams") != null) {
             sb.append("^_^");
             sb.append("ProtocalMustParams:");
             appendLog((HifiveHashMap) rt.get("protocalMustParams"), sb);
         }
-        if (rt.get("protocalOptParams") == null) {
+        if (rt.get("protocalOptParams")  != null) {
             sb.append("^_^");
             sb.append("ProtocalOptParams:");
             appendLog((HifiveHashMap) rt.get("protocalOptParams"), sb);
         }
-        if (rt.get("textParams") == null) {
+        if (rt.get("textParams") !=  null) {
             sb.append("^_^");
             sb.append("ApplicationParams:");
             appendLog((HifiveHashMap) rt.get("textParams"), sb);

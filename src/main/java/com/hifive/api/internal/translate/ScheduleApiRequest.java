@@ -102,6 +102,11 @@ public class ScheduleApiRequest implements HifiveRequest<ScheduleApiResponse> {
 		return null;
 	}
 
+	@Override
+	public String getToken() {
+		return null;
+	}
+
 	public Class<ScheduleApiResponse> getResponseClass() {
 		return ScheduleApiResponse.class;
 	}

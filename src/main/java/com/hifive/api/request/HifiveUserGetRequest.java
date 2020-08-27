@@ -15,9 +15,8 @@ import java.util.Map;
  * @author auto create
  * @since 1.0, 2013-12-08 16:51:41
  */
-public class HifiveUserGetRequest extends HifiveBaseRequest implements HifiveRequest<HifiveUserGetResponse> {
+public class HifiveUserGetRequest extends HifiveBaseRequest<HifiveUserGetResponse>  {
 
-    private Map<String, String> headerMap = new HifiveHashMap();
     private HifiveHashMap udfParams; // add user-defined text parameters
     private Long timestamp;
 
@@ -81,11 +80,6 @@ public class HifiveUserGetRequest extends HifiveBaseRequest implements HifiveReq
      */
     private String favoriteGenre;
 
-
-
-    public void setHeaderMap(Map<String, String> headerMap) {
-        this.headerMap = headerMap;
-    }
 
     public HifiveHashMap getUdfParams() {
         return udfParams;
@@ -242,7 +236,4 @@ public class HifiveUserGetRequest extends HifiveBaseRequest implements HifiveReq
     public void check() throws ApiRuleException {
     }
 
-    public Map<String, String> getHeaderMap() {
-        return headerMap;
-    }
 }

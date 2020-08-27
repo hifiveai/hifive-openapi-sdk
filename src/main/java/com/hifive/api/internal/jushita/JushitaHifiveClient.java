@@ -128,6 +128,11 @@ public class JushitaHifiveClient {
 		public String getAuthorization() {
 			return null;
 		}
+
+		@Override
+		public String getToken() {
+			return null;
+		}
 	}
 
 	public static class JushitaResponse extends HifiveResponse {

@@ -1,12 +1,14 @@
 package com.hifive.api.request;
 
+import com.hifive.api.HifiveRequest;
+import com.hifive.api.HifiveResponse;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author yong.huang
  */
-public class HifiveBaseRequest  {
+public abstract class HifiveBaseRequest<T extends HifiveResponse> implements HifiveRequest <T>  {
 
     private String clientId;
 
@@ -17,6 +19,8 @@ public class HifiveBaseRequest  {
     private String authorization = "HF3-HMAC-SHA1";
 
     private String method;
+
+    private String token;
 
     public void setClientId(String clientId) {
         this.clientId = clientId;
@@ -56,5 +60,13 @@ public class HifiveBaseRequest  {
 
     public String getAuthorization() {
         return authorization;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

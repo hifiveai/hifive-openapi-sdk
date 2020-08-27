@@ -55,10 +55,6 @@ public interface HifiveRequest<T extends HifiveResponse> {
      */
     public void check() throws ApiRuleException;
 
-    /**
-     * 添加HTTP请求头参数
-     */
-    public Map<String, String> getHeaderMap();
 
     /**
      * 添加自定义请求参数
@@ -81,6 +77,8 @@ public interface HifiveRequest<T extends HifiveResponse> {
     public String getNonce();
 
     public String getAuthorization();
+
+    public String getToken();
 
 
 }

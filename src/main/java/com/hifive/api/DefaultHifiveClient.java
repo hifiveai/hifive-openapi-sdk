@@ -49,8 +49,6 @@ public class DefaultHifiveClient implements HifiveClient {
     }
 
 
-
-
     public DefaultHifiveClient(String serverUrl, String appKey, String appSecret, String format) {
         this(serverUrl, appKey, appSecret);
         this.format = format;
@@ -133,7 +131,7 @@ public class DefaultHifiveClient implements HifiveClient {
         requestHolder.setApplicationParams(appParams);
 
 
-        HifiveHashMap appHeaders = new HifiveHashMap(request.getHeaderMap());
+        HifiveHashMap appHeaders = new HifiveHashMap();
 
         appHeaders.put(Constants.X_HF_ACTION, request.getApiMethodName());
         String version = request.getVersion();// 允许用户设置时间戳
@@ -145,6 +143,9 @@ public class DefaultHifiveClient implements HifiveClient {
         appHeaders.put(Constants.X_HF_NONCE, request.getNonce());
         appHeaders.put(Constants.X_HF_CLIENT_ID, request.getClientId());
         appHeaders.put(Constants.X_HF_APP_ID, appKey);
+        if (!StringUtils.isEmpty(request.getToken())) {
+            appHeaders.put(Constants.X_HF_TOKEN, request.getToken());
+        }
         appHeaders.put(Constants.AUTHORIZATION, request.getAuthorization());
         Long timestamp = request.getTimestamp();// 允许用户设置时间戳
         if (timestamp == null) {
@@ -190,7 +191,7 @@ public class DefaultHifiveClient implements HifiveClient {
             if (request instanceof HifiveUploadRequest) {
                 HifiveUploadRequest<T> uRequest = (HifiveUploadRequest<T>) request;
                 Map<String, FileItem> fileParams = HifiveUtils.cleanupMap(uRequest.getFileParams());
-                rsp = WebUtils.doPost(urlSb.toString(), appParams, fileParams, Constants.CHARSET_UTF8, connectTimeout, readTimeout,requestHolder.getApplicationHeaders());
+                rsp = WebUtils.doPost(urlSb.toString(), appParams, fileParams, Constants.CHARSET_UTF8, connectTimeout, readTimeout, requestHolder.getApplicationHeaders());
             } else {
                 if (method.equals(HifiveRequest.METHOD_POST)) {
                     rsp = HttpClientUtils.post(serverUrl, requestHolder.getApplicationHeaders(), appParams);
@@ -219,30 +220,5 @@ public class DefaultHifiveClient implements HifiveClient {
         HifiveLogger.setNeedEnableLogger(needEnableLogger);
     }
 
-
-    public static void main(String[] args) {
-        String url = "https://hifive-gateway-test.hifiveai.com";
-        String appkey = "596196bfe5aa4f35a9e4de67aced260c";
-        String secret = "f528bfb24f5146429e";
-        HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        HifiveUserGetRequest request = new HifiveUserGetRequest();
-        request.setMethod(HifiveUserGetRequest.METHOD_POST);
-        request.setBirthday(202012121);
-        request.setCountry("乐山");
-        request.setEducation(2);
-        request.setGender(1);
-        request.setNickname("谎言");
-        request.setClientId("1234567");
-        request.setProfession(8);
-        request.setOrganization(true);
-        request.setFavoriteSinger("周杰伦");
-        request.setFavoriteGenre("1");
-        try {
-            HifiveUserGetResponse response = client.execute(request);
-            System.out.println(JSON.toJSON(response));
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
-    }
 
 }
