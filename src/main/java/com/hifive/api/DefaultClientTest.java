@@ -47,7 +47,7 @@ public class DefaultClientTest {
         request.setAction(1009);
         request.setTargetId("B75C80A41E3A");
         request.setClientId("1234567");
-        request.setToken("59c0393a44e6642f397bc24f5994e10c");
+        request.setToken("466e3cb5fc45231eb7f39de739e0d228");
         try {
             HifiveBehaviorResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -64,7 +64,7 @@ public class DefaultClientTest {
         request.setStartTime(1594639058L);
         request.setDuration(183);
         request.setClientId("12345678");
-        request.setToken("bf5d538eef34a212924b617fa1869ca3");
+        request.setToken("466e3cb5fc45231eb7f39de739e0d228");
         try {
             HifiveHotResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));

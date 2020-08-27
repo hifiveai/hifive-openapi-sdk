@@ -1,8 +1,7 @@
 package com.hifive.api.response;
 
 import com.hifive.api.HifiveResponse;
-import com.hifive.api.domain.common.HifiveMusicInfoDetail;
-import com.hifive.api.domain.common.Page;
+import com.hifive.api.domain.common.HotMusicPage;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
@@ -13,13 +12,13 @@ import com.hifive.api.internal.mapping.ApiField;
  */
 public class HifiveHotResponse extends HifiveResponse {
     @ApiField("data")
-    Page<HifiveMusicInfoDetail> page;
+    HotMusicPage page;
 
-    public Page<HifiveMusicInfoDetail> getPage() {
+    public HotMusicPage getPage() {
         return page;
     }
 
-    public void setPage(Page<HifiveMusicInfoDetail> page) {
+    public void setPage(HotMusicPage page) {
         this.page = page;
     }
 }

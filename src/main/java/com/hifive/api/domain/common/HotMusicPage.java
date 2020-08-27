@@ -6,10 +6,10 @@ import com.hifive.api.internal.mapping.ApiListField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 /**
  * 分页。
  *
@@ -18,25 +18,26 @@ import java.util.Objects;
  */
 @Data
 @AllArgsConstructor
-public class Page<T extends  HifiveObject> extends HifiveObject {
+public class HotMusicPage extends HifiveObject{
+
     @ApiListField("record")
-    @ApiField("hifive_object")
-    private List<T> record;
+    @ApiField("hifive_music_info_detail")
+    private List<HifiveMusicInfoDetail> record;
     @ApiField("meta")
     private HifiveMeta meta;
 
-    public Page(){
+    public HotMusicPage(){
         record = new ArrayList<>();
         meta = new HifiveMeta();
         meta.setCurrentPage(1L);
         meta.setTotalCount(0L);
     }
 
-    public List<T> getRecord() {
+    public List<HifiveMusicInfoDetail> getRecord() {
         return record;
     }
 
-    public void setRecord(List<T> record) {
+    public void setRecord(List<HifiveMusicInfoDetail> record) {
         this.record = record;
     }
 

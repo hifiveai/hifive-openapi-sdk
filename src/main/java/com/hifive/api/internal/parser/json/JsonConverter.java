@@ -90,6 +90,22 @@ public class JsonConverter implements Converter {
 							}
 						}
 					}
+				} else if (listTmp instanceof List<?>) {
+					listObjs = new ArrayList<Object>();
+					List<?> tmpList = (List<?>) listTmp;
+					for (Object subTmp : tmpList) {
+						if (subTmp instanceof Map<?, ?>) {// object
+							Map<?, ?> subMap = (Map<?, ?>) subTmp;
+							Object subObj = fromJson(subMap, subType);
+							if (subObj != null) {
+								listObjs.add(subObj);
+							}
+						} else if (subTmp instanceof List<?>) {// array
+							// TODO not support yet
+						} else {// boolean, long, double, string, null
+							listObjs.add(subTmp);
+						}
+					}
 				}
 
 				return listObjs;

@@ -6,6 +6,7 @@ import com.hifive.api.ApiException;
 import com.hifive.api.Constants;
 import com.hifive.api.HifiveResponse;
 import com.hifive.api.internal.util.StringUtils;
+import org.springframework.util.ReflectionUtils;
 
 import java.beans.BeanInfo;
 import java.beans.Introspector;
@@ -79,7 +80,9 @@ public class Converters {
 				if (baseFields.contains(itemName) && HifiveResponse.class.isAssignableFrom(clazz)) {
 					field = HifiveResponse.class.getDeclaredField(itemName);
 				} else {
-					field = clazz.getDeclaredField(itemName);
+					//field = clazz.getDeclaredField(itemName);
+					 field = ReflectionUtils.findField(clazz, itemName);
+					ReflectionUtils.makeAccessible(field);
 				}
 
 				ApiField jsonField = field.getAnnotation(ApiField.class);
