@@ -2,20 +2,17 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveBaseVisualResponse;
+import com.hifive.api.response.HifiveMusicConfigResponse;
+import com.hifive.api.response.HifiveRecommendResponse;
 
 import java.util.Map;
 
-public class HifiveBaseVisualRequest extends HifiveBaseRequest<HifiveBaseVisualResponse> {
+public class HifiveMusicConfigRequest extends HifiveBaseRequest<HifiveMusicConfigResponse> {
 
-    /**
-     * 经纬度信息 latitude/longitude
-     */
-    private String location;
 
     @Override
     public String getApiMethodName() {
-        return "BaseVisual";
+        return "MusicConfig";
     }
 
 
@@ -29,26 +26,16 @@ public class HifiveBaseVisualRequest extends HifiveBaseRequest<HifiveBaseVisualR
 
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
 
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
-            {
-                put("location", getLocation());
-            }
         };
         return txtParams;
     }
 
 
-    public Class<HifiveBaseVisualResponse> getResponseClass() {
-        return HifiveBaseVisualResponse.class;
+    public Class<HifiveMusicConfigResponse> getResponseClass() {
+        return HifiveMusicConfigResponse.class;
     }
 
     @Override

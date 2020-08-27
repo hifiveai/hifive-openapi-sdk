@@ -24,6 +24,6 @@ public class TagPrice implements Serializable {
      * 价格列表
      * </p>
      **/
-    @ApiField("prices")
-    private Long[] prices;
+    @ApiListField("prices")
+    private List<Long> prices;
 }

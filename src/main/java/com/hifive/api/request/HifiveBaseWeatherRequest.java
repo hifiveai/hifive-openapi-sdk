@@ -5,7 +5,7 @@ import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HifiveBaseWeatherResponse;
 import java.util.Map;
 
-public class HifiveBaseWeatherRequest extends HifivePageRequest<HifiveBaseWeatherResponse> {
+public class HifiveBaseWeatherRequest extends HifiveBaseRequest<HifiveBaseWeatherResponse> {
 
     /**
      * 经纬度信息 latitude/longitude
