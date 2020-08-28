@@ -36,6 +36,9 @@ public class Order extends HifiveObject {
     private String deadline;
     @ApiField("createTime")
     private String createTime;
+
+    @ApiField("status")
+    private Integer status;
     @ApiListField("music")
     private List<HifiveMusicFile> music;
     

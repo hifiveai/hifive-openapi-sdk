@@ -13,8 +13,7 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        // ChannelRequest(client);
-        OrderPublishRequest(client);
+        OrderDetailRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -311,7 +310,7 @@ public class DefaultClientTest {
 
     private static void OrderPublishRequest(HifiveClient client) {
         HifiveOrderPublishRequest request = new HifiveOrderPublishRequest();
-        request.setMethod(HifiveUserGetRequest.METHOD_POST);
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
         request.setToken("394427b702825d59222c71d15ceab720");
         request.setOrderId("1434556569145");
@@ -319,6 +318,35 @@ public class DefaultClientTest {
         request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp1");
         try {
             HifiveOrderPublishResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void OrderDetailRequest(HifiveClient client) {
+        HifiveOrderDetailRequest request = new HifiveOrderDetailRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+        request.setOrderId("1434556569145");
+        try {
+            HifiveOrderDetailResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void OrderRefundRequest(HifiveClient client) {
+        HifiveOrderRefundRequest request = new HifiveOrderRefundRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+        request.setOrderId("1434556569145");
+        try {
+            HifiveOrderRefundResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
