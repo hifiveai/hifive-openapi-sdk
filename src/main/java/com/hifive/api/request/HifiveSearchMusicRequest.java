@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HifiveSearchMusicResponse;
+
 import java.util.Map;
 
 public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusicResponse> {
@@ -96,6 +97,16 @@ public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusi
 
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
+            {
+                put("keyword", getKeyword());
+                put("language", getLanguage());
+                put("price", getPrice());
+                put("tagId", getTagId());
+                put("bpm", getBpm());
+                put("duration", getDuration());
+                put("Page", getPage());
+                put("PageSize", getPageSize());
+            }
         };
         return txtParams;
     }
@@ -109,7 +120,6 @@ public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusi
     public void check() throws ApiRuleException {
 
     }
-
 
 
     @Override

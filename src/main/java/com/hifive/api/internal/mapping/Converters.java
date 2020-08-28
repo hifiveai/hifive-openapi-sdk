@@ -65,9 +65,15 @@ public class Converters {
 
         try {
             rsp = clazz.newInstance();
-            BeanInfo beanInfo = Introspector.getBeanInfo(clazz);
-            PropertyDescriptor[] pds = beanInfo.getPropertyDescriptors();
+            List<PropertyDescriptor> pds = new ArrayList<>();
+            Class cls = clazz;
+            while (cls != null){
+                BeanInfo beanInfo = Introspector.getBeanInfo(cls);
+                pds.addAll(new ArrayList<>(Arrays.asList(beanInfo.getPropertyDescriptors())));
+                cls = (Class<T>) cls.getSuperclass();
+            }
 
+            //PropertyDescriptor[] pds = beanInfo.getPropertyDescriptors();
             for (PropertyDescriptor pd : pds) {
                 Method method = pd.getWriteMethod();
                 if (method == null) { // ignore read-only fields

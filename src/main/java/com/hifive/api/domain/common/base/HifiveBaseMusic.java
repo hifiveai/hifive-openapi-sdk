@@ -48,4 +48,68 @@ public abstract class HifiveBaseMusic extends HifiveBaseMusicInfo {
      */
     @ApiField("auditionEnd")
     private Integer auditionEnd;
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
+
+    public String getMusicName() {
+        return musicName;
+    }
+
+    public void setMusicName(String musicName) {
+        this.musicName = musicName;
+    }
+
+    public String getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(String albumId) {
+        this.albumId = albumId;
+    }
+
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
+    }
+
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public Integer getBpm() {
+        return bpm;
+    }
+
+    public void setBpm(Integer bpm) {
+        this.bpm = bpm;
+    }
+
+    public Integer getAuditionBegin() {
+        return auditionBegin;
+    }
+
+    public void setAuditionBegin(Integer auditionBegin) {
+        this.auditionBegin = auditionBegin;
+    }
+
+    public Integer getAuditionEnd() {
+        return auditionEnd;
+    }
+
+    public void setAuditionEnd(Integer auditionEnd) {
+        this.auditionEnd = auditionEnd;
+    }
 }
