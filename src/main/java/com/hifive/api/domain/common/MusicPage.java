@@ -18,7 +18,7 @@ import java.util.Objects;
  */
 @Data
 @AllArgsConstructor
-public class HotMusicPage extends HifiveObject{
+public class MusicPage extends HifiveObject{
 
     @ApiListField("record")
     @ApiField("hifive_music_info_detail")
@@ -26,7 +26,7 @@ public class HotMusicPage extends HifiveObject{
     @ApiField("meta")
     private HifiveMeta meta;
 
-    public HotMusicPage(){
+    public MusicPage(){
         record = new ArrayList<>();
         meta = new HifiveMeta();
         meta.setCurrentPage(1L);

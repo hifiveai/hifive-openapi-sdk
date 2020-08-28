@@ -8,12 +8,12 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) {
-        String url = "https://hifive-gateway-test.hifiveai.com";
-        String appkey = "d1cb7d272fe8460c8ad6b114e3977f03";
-        String secret = "8b7089e4112f4391";
+        String url = "https://hifive-openapi-qa.hifiveai.com";
+        String appkey = "5216d02806d5464b943492838b7e4390";
+        String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        MusicConfigRequest(client);
+        SearchMusicRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -121,6 +121,23 @@ public class DefaultClientTest {
         request.setToken("394427b702825d59222c71d15ceab720");
         try {
             HifiveMusicConfigResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void SearchMusicRequest(HifiveClient client) {
+        HifiveSearchMusicRequest request = new HifiveSearchMusicRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setPage(1L);
+        request.setPageSize(20L);
+        request.setPrice("1-100000");
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+        try {
+            HifiveSearchMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
