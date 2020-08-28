@@ -14,7 +14,7 @@ public class DefaultClientTest {
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
        // ChannelRequest(client);
-        TrafficHQListenRequest(client);
+        TrafficHQListenSliceRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -257,6 +257,27 @@ public class DefaultClientTest {
 
         try {
             HifiveHQListenResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void TrafficHQListenSliceRequest(HifiveClient client) {
+        HifiveHQListenSliceRequest request = new HifiveHQListenSliceRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+
+        request.setMusicId("B7B810AABADF");
+        request.setAudioFormat("mp3");
+        request.setAudioRate("128");
+        request.setMixed(true);
+        request.setAuditionBegin(2);
+        request.setAuditionEnd(100);
+        try {
+            HifiveHQListenSliceResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
