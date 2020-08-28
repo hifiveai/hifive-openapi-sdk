@@ -1,11 +1,11 @@
 package com.hifive.api.response;
 
 import com.hifive.api.HifiveResponse;
-import com.hifive.api.domain.ai.HifiveRecommendMusicDetail;
 import com.hifive.api.domain.common.HifiveMusicInfoDetail;
 import com.hifive.api.domain.common.HifivePage;
-import com.hifive.api.domain.common.RecomandMusicPage;
+import com.hifive.api.domain.common.TrafficTagSheet;
 import com.hifive.api.internal.mapping.ApiField;
+
 
 /**
  * 分页。
@@ -13,16 +13,17 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HifiveRecommendResponse extends HifiveResponse {
+public class HifiveChannelSheetResponse extends HifiveResponse {
 
     @ApiField("data")
-    HifivePage<HifiveRecommendMusicDetail> hifivePage;
+    HifivePage<TrafficTagSheet<HifiveMusicInfoDetail>> hifivePage;
 
-    public HifivePage<HifiveRecommendMusicDetail> getHifivePage() {
+
+    public HifivePage<TrafficTagSheet<HifiveMusicInfoDetail>> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HifivePage<HifiveRecommendMusicDetail> hifivePage) {
+    public void setHifivePage(HifivePage<TrafficTagSheet<HifiveMusicInfoDetail>> hifivePage) {
         this.hifivePage = hifivePage;
     }
 }
