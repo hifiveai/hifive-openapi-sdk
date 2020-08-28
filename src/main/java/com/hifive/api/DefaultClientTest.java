@@ -13,7 +13,7 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        OrderTagSheetRequest(client);
+        OrderGroupSheetRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -436,6 +436,46 @@ public class DefaultClientTest {
         request.setRecoNum(2);
         try {
             HifiveOrderTagSheetResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    private static void TrafficGroupSheetRequest(HifiveClient client) {
+        HifiveTrafficGroupSheetRequest request = new HifiveTrafficGroupSheetRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+        request.setGroupId("csa0t86qv24");
+        request.setLanguage(1);
+        request.setRecoNum(10);
+        request.setPage(1L);
+        request.setPageSize(10L);
+
+        try {
+            HifiveTrafficGroupSheetResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void OrderGroupSheetRequest(HifiveClient client) {
+        HifiveOrderGroupSheetRequest request = new HifiveOrderGroupSheetRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+        request.setGroupId("csa0t86qv24");
+        request.setLanguage(1);
+        request.setRecoNum(10);
+        request.setPage(1L);
+        request.setPageSize(10L);
+
+        try {
+            HifiveOrderGroupSheetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
