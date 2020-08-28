@@ -226,6 +226,12 @@ public class Converters {
                                                 }
                                             }
                                         }
+                                    } else if (fieldType instanceof Class<?>) {
+                                        Class<?> subType = (Class<?>) fieldType;
+                                        List<?> listObjs = reader.getListObjects(listName, itemName, subType);
+                                        if (listObjs != null) {
+                                            method.invoke(rsp, listObjs);
+                                        }
                                     }
                                 }
                             }
