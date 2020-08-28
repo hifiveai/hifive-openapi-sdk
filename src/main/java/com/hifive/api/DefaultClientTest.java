@@ -13,8 +13,8 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-       // ChannelRequest(client);
-        TrafficHQListenSliceRequest(client);
+        // ChannelRequest(client);
+        OrderMusicRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -278,6 +278,30 @@ public class DefaultClientTest {
         request.setAuditionEnd(100);
         try {
             HifiveHQListenSliceResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void OrderMusicRequest(HifiveClient client) {
+        HifiveOrderMusicRequest request = new HifiveOrderMusicRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_POST);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+        request.setOrderId("143456789056569145");
+        request.setSubject("nYyple");
+        request.setClientId("DXQOY");
+        request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp");
+        request.setMusic("[{\"versionId\":\"B7B810AABADF\",\"price\":20,\"num\":1}]");
+        request.setTotalFee(1556);
+        request.setDeadline(50);
+        request.setLanguage(1);
+        request.setAudioFormat("mp3");
+        request.setAudioRate("320");
+        try {
+            HifiveOrderMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();

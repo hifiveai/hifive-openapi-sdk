@@ -22,7 +22,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hforderId"})
 public class Order extends HifiveObject {
     @ApiField("subject")
     private String subject;
