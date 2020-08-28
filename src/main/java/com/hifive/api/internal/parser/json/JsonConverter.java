@@ -11,6 +11,7 @@ import com.hifive.api.internal.util.json.ExceptionErrorListener;
 import com.hifive.api.internal.util.json.JSONReader;
 import com.hifive.api.internal.util.json.JSONValidatingReader;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

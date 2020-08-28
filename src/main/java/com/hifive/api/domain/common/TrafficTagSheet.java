@@ -1,6 +1,7 @@
 package com.hifive.api.domain.common;
 
 
+import com.hifive.api.domain.common.base.HifiveBaseMusicInfo;
 import com.hifive.api.domain.common.base.HifiveBaseMusicSize;
 import com.hifive.api.domain.common.es.EsCover;
 import com.hifive.api.internal.mapping.ApiField;
@@ -14,7 +15,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TrafficTagSheet<T extends HifiveBaseMusicSize> implements Serializable {
+public class TrafficTagSheet<T extends HifiveBaseMusicInfo> implements Serializable {
     /**
      * 歌单编号
      */
