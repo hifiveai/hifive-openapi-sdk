@@ -14,7 +14,7 @@ public class DefaultClientTest {
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
         // ChannelRequest(client);
-        OrderMusicRequest(client);
+        OrderPublishRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -290,7 +290,7 @@ public class DefaultClientTest {
         request.setMethod(HifiveUserGetRequest.METHOD_POST);
         request.setClientId("1234567");
         request.setToken("394427b702825d59222c71d15ceab720");
-        request.setOrderId("143456789056569145");
+        request.setOrderId("1434556569145");
         request.setSubject("nYyple");
         request.setClientId("DXQOY");
         request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp");
@@ -302,6 +302,23 @@ public class DefaultClientTest {
         request.setAudioRate("320");
         try {
             HifiveOrderMusicResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void OrderPublishRequest(HifiveClient client) {
+        HifiveOrderPublishRequest request = new HifiveOrderPublishRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_POST);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+        request.setOrderId("1434556569145");
+        request.setClientId("DXQOY");
+        request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp1");
+        try {
+            HifiveOrderPublishResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
