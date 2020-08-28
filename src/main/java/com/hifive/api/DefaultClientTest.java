@@ -9,11 +9,11 @@ public class DefaultClientTest {
 
     public static void main(String[] args) {
         String url = "https://hifive-openapi-qa.hifiveai.com";
-        String appkey = "5216d02806d5464b943492838b7e4390";
-        String secret = "2d241e8f934d47d5";
+        String appkey = "5cccd9205dd54e4db1c551dfe188e25a";
+        String secret = "8f109da3744d4f9b8c";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        SheetMusicRequest(client);
+        OrderAuthorizationRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -181,6 +181,27 @@ public class DefaultClientTest {
         request.setSheetId(1203L);
         try {
             HifiveSheetMusicResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void OrderAuthorizationRequest(HifiveClient client) {
+        HifiveAuthorizationRequest request = new HifiveAuthorizationRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+
+        request.setCompanyName("嗨翻屋d1g");
+        request.setArea("2");
+        request.setBrand("HIFIVE音乐开放平台");
+        request.setPeriod("3");
+        request.setProjectName("小嗨nbdb");
+        request.setOrderIds("hifive1598530734587");
+        try {
+            HifiveAuthorizationResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();

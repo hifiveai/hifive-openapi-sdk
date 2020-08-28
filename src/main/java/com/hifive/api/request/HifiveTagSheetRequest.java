@@ -77,6 +77,10 @@ public class HifiveTagSheetRequest extends HifiveBaseRequest<HifiveTagSheetRespo
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
+                put("tagId", getTagId());
+                put("type", getType());
+                put("recoNum", getRecoNum());
+                put("language", getLanguage());
             }
         };
         return txtParams;
@@ -91,7 +95,6 @@ public class HifiveTagSheetRequest extends HifiveBaseRequest<HifiveTagSheetRespo
     public void check() throws ApiRuleException {
 
     }
-
 
 
     @Override
