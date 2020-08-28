@@ -32,7 +32,7 @@ public class HifiveBaseMusicSize extends HifiveObject {
     /**
      * 过期时间戳
      */
-    @ApiField("waveUrl")
+    @ApiField("expires")
     private Long expires;
 
     public Long getFileSize() {
