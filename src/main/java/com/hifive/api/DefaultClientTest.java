@@ -13,7 +13,7 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        TrafficSearchMusicRequest(client);
+        TrafficTagMusicRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -672,4 +672,38 @@ public class DefaultClientTest {
         }
     }
 
+    private static void TrafficTagMusicRequest(HifiveClient client) {
+        HifiveTrafficTagMusicRequest request = new HifiveTrafficTagMusicRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+
+        request.setTagId("5440");
+
+
+        try {
+            HifiveTrafficTagMusicResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void OrderTagMusicRequest(HifiveClient client) {
+        HifiveOrderTagMusicRequest request = new HifiveOrderTagMusicRequest();
+        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+
+        request.setTagId("5440");
+
+
+        try {
+            HifiveOrderTagMusicResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -11,7 +11,7 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HifiveSearchMusicResponse extends HifiveResponse {
+public class HifiveTrafficTagMusicResponse extends HifiveResponse {
 
     @ApiField("data")
     HifivePage<HifiveMusicInfoDetail> hifivePage;
