@@ -13,7 +13,7 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        TrafficTagMusicRequest(client);
+        OrderTagMusicRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -691,16 +691,18 @@ public class DefaultClientTest {
 
 
     private static void OrderTagMusicRequest(HifiveClient client) {
-        HifiveOrderTagMusicRequest request = new HifiveOrderTagMusicRequest();
+        HifiveTrafficDownloadRequest request = new HifiveTrafficDownloadRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
         request.setToken("394427b702825d59222c71d15ceab720");
 
-        request.setTagId("5440");
+        request.setMusicId("B7B810AABADF");
+        request.setAudioFormat("mp3");
+        request.setAudioRate("128");
 
 
         try {
-            HifiveOrderTagMusicResponse response = client.execute(request);
+            HifiveTrafficDownloadResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
