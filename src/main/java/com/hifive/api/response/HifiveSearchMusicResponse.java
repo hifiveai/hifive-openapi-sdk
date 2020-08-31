@@ -2,7 +2,6 @@ package com.hifive.api.response;
 
 import com.hifive.api.HifiveResponse;
 import com.hifive.api.domain.common.MusicPage;
-import com.hifive.api.domain.common.TagPrice;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
