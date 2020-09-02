@@ -209,6 +209,10 @@ public class HifiveUserGetRequest extends HifiveBaseRequest<HifiveUserGetRespons
                 put("isOrganization", isOrganization);
                 put("favoriteSinger", getFavoriteSinger());
                 put("favoriteGenre", getFavoriteGenre());
+                put("country", getCountry());
+                put("location", getLocation());
+                put("province", getProvince());
+                put("reserve", getReserve());
             }
         };
         if (this.udfParams != null) {

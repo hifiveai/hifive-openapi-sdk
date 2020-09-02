@@ -13,11 +13,11 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-       // UserGetRequest(client);
-        HifiveBaseFavoriteRequest(client);
+        HifiveUserGetRequest(client);
+       // HifiveBaseFavoriteRequest(client);
     }
 
-    private static void UserGetRequest(HifiveClient client) {
+    private static void HifiveUserGetRequest(HifiveClient client) {
         HifiveUserGetRequest request = new HifiveUserGetRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setBirthday(202012121);
@@ -25,7 +25,7 @@ public class DefaultClientTest {
         request.setEducation(2);
         request.setGender(1);
         request.setNickname("谎言");
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setProfession(8);
         request.setOrganization(true);
         request.setFavoriteSinger("周杰伦");
@@ -38,7 +38,7 @@ public class DefaultClientTest {
         }
     }
 
-    private static void behaviorRequest(HifiveClient client) {
+    private static void HifiveBehaviorRequest(HifiveClient client) {
         HifiveBehaviorRequest request = new HifiveBehaviorRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setAction(1009);
@@ -53,7 +53,7 @@ public class DefaultClientTest {
         }
     }
 
-    private static void hotRequest(HifiveClient client) {
+    private static void HifiveHotRequest(HifiveClient client) {
         HifiveHotRequest request = new HifiveHotRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setPage(1L);
