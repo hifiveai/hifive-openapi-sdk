@@ -124,7 +124,6 @@ public class HifiveAuthorizationRequest extends HifiveBaseRequest<HifiveAuthoriz
 
                 put("area", getArea());
                 put("orderIds", getOrderIds());
-                put("musicIds", getMusicIds());
             }
         };
         return txtParams;

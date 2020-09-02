@@ -3,7 +3,6 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HifiveMusicConfigResponse;
-import com.hifive.api.response.HifiveRecommendResponse;
 
 import java.util.Map;
 
