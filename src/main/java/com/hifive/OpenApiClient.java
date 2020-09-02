@@ -70,7 +70,7 @@ public class OpenApiClient {
      **/
     private static Map<String, String> params = new HashMap<>();
 
-    static OpenApiClientBuilder builder() {
+    public static OpenApiClientBuilder builder() {
         return new OpenApiClientBuilder();
     }
 

@@ -31,15 +31,6 @@ public class HifiveHQListenRequest extends HifiveBaseRequest<HifiveHQListenRespo
     }
 
 
-    @Override
-    public Long getTimestamp() {
-        return null;
-    }
-
-    @Override
-    public void setTimestamp(Long timestamp) {
-
-    }
 
     public String getMusicId() {
         return musicId;

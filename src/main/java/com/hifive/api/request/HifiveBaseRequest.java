@@ -22,6 +22,8 @@ public abstract class HifiveBaseRequest<T extends HifiveResponse> implements Hif
 
     private String token;
 
+    private Long timestamp;
+
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
@@ -68,5 +70,16 @@ public abstract class HifiveBaseRequest<T extends HifiveResponse> implements Hif
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+
+    @Override
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    @Override
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
     }
 }

@@ -68,6 +68,8 @@ public class HifiveHotRequest extends HifivePageRequest<HifiveHotResponse> {
     @Override
     public void check() throws ApiRuleException {
 
+
+
     }
 
 

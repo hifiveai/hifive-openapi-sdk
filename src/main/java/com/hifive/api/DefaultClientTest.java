@@ -13,7 +13,7 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        OrderTagMusicRequest(client);
+        HifiveSearchMusicRequest(client);
     }
 
     private static void UserGetRequest(HifiveClient client) {
@@ -128,9 +128,9 @@ public class DefaultClientTest {
     }
 
 
-    private static void SearchMusicRequest(HifiveClient client) {
+    private static void HifiveSearchMusicRequest(HifiveClient client) {
         HifiveSearchMusicRequest request = new HifiveSearchMusicRequest();
-        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setMethod(HifiveUserGetRequest.METHOD_POST);
         request.setPage(1L);
         request.setPageSize(20L);
         request.setPrice("1-100000");
@@ -209,7 +209,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void ChannelRequest(HifiveClient client) {
+    private static void HifiveChannelRequest(HifiveClient client) {
         HifiveChannelRequest request = new HifiveChannelRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -224,7 +224,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void ChannelSheetRequest(HifiveClient client) {
+    private static void HifiveChannelSheetRequest(HifiveClient client) {
         HifiveChannelSheetRequest request = new HifiveChannelSheetRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -244,16 +244,15 @@ public class DefaultClientTest {
     }
 
 
-    private static void TrafficHQListenRequest(HifiveClient client) {
+    private static void HifiveHQListenRequest(HifiveClient client) {
         HifiveHQListenRequest request = new HifiveHQListenRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
-        request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
-
+        request.setClientId("1223234343");
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat("mp3");
         request.setAudioRate("128");
-
+        request.setTimestamp(1598940639847L);
+        request.setNonce("kev6i53p1r0znfuhojl487xtbawqgcsm");
         try {
             HifiveHQListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -263,10 +262,10 @@ public class DefaultClientTest {
     }
 
 
-    private static void TrafficHQListenSliceRequest(HifiveClient client) {
+    private static void HifiveHQListenSliceRequest(HifiveClient client) {
         HifiveHQListenSliceRequest request = new HifiveHQListenSliceRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
@@ -284,7 +283,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void OrderMusicRequest(HifiveClient client) {
+    private static void HifiveOrderMusicRequest(HifiveClient client) {
         HifiveOrderMusicRequest request = new HifiveOrderMusicRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_POST);
         request.setClientId("1234567");
@@ -308,9 +307,9 @@ public class DefaultClientTest {
     }
 
 
-    private static void OrderPublishRequest(HifiveClient client) {
+    private static void HifiveOrderPublishRequest(HifiveClient client) {
         HifiveOrderPublishRequest request = new HifiveOrderPublishRequest();
-        request.setMethod(HifiveUserGetRequest.METHOD_GET);
+        request.setMethod(HifiveUserGetRequest.METHOD_POST);
         request.setClientId("1234567");
         request.setToken("394427b702825d59222c71d15ceab720");
         request.setOrderId("1434556569145");
@@ -325,7 +324,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void OrderDetailRequest(HifiveClient client) {
+    private static void HifiveOrderDetailRequest(HifiveClient client) {
         HifiveOrderDetailRequest request = new HifiveOrderDetailRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -339,7 +338,7 @@ public class DefaultClientTest {
         }
     }
 
-    private static void OrderRefundRequest(HifiveClient client) {
+    private static void HifiveOrderRefundRequest(HifiveClient client) {
         HifiveOrderRefundRequest request = new HifiveOrderRefundRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -355,7 +354,7 @@ public class DefaultClientTest {
 
 
 
-    private static void OrderTagRequest(HifiveClient client) {
+    private static void HifiveOrderTagRequest(HifiveClient client) {
         HifiveOrderTagRequest request = new HifiveOrderTagRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -369,7 +368,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void TrafficTagRequest(HifiveClient client) {
+    private static void HifiveTrafficTagRequest(HifiveClient client) {
         HifiveTrafficTagRequest request = new HifiveTrafficTagRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -383,7 +382,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void TrafficGroupRequest(HifiveClient client) {
+    private static void HifiveTrafficGroupRequest(HifiveClient client) {
         HifiveTrafficGroupRequest request = new HifiveTrafficGroupRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -397,7 +396,7 @@ public class DefaultClientTest {
         }
     }
 
-    private static void OrderGroupRequest(HifiveClient client) {
+    private static void HifiveOrderGroupRequest(HifiveClient client) {
         HifiveOrderGroupRequest request = new HifiveOrderGroupRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -413,7 +412,7 @@ public class DefaultClientTest {
 
 
 
-    private static void TrafficTagSheetRequest(HifiveClient client) {
+    private static void HifiveTrafficTagSheetRequest(HifiveClient client) {
         HifiveTrafficTagSheetRequest request = new HifiveTrafficTagSheetRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -428,7 +427,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void OrderTagSheetRequest(HifiveClient client) {
+    private static void HifiveOrderTagSheetRequest(HifiveClient client) {
         HifiveOrderTagSheetRequest request = new HifiveOrderTagSheetRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -444,7 +443,7 @@ public class DefaultClientTest {
 
 
 
-    private static void TrafficGroupSheetRequest(HifiveClient client) {
+    private static void HifiveTrafficGroupSheetRequest(HifiveClient client) {
         HifiveTrafficGroupSheetRequest request = new HifiveTrafficGroupSheetRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -463,7 +462,7 @@ public class DefaultClientTest {
         }
     }
 
-    private static void OrderGroupSheetRequest(HifiveClient client) {
+    private static void HifiveOrderGroupSheetRequest(HifiveClient client) {
         HifiveOrderGroupSheetRequest request = new HifiveOrderGroupSheetRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -483,7 +482,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void TrafficSheetMusicRequest(HifiveClient client) {
+    private static void HifiveTrafficSheetMusicRequest(HifiveClient client) {
         HifiveTrafficSheetMusicRequest request = new HifiveTrafficSheetMusicRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -497,7 +496,7 @@ public class DefaultClientTest {
         }
     }
 
-    private static void OrderSheetMusicRequest(HifiveClient client) {
+    private static void HifiveOrderSheetMusicRequest(HifiveClient client) {
         HifiveOrderSheetMusicRequest request = new HifiveOrderSheetMusicRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -514,7 +513,7 @@ public class DefaultClientTest {
 
 
 
-    private static void OrderListenRequest(HifiveClient client) {
+    private static void HifiveOrderListenRequest(HifiveClient client) {
         HifiveOrderListenRequest request = new HifiveOrderListenRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -533,7 +532,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void TrafficListenRequest(HifiveClient client) {
+    private static void HifiveTrafficListenRequest(HifiveClient client) {
         HifiveTrafficListenRequest request = new HifiveTrafficListenRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -553,7 +552,7 @@ public class DefaultClientTest {
 
 
 
-    private static void OrderListenSliceRequest(HifiveClient client) {
+    private static void HifiveOrderListenSliceRequest(HifiveClient client) {
         HifiveOrderListenSliceRequest request = new HifiveOrderListenSliceRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
@@ -576,9 +575,8 @@ public class DefaultClientTest {
 
 
 
-    private static void TrafficListenSliceRequest(HifiveClient client) {
+    private static void HifiveTrafficListenSliceRequest(HifiveClient client) {
         HifiveTrafficListenSliceRequest request = new HifiveTrafficListenSliceRequest();
-        request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
         request.setToken("394427b702825d59222c71d15ceab720");
@@ -599,7 +597,7 @@ public class DefaultClientTest {
 
 
 
-    private static void OrderListenMixedRequest(HifiveClient client) {
+    private static void HifiveOrderListenMixedRequest(HifiveClient client) {
         HifiveOrderListenMixedRequest request = new HifiveOrderListenMixedRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -690,7 +688,7 @@ public class DefaultClientTest {
     }
 
 
-    private static void OrderTagMusicRequest(HifiveClient client) {
+    private static void HifiveTrafficDownloadRequest(HifiveClient client) {
         HifiveTrafficDownloadRequest request = new HifiveTrafficDownloadRequest();
         request.setMethod(HifiveUserGetRequest.METHOD_GET);
         request.setClientId("1234567");
