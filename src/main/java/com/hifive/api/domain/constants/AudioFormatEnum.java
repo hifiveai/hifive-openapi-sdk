@@ -4,7 +4,7 @@ package com.hifive.api.domain.constants;
 
 /***
  * 音频格式，todo:　应该做到系统配置中，而不应该写死，这样不利于扩展
- * @author superchen
+ * @author yong.huang
  */
 public enum AudioFormatEnum {
 

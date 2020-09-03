@@ -1,23 +1,28 @@
 package com.hifive.api.domain.constants;
 
-
 /***
+ *
  * @author yong.huang
  */
-public enum LangageEnum {
+public enum EducationEnum {
 
-    //
-    EN(0),
-    // 默认
-    CN(1);
+    UN_COLLECTED(0), //未采集
 
-    /**
-     * 音频格式
-     */
+    PRIMARY_SCHO0LE(1), //小学
+
+    MIDDLE_SCHOOLE(2),//初中
+
+    HIGH_SCHOOLE(3),//高中
+
+    COLLEGE(4),//大学
+
+    MASTER(5),//硕士
+    ;
+
     Integer value;
 
 
-    LangageEnum(Integer value) {
+    EducationEnum(Integer value) {
         this.value = value;
     }
 

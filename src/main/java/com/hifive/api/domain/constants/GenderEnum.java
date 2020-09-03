@@ -1,23 +1,17 @@
 package com.hifive.api.domain.constants;
-
-
 /***
  * @author yong.huang
  */
-public enum LangageEnum {
+public enum GenderEnum {
 
-    //
-    EN(0),
-    // 默认
-    CN(1);
+    UNKNOWN(0),
+    MAN(1),
+    WOMAN(2);
 
-    /**
-     * 音频格式
-     */
     Integer value;
 
 
-    LangageEnum(Integer value) {
+    GenderEnum(Integer value) {
         this.value = value;
     }
 
