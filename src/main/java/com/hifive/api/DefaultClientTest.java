@@ -1,8 +1,10 @@
 package com.hifive.api;
 
 import com.alibaba.fastjson.JSON;
+import com.hifive.api.domain.constants.AreaEnum;
 import com.hifive.api.domain.constants.AudioFormatEnum;
 import com.hifive.api.domain.constants.LangageEnum;
+import com.hifive.api.domain.constants.PeriodEnum;
 import com.hifive.api.request.*;
 import com.hifive.api.response.*;
 
@@ -198,9 +200,9 @@ public class DefaultClientTest {
         request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setCompanyName("嗨翻屋d1g");
-        request.setArea("2");
+        request.setArea(AreaEnum.GLOBLE.getValue());
         request.setBrand("HIFIVE音乐开放平台");
-        request.setPeriod("3");
+        request.setPeriod(PeriodEnum.THREE_YEAR.getValue());
         request.setProjectName("小嗨nbdb");
         request.setOrderIds("hifive1598530734587");
         try {
