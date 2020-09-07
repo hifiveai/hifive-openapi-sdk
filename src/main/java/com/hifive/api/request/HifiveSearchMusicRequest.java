@@ -24,7 +24,7 @@ public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusi
 
     private Long priceFromCent;
 
-    private List<String> tagIds;
+    private String tagIds;
 
     /**
      * BPM区间
@@ -95,11 +95,12 @@ public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusi
         this.priceFromCent = priceFromCent;
     }
 
-    public List<String> getTagIds() {
+
+    public String getTagIds() {
         return tagIds;
     }
 
-    public void setTagIds(List<String> tagIds) {
+    public void setTagIds(String tagIds) {
         this.tagIds = tagIds;
     }
 

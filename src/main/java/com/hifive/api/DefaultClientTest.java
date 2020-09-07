@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.hifive.api.domain.constants.*;
 import com.hifive.api.request.*;
 import com.hifive.api.response.*;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -136,11 +137,9 @@ public class DefaultClientTest {
     private static void hifiveSearchMusicRequest(HifiveClient client) {
         HifiveSearchMusicRequest request = new HifiveSearchMusicRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
-        List<String> tagIds = new ArrayList<>();
-        tagIds.add("118");
         request.setPage(1L);
         request.setPageSize(20L);
-        //request.setTagIds(tagIds);
+        request.setTagIds("118,119");
        /* request.setPriceFromCent(1L);
         request.setPriceToCent(1000000L);*/
         request.setBpmFrom(1);
