@@ -5,11 +5,14 @@ import com.hifive.api.domain.constants.*;
 import com.hifive.api.request.*;
 import com.hifive.api.response.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DefaultClientTest {
 
 
     public static void main(String[] args) {
-        String url = "https://hifive-gateway-test.hifiveai.com";
+        String url = "https://hifive-openapi-qa.hifiveai.com";
         String appkey = "5216d02806d5464b943492838b7e4390";
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
@@ -133,10 +136,15 @@ public class DefaultClientTest {
     private static void hifiveSearchMusicRequest(HifiveClient client) {
         HifiveSearchMusicRequest request = new HifiveSearchMusicRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
+        List<String> tagIds = new ArrayList<>();
+        tagIds.add("118");
         request.setPage(1L);
         request.setPageSize(20L);
-        request.setPriceFromCent(1L);
-        request.setPriceToCent(100000L);
+        //request.setTagIds(tagIds);
+       /* request.setPriceFromCent(1L);
+        request.setPriceToCent(1000000L);*/
+        request.setBpmFrom(1);
+        request.setBpmTo(100);
         request.setClientId("1234567");
         request.setToken("394427b702825d59222c71d15ceab720");
         try {
