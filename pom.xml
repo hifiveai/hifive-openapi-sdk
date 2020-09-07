@@ -11,7 +11,7 @@
     <groupId>com.hifive</groupId>
     <artifactId>hifive-openapi-sdk</artifactId>
     <name>hifive-openapi-sdk</name>
-    <version>1.0.0</version>
+    <version>4.0.1</version>
     <description>Starter of log recorder.</description>
     <packaging>jar</packaging>
     <dependencies>

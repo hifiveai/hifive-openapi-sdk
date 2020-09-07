@@ -9,12 +9,12 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) {
-        String url = "https://hifive-openapi-qa.hifiveai.com";
+        String url = "https://hifive-gateway-test.hifiveai.com";
         String appkey = "5216d02806d5464b943492838b7e4390";
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        hifiveUserGetRequest(client);
+        hifiveSearchMusicRequest(client);
         // HifiveBaseFavoriteRequest(client);
     }
 
@@ -44,8 +44,8 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setAction(1009);
         request.setTargetId("B75C80A41E3A");
-        request.setClientId("1234567");
-        request.setToken("466e3cb5fc45231eb7f39de739e0d228");
+        request.setClientId("1223234343");
+        request.setToken("13cda3f10b63120093d64ebf4116eabd");
         try {
             HifiveBehaviorResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -61,8 +61,8 @@ public class DefaultClientTest {
         request.setPageSize(20L);
         request.setStartTime(1594639058L);
         request.setDuration(183);
-        request.setClientId("12345678");
-        request.setToken("466e3cb5fc45231eb7f39de739e0d228");
+        request.setClientId("1223234343");
+        request.setToken("13cda3f10b63120093d64ebf4116eabd");
         try {
             HifiveHotResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -76,8 +76,8 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setPage(1L);
         request.setPageSize(20L);
-        request.setClientId("1234567");
-        request.setToken("7e348a0da6c133d2c231099dff1c09bd");
+        request.setClientId("1223234343");
+        request.setToken("13cda3f10b63120093d64ebf4116eabd");
         try {
             HifiveBaseFavoriteResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -135,7 +135,8 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setPage(1L);
         request.setPageSize(20L);
-        request.setPrice("1-100000");
+        request.setPriceFromCent(1L);
+        request.setPriceToCent(100000L);
         request.setClientId("1234567");
         request.setToken("394427b702825d59222c71d15ceab720");
         try {
@@ -201,7 +202,7 @@ public class DefaultClientTest {
         request.setBrand("HIFIVE音乐开放平台");
         request.setPeriod(PeriodEnum.THREE_YEAR.getValue());
         request.setProjectName("小嗨nbdb");
-        request.setOrderIds("hifive1598530734587");
+        request.setOrderIds("1434556569145");
         try {
             HifiveAuthorizationResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));

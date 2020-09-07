@@ -4,6 +4,7 @@ import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HifiveSearchMusicResponse;
 
+import java.util.List;
 import java.util.Map;
 
 public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusicResponse> {
@@ -16,20 +17,35 @@ public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusi
      */
     private Integer language;
 
-    private String price;
+    /**
+     * 结束价格
+     */
+    private Long priceToCent;
 
+    private Long priceFromCent;
 
-    private String tagId;
+    private List<String> tagIds;
 
     /**
      * BPM区间
      */
-    private String bpm;
+    private Integer bpmTo;
+
+    /**
+     * BPM区间
+     */
+    private Integer bpmFrom;
 
     /**
      * 时长区间,单位秒
      */
-    private String duration;
+    private Integer durationTo;
+
+
+    /**
+     * 时长区间,单位秒
+     */
+    private Integer durationFrom;
 
     @Override
     public String getApiMethodName() {
@@ -63,36 +79,60 @@ public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusi
         this.language = language;
     }
 
-    public String getPrice() {
-        return price;
+    public Long getPriceToCent() {
+        return priceToCent;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setPriceToCent(Long priceToCent) {
+        this.priceToCent = priceToCent;
     }
 
-    public String getTagId() {
-        return tagId;
+    public Long getPriceFromCent() {
+        return priceFromCent;
     }
 
-    public void setTagId(String tagId) {
-        this.tagId = tagId;
+    public void setPriceFromCent(Long priceFromCent) {
+        this.priceFromCent = priceFromCent;
     }
 
-    public String getBpm() {
-        return bpm;
+    public List<String> getTagIds() {
+        return tagIds;
     }
 
-    public void setBpm(String bpm) {
-        this.bpm = bpm;
+    public void setTagIds(List<String> tagIds) {
+        this.tagIds = tagIds;
     }
 
-    public String getDuration() {
-        return duration;
+    public Integer getBpmTo() {
+        return bpmTo;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setBpmTo(Integer bpmTo) {
+        this.bpmTo = bpmTo;
+    }
+
+    public Integer getBpmFrom() {
+        return bpmFrom;
+    }
+
+    public void setBpmFrom(Integer bpmFrom) {
+        this.bpmFrom = bpmFrom;
+    }
+
+    public Integer getDurationTo() {
+        return durationTo;
+    }
+
+    public void setDurationTo(Integer durationTo) {
+        this.durationTo = durationTo;
+    }
+
+    public Integer getDurationFrom() {
+        return durationFrom;
+    }
+
+    public void setDurationFrom(Integer durationFrom) {
+        this.durationFrom = durationFrom;
     }
 
     public Map<String, String> getTextParams() {
@@ -100,10 +140,13 @@ public class HifiveSearchMusicRequest extends HifivePageRequest<HifiveSearchMusi
             {
                 put("keyword", getKeyword());
                 put("language", getLanguage());
-                put("price", getPrice());
-                put("tagId", getTagId());
-                put("bpm", getBpm());
-                put("duration", getDuration());
+                put("priceFromCent", getPriceFromCent());
+                put("priceToCent", getPriceToCent());
+                put("tagIds", getTagIds());
+                put("bpmFrom", getBpmFrom());
+                put("bpmTo", getBpmTo());
+                put("durationFrom", getDurationFrom());
+                put("durationTo", getDurationTo());
                 put("Page", getPage());
                 put("PageSize", getPageSize());
             }
