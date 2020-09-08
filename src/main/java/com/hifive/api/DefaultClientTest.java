@@ -4,10 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.hifive.api.domain.constants.*;
 import com.hifive.api.request.*;
 import com.hifive.api.response.*;
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DefaultClientTest {
 
@@ -18,7 +14,7 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        hifiveSearchMusicRequest(client);
+        hifiveMusicConfigRequest(client);
         // HifiveBaseFavoriteRequest(client);
     }
 
@@ -140,8 +136,8 @@ public class DefaultClientTest {
         request.setPage(1L);
         request.setPageSize(20L);
         request.setTagIds("118,119");
-       /* request.setPriceFromCent(1L);
-        request.setPriceToCent(1000000L);*/
+        request.setPriceFromCent(1L);
+        request.setPriceToCent(1000000L);
         request.setBpmFrom(1);
         request.setBpmTo(100);
         request.setClientId("1234567");
@@ -670,7 +666,7 @@ public class DefaultClientTest {
         }
     }
 
-    private static void TrafficTagMusicRequest(HifiveClient client) {
+    private static void HifiveTrafficTagMusicRequest(HifiveClient client) {
         HifiveTrafficTagMusicRequest request = new HifiveTrafficTagMusicRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
@@ -681,6 +677,24 @@ public class DefaultClientTest {
 
         try {
             HifiveTrafficTagMusicResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private static void HifiveOrderTagMusicRequest(HifiveClient client) {
+        HifiveOrderTagMusicRequest request = new HifiveOrderTagMusicRequest();
+        request.setMethod(HifiveRequest.METHOD_GET);
+        request.setClientId("1234567");
+        request.setToken("394427b702825d59222c71d15ceab720");
+
+        request.setTagId("5440");
+
+
+        try {
+            HifiveOrderTagMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
