@@ -10,12 +10,12 @@ public class DefaultClientTest {
 
     public static void main(String[] args) {
         String url = "https://hifive-openapi-qa.hifiveai.com";
-        String appkey = "5216d02806d5464b943492838b7e4390";
-        String secret = "2d241e8f934d47d5";
+        String appkey = "5cccd9205dd54e4db1c551dfe188e25a";
+        String secret = "8f109da3744d4f9b8c";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        hifiveMusicConfigRequest(client);
-        // HifiveBaseFavoriteRequest(client);
+       // hifiveUserGetRequest(client);
+         hifiveBaseFavoriteRequest(client);
     }
 
     private static void hifiveUserGetRequest(HifiveClient client) {
@@ -77,7 +77,7 @@ public class DefaultClientTest {
         request.setPage(1L);
         request.setPageSize(20L);
         request.setClientId("1223234343");
-        request.setToken("13cda3f10b63120093d64ebf4116eabd");
+        request.setToken("d55d7c9dc9f3446c1c192f6b150e2c58");
         try {
             HifiveBaseFavoriteResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -135,7 +135,7 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setPage(1L);
         request.setPageSize(20L);
-        request.setTagIds("118,119");
+        request.setTagIds("xxx,yyy");
         request.setPriceFromCent(1L);
         request.setPriceToCent(1000000L);
         request.setBpmFrom(1);
@@ -294,7 +294,7 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setClientId("1234567");
         request.setToken("394427b702825d59222c71d15ceab720");
-        request.setOrderId("1434556569145");
+        request.setOrderId("14345565455656");
         request.setSubject("nYyple");
         request.setClientId("DXQOY");
         request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp");

@@ -53,8 +53,10 @@ public class HifiveBehaviorRequest extends HifiveBaseRequest<HifiveBehaviorRespo
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
-                put("Action", "1009");
-                put("TargetId", "B75C80A41E3A");
+                put("Action", getAction());
+                put("TargetId",getTargetId());
+                put("content", getContent());
+                put("context", getContext());
             }
         };
         return txtParams;
