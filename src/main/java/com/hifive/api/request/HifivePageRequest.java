@@ -4,23 +4,23 @@ import com.hifive.api.HifiveResponse;
 
 public abstract class HifivePageRequest<T extends HifiveResponse> extends HifiveBaseRequest<T> {
 
-    protected Long page;
+    protected Integer page;
 
-    protected Long pageSize;
+    protected Integer pageSize;
 
-    public Long getPage() {
+    public Integer getPage() {
         return page;
     }
 
-    public void setPage(Long page) {
+    public void setPage(Integer page) {
         this.page = page;
     }
 
-    public Long getPageSize() {
+    public Integer getPageSize() {
         return pageSize;
     }
 
-    public void setPageSize(Long pageSize) {
+    public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
 }
