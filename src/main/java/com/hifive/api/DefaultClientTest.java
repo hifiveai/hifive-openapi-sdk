@@ -40,7 +40,7 @@ public class DefaultClientTest {
     }
 
     private static void hifiveBaseReportRequest(HifiveClient client) {
-        hifiveBaseReportRequest request = new hifiveBaseReportRequest();
+        HifiveBaseReportRequest request = new HifiveBaseReportRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setAction(1009);
         request.setTargetId("B75C80A41E3A");
