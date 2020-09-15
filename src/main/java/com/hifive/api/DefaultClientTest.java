@@ -15,13 +15,13 @@ public class DefaultClientTest {
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
         //HifiveBaseLoginRequest(client);
-        hifiveOrderDetailRequestTest(client);
+        hifiveOrderRefundRequestTest(client);
     }
 
     private static void HifiveBaseLoginRequest(HifiveClient client) {
         HFBaseLoginRequest request = new HFBaseLoginRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
-        request.setBirthday(202012121);
+        request.setBirthday(1594639058);
         request.setCountry("乐山");
         request.setEducation(EducationEnum.MIDDLE_SCHOOLE.ordinal());
         request.setGender(GenderEnum.MAN.ordinal());
@@ -332,7 +332,7 @@ public class DefaultClientTest {
 
     private static void hifiveOrderRefundRequestTest(HifiveClient client) {
         HFOrderRefundRequest request = new HFOrderRefundRequest();
-        request.setMethod(HifiveRequest.METHOD_GET);
+        request.setMethod(HifiveRequest.METHOD_POST);
         request.setClientId("1234567");
         request.setOrderId("1434556569145");
         try {
