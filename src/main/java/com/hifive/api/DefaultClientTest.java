@@ -54,8 +54,8 @@ public class DefaultClientTest {
         }
     }
 
-    private static void hifiveHotRequestTest(HifiveClient client) {
-        HifiveHotRequest request = new HifiveHotRequest();
+    private static void hifiveBaseHotRequestTest(HifiveClient client) {
+        HifiveBaseHotRequest request = new HifiveBaseHotRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setPage(1);
         request.setPageSize(20);

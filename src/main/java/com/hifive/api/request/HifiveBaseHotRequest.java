@@ -5,7 +5,7 @@ import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HifiveHotResponse;
 import java.util.Map;
 
-public class HifiveHotRequest extends HifivePageRequest<HifiveHotResponse> {
+public class HifiveBaseHotRequest extends HifivePageRequest<HifiveHotResponse> {
     /**
      * 开始时间
      **/
