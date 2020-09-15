@@ -5,7 +5,7 @@ import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HifiveAuthorizationResponse;
 import java.util.Map;
 
-public class HifiveAuthorizationRequest extends HifiveBaseRequest<HifiveAuthorizationResponse> {
+public class HifiveOrderAuthorizationRequest extends HifiveBaseRequest<HifiveAuthorizationResponse> {
 
 
     private String companyName;
