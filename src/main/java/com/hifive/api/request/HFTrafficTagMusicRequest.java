@@ -2,10 +2,10 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveTrafficTagMusicResponse;
+import com.hifive.api.response.HFTrafficTagMusicResponse;
 import java.util.Map;
 
-public class HFTrafficTagMusicRequest extends HFPageRequest<HifiveTrafficTagMusicResponse> {
+public class HFTrafficTagMusicRequest extends HFPageRequest<HFTrafficTagMusicResponse> {
 
 
     /**
@@ -67,8 +67,8 @@ public class HFTrafficTagMusicRequest extends HFPageRequest<HifiveTrafficTagMusi
     }
 
 
-    public Class<HifiveTrafficTagMusicResponse> getResponseClass() {
-        return HifiveTrafficTagMusicResponse.class;
+    public Class<HFTrafficTagMusicResponse> getResponseClass() {
+        return HFTrafficTagMusicResponse.class;
     }
 
     @Override

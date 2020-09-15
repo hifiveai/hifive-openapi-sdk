@@ -2,10 +2,10 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveHotResponse;
+import com.hifive.api.response.HFHotResponse;
 import java.util.Map;
 
-public class HFBaseHotRequest extends HFPageRequest<HifiveHotResponse> {
+public class HFBaseHotRequest extends HFPageRequest<HFHotResponse> {
     /**
      * 开始时间
      **/
@@ -61,8 +61,8 @@ public class HFBaseHotRequest extends HFPageRequest<HifiveHotResponse> {
     }
 
 
-    public Class<HifiveHotResponse> getResponseClass() {
-        return HifiveHotResponse.class;
+    public Class<HFHotResponse> getResponseClass() {
+        return HFHotResponse.class;
     }
 
     @Override

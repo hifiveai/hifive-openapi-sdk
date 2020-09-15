@@ -2,10 +2,10 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveBehaviorResponse;
+import com.hifive.api.response.HFBehaviorResponse;
 import java.util.Map;
 
-public class HFBaseReportRequest extends HFBaseRequest<HifiveBehaviorResponse> {
+public class HFBaseReportRequest extends HFBaseRequest<HFBehaviorResponse> {
 
     /**
      * 描述⽤户⾏为
@@ -63,8 +63,8 @@ public class HFBaseReportRequest extends HFBaseRequest<HifiveBehaviorResponse> {
     }
 
 
-    public Class<HifiveBehaviorResponse> getResponseClass() {
-        return HifiveBehaviorResponse.class;
+    public Class<HFBehaviorResponse> getResponseClass() {
+        return HFBehaviorResponse.class;
     }
 
     @Override

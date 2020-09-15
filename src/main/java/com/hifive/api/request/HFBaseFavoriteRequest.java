@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveBaseFavoriteResponse;
+import com.hifive.api.response.HFBaseFavoriteResponse;
 
 import java.util.Map;
 
-public class HFBaseFavoriteRequest extends HFPageRequest<HifiveBaseFavoriteResponse> {
+public class HFBaseFavoriteRequest extends HFPageRequest<HFBaseFavoriteResponse> {
 
 
     @Override
@@ -37,8 +37,8 @@ public class HFBaseFavoriteRequest extends HFPageRequest<HifiveBaseFavoriteRespo
     }
 
 
-    public Class<HifiveBaseFavoriteResponse> getResponseClass() {
-        return HifiveBaseFavoriteResponse.class;
+    public Class<HFBaseFavoriteResponse> getResponseClass() {
+        return HFBaseFavoriteResponse.class;
     }
 
     @Override

@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveOrderListenSliceResponse;
+import com.hifive.api.response.HFOrderListenSliceResponse;
 
 import java.util.Map;
 
-public class HFOrderListenSliceRequest extends HFBaseRequest<HifiveOrderListenSliceResponse> {
+public class HFOrderListenSliceRequest extends HFBaseRequest<HFOrderListenSliceResponse> {
 
 
     /**
@@ -120,8 +120,8 @@ public class HFOrderListenSliceRequest extends HFBaseRequest<HifiveOrderListenSl
     }
 
 
-    public Class<HifiveOrderListenSliceResponse> getResponseClass() {
-        return HifiveOrderListenSliceResponse.class;
+    public Class<HFOrderListenSliceResponse> getResponseClass() {
+        return HFOrderListenSliceResponse.class;
     }
 
     @Override

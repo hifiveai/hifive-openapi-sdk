@@ -9,13 +9,13 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) {
-        String url = "https://hifive-gateway-test.hifiveai.com";
-        String appkey = "25861e5063284e38a40bc960070b34ab";
-        String secret = "7a4e2914d1b647b98a";
+        String url = "https://hifive-openapi-qa.hifiveai.com";
+        String appkey = "5216d02806d5464b943492838b7e4390";
+        String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
-        //hifiveUserGetRequest(client);
-        hifiveHQListenRequestTest(client);
+        //HifiveBaseLoginRequest(client);
+        hifiveOrderDetailRequestTest(client);
     }
 
     private static void HifiveBaseLoginRequest(HifiveClient client) {
@@ -32,7 +32,7 @@ public class DefaultClientTest {
         request.setFavoriteSinger("周杰伦");
         request.setFavoriteGenre("1");
         try {
-            HifiveUserGetResponse response = client.execute(request);
+            HFUserGetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -45,9 +45,9 @@ public class DefaultClientTest {
         request.setAction(1009);
         request.setTargetId("B75C80A41E3A");
         request.setClientId("1223234343");
-        request.setToken("64f432bb3bf580c9977813d16b9ba76b");
+        request.setToken("a0ef39d567c08eadb3da1f1b60728e67");
         try {
-            HifiveBehaviorResponse response = client.execute(request);
+            HFBehaviorResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -62,9 +62,9 @@ public class DefaultClientTest {
         request.setStartTime(1594639058L);
         request.setDuration(183);
         request.setClientId("1223234343");
-        request.setToken("64f432bb3bf580c9977813d16b9ba76b");
+        request.setToken("a0ef39d567c08eadb3da1f1b60728e67");
         try {
-            HifiveHotResponse response = client.execute(request);
+            HFHotResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -77,9 +77,9 @@ public class DefaultClientTest {
         request.setPage(1);
         request.setPageSize(20);
         request.setClientId("1223234343");
-        request.setToken("64f432bb3bf580c9977813d16b9ba76b");
+        request.setToken("4f6d6841972afd2ea9ccebad56143ac8");
         try {
-            HifiveBaseFavoriteResponse response = client.execute(request);
+            HFBaseFavoriteResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -91,9 +91,9 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
         request.setLocation("30.779164,103.94547");
-        request.setToken("64f432bb3bf580c9977813d16b9ba76b");
+        request.setToken("4f6d6841972afd2ea9ccebad56143ac8");
         try {
-            HifiveBaseVisualResponse response = client.execute(request);
+            HFBaseVisualResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -106,9 +106,9 @@ public class DefaultClientTest {
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
         request.setLocation("30.779164,103.94547");
-        request.setToken("64f432bb3bf580c9977813d16b9ba76b");
+        request.setToken("hifiveBaseWeatherRequestTest");
         try {
-            HifiveBaseWeatherResponse response = client.execute(request);
+            HFBaseWeatherResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -120,9 +120,8 @@ public class DefaultClientTest {
         HFMusicConfigRequest request = new HFMusicConfigRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("64f432bb3bf580c9977813d16b9ba76b");
         try {
-            HifiveMusicConfigResponse response = client.execute(request);
+            HFMusicConfigResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -141,9 +140,8 @@ public class DefaultClientTest {
         request.setBpmFrom(1);
         request.setBpmTo(100);
         request.setClientId("1234567");
-        request.setToken("64f432bb3bf580c9977813d16b9ba76b");
         try {
-            HifiveSearchMusicResponse response = client.execute(request);
+            HFSearchMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -155,9 +153,8 @@ public class DefaultClientTest {
         HFSheetTagRequest request = new HFSheetTagRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         try {
-            HifiveSheetTagResponse response = client.execute(request);
+            HFSheetTagResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -169,10 +166,9 @@ public class DefaultClientTest {
         HFTagSheetRequest request = new HFTagSheetRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setRecoNum(2);
         try {
-            HifiveTagSheetResponse response = client.execute(request);
+            HFTagSheetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -183,10 +179,9 @@ public class DefaultClientTest {
         HFSheetMusicRequest request = new HFSheetMusicRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setSheetId(1203L);
         try {
-            HifiveSheetMusicResponse response = client.execute(request);
+            HFSheetMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -198,7 +193,6 @@ public class DefaultClientTest {
         HFOrderAuthorizationRequest request = new HFOrderAuthorizationRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setCompanyName("嗨翻屋d1g");
         request.setArea(AreaEnum.GLOBLE.getValue());
@@ -207,7 +201,7 @@ public class DefaultClientTest {
         request.setProjectName("小嗨nbdb");
         request.setOrderIds("1434556569145");
         try {
-            HifiveAuthorizationResponse response = client.execute(request);
+            HFAuthorizationResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -219,10 +213,9 @@ public class DefaultClientTest {
         HFChannelRequest request = new HFChannelRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         try {
-            HifiveChannelResponse response = client.execute(request);
+            HFChannelResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -234,7 +227,6 @@ public class DefaultClientTest {
         HFChannelSheetRequest request = new HFChannelSheetRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setGroupId("csa0t86qv24");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
@@ -242,7 +234,7 @@ public class DefaultClientTest {
         request.setPageSize(10);
 
         try {
-            HifiveChannelSheetResponse response = client.execute(request);
+            HFChannelSheetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -258,7 +250,7 @@ public class DefaultClientTest {
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);
         try {
-            HifiveHQListenResponse response = client.execute(request);
+            HFHQListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -270,7 +262,6 @@ public class DefaultClientTest {
         HFHQListenSliceRequest request = new HFHQListenSliceRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1223234343");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -279,7 +270,7 @@ public class DefaultClientTest {
         request.setAuditionBegin(2);
         request.setAuditionEnd(100);
         try {
-            HifiveHQListenSliceResponse response = client.execute(request);
+            HFHQListenSliceResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -291,7 +282,6 @@ public class DefaultClientTest {
         HFOrderMusicRequest request = new HFOrderMusicRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setOrderId("14345565455656gd");
         request.setSubject("nYyple");
         request.setClientId("DXQOY");
@@ -303,7 +293,7 @@ public class DefaultClientTest {
         request.setAudioFormat(AudioFormatEnum.AAC_320.format);
         request.setAudioRate(AudioFormatEnum.AAC_320.rate);
         try {
-            HifiveOrderMusicResponse response = client.execute(request);
+            HFOrderMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -315,12 +305,11 @@ public class DefaultClientTest {
         HFOrderPublishRequest request = new HFOrderPublishRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setOrderId("1434556569145");
         request.setClientId("DXQOY");
         request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp1");
         try {
-            HifiveOrderPublishResponse response = client.execute(request);
+            HFOrderPublishResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -332,10 +321,9 @@ public class DefaultClientTest {
         HFOrderDetailRequest request = new HFOrderDetailRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setOrderId("1434556569145");
         try {
-            HifiveOrderDetailResponse response = client.execute(request);
+            HFOrderDetailResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -346,10 +334,9 @@ public class DefaultClientTest {
         HFOrderRefundRequest request = new HFOrderRefundRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setOrderId("1434556569145");
         try {
-            HifiveOrderRefundResponse response = client.execute(request);
+            HFOrderRefundResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -361,9 +348,8 @@ public class DefaultClientTest {
         HFOrderTagRequest request = new HFOrderTagRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         try {
-            HifiveOrderTagResponse response = client.execute(request);
+            HFOrderTagResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -375,9 +361,8 @@ public class DefaultClientTest {
         HFTrafficTagRequest request = new HFTrafficTagRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         try {
-            HifiveTrafficTagResponse response = client.execute(request);
+            HFTrafficTagResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -389,10 +374,9 @@ public class DefaultClientTest {
         HFTrafficGroupRequest request = new HFTrafficGroupRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         try {
-            HifiveTrafficGroupResponse response = client.execute(request);
+            HFTrafficGroupResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -403,10 +387,9 @@ public class DefaultClientTest {
         HFOrderGroupRequest request = new HFOrderGroupRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         try {
-            HifiveOrderGroupResponse response = client.execute(request);
+            HFOrderGroupResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -418,10 +401,9 @@ public class DefaultClientTest {
         HFTrafficTagSheetRequest request = new HFTrafficTagSheetRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setRecoNum(2);
         try {
-            HifiveTrafficTagSheetResponse response = client.execute(request);
+            HFTrafficTagSheetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -433,10 +415,9 @@ public class DefaultClientTest {
         HFOrderTagSheetRequest request = new HFOrderTagSheetRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setRecoNum(2);
         try {
-            HifiveOrderTagSheetResponse response = client.execute(request);
+            HFOrderTagSheetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -448,7 +429,6 @@ public class DefaultClientTest {
         HFTrafficGroupSheetRequest request = new HFTrafficGroupSheetRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setGroupId("csa0t86qv24");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
@@ -456,7 +436,7 @@ public class DefaultClientTest {
         request.setPageSize(10);
 
         try {
-            HifiveTrafficGroupSheetResponse response = client.execute(request);
+            HFTrafficGroupSheetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -467,7 +447,6 @@ public class DefaultClientTest {
         HFOrderGroupSheetRequest request = new HFOrderGroupSheetRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setGroupId("csa0t86qv24");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
@@ -475,7 +454,7 @@ public class DefaultClientTest {
         request.setPageSize(10);
 
         try {
-            HifiveOrderGroupSheetResponse response = client.execute(request);
+            HFOrderGroupSheetResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -487,10 +466,9 @@ public class DefaultClientTest {
         HFTrafficSheetMusicRequest request = new HFTrafficSheetMusicRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setSheetId(1203L);
         try {
-            HifiveTrafficSheetMusicResponse response = client.execute(request);
+            HFTrafficSheetMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -501,10 +479,9 @@ public class DefaultClientTest {
         HFOrderSheetMusicRequest request = new HFOrderSheetMusicRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
         request.setSheetId(1203L);
         try {
-            HifiveOrderSheetMusicResponse response = client.execute(request);
+            HFOrderSheetMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -516,14 +493,13 @@ public class DefaultClientTest {
         HFOrderListenRequest request = new HFOrderListenRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);
 
         try {
-            HifiveOrderListenResponse response = client.execute(request);
+            HFOrderListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -535,14 +511,13 @@ public class DefaultClientTest {
         HFTrafficListenRequest request = new HFTrafficListenRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);
 
         try {
-            HifiveTrafficListenResponse response = client.execute(request);
+            HFTrafficListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -554,7 +529,6 @@ public class DefaultClientTest {
         HFOrderListenSliceRequest request = new HFOrderListenSliceRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -563,7 +537,7 @@ public class DefaultClientTest {
         request.setAuditionBegin(2);
         request.setAuditionEnd(100);
         try {
-            HifiveOrderListenSliceResponse response = client.execute(request);
+            HFOrderListenSliceResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -575,7 +549,6 @@ public class DefaultClientTest {
         HFTrafficListenSliceRequest request = new HFTrafficListenSliceRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -584,7 +557,7 @@ public class DefaultClientTest {
         request.setAuditionBegin(2);
         request.setAuditionEnd(100);
         try {
-            HifiveTrafficListenSliceResponse response = client.execute(request);
+            HFTrafficListenSliceResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -596,14 +569,13 @@ public class DefaultClientTest {
         HFOrderListenMixedRequest request = new HFOrderListenMixedRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);
 
         try {
-            HifiveOrderListenMixedResponse response = client.execute(request);
+            HFOrderListenMixedResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -615,13 +587,12 @@ public class DefaultClientTest {
         HFTrafficListenMixedRequest request = new HFTrafficListenMixedRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);
         try {
-            HifiveTrafficListenMixedResponse response = client.execute(request);
+            HFTrafficListenMixedResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -633,13 +604,12 @@ public class DefaultClientTest {
         HFOrderSearchMusicRequest request = new HFOrderSearchMusicRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setKeyword("a");
 
 
         try {
-            HifiveOrderSearchMusicResponse response = client.execute(request);
+            HFOrderSearchMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -651,13 +621,12 @@ public class DefaultClientTest {
         HFTrafficSearchMusicRequest request = new HFTrafficSearchMusicRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setKeyword("a");
 
 
         try {
-            HifiveTrafficSearchMusicResponse response = client.execute(request);
+            HFTrafficSearchMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -668,13 +637,12 @@ public class DefaultClientTest {
         HFTrafficTagMusicRequest request = new HFTrafficTagMusicRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setTagId("5440");
 
 
         try {
-            HifiveTrafficTagMusicResponse response = client.execute(request);
+            HFTrafficTagMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -686,13 +654,12 @@ public class DefaultClientTest {
         HFOrderTagMusicRequest request = new HFOrderTagMusicRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setTagId("5440");
 
 
         try {
-            HifiveOrderTagMusicResponse response = client.execute(request);
+            HFOrderTagMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
@@ -704,7 +671,6 @@ public class DefaultClientTest {
         HFTrafficDownloadRequest request = new HFTrafficDownloadRequest();
         request.setMethod(HifiveRequest.METHOD_GET);
         request.setClientId("1234567");
-        request.setToken("394427b702825d59222c71d15ceab720");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -712,7 +678,7 @@ public class DefaultClientTest {
 
 
         try {
-            HifiveTrafficDownloadResponse response = client.execute(request);
+            HFTrafficDownloadResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();

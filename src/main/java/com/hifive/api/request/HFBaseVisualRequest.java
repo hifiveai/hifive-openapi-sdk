@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveBaseVisualResponse;
+import com.hifive.api.response.HFBaseVisualResponse;
 
 import java.util.Map;
 
-public class HFBaseVisualRequest extends HFBaseRequest<HifiveBaseVisualResponse> {
+public class HFBaseVisualRequest extends HFBaseRequest<HFBaseVisualResponse> {
 
     /**
      * 经纬度信息 latitude/longitude
@@ -47,8 +47,8 @@ public class HFBaseVisualRequest extends HFBaseRequest<HifiveBaseVisualResponse>
     }
 
 
-    public Class<HifiveBaseVisualResponse> getResponseClass() {
-        return HifiveBaseVisualResponse.class;
+    public Class<HFBaseVisualResponse> getResponseClass() {
+        return HFBaseVisualResponse.class;
     }
 
     @Override

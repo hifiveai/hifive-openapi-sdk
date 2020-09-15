@@ -3,7 +3,7 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveUserGetResponse;
+import com.hifive.api.response.HFUserGetResponse;
 
 import java.util.Map;
 
@@ -13,7 +13,7 @@ import java.util.Map;
  * @author auto create
  * @since 1.0, 2013-12-08 16:51:41
  */
-public class HFBaseLoginRequest extends HFBaseRequest<HifiveUserGetResponse> {
+public class HFBaseLoginRequest extends HFBaseRequest<HFUserGetResponse> {
 
     private HifiveHashMap udfParams; // add user-defined text parameters
     private Long timestamp;
@@ -231,8 +231,8 @@ public class HFBaseLoginRequest extends HFBaseRequest<HifiveUserGetResponse> {
 
 
 
-    public Class<HifiveUserGetResponse> getResponseClass() {
-        return HifiveUserGetResponse.class;
+    public Class<HFUserGetResponse> getResponseClass() {
+        return HFUserGetResponse.class;
     }
 
     public void check() throws ApiRuleException {

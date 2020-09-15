@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveMusicConfigResponse;
+import com.hifive.api.response.HFMusicConfigResponse;
 
 import java.util.Map;
 
-public class HFMusicConfigRequest extends HFBaseRequest<HifiveMusicConfigResponse> {
+public class HFMusicConfigRequest extends HFBaseRequest<HFMusicConfigResponse> {
 
 
     @Override
@@ -33,8 +33,8 @@ public class HFMusicConfigRequest extends HFBaseRequest<HifiveMusicConfigRespons
     }
 
 
-    public Class<HifiveMusicConfigResponse> getResponseClass() {
-        return HifiveMusicConfigResponse.class;
+    public Class<HFMusicConfigResponse> getResponseClass() {
+        return HFMusicConfigResponse.class;
     }
 
     @Override

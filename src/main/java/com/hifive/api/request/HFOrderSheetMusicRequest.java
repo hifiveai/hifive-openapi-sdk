@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveOrderSheetMusicResponse;
+import com.hifive.api.response.HFOrderSheetMusicResponse;
 
 import java.util.Map;
 
-public class HFOrderSheetMusicRequest extends HFPageRequest<HifiveOrderSheetMusicResponse> {
+public class HFOrderSheetMusicRequest extends HFPageRequest<HFOrderSheetMusicResponse> {
 
     private Long sheetId;
 
@@ -58,8 +58,8 @@ public class HFOrderSheetMusicRequest extends HFPageRequest<HifiveOrderSheetMusi
     }
 
 
-    public Class<HifiveOrderSheetMusicResponse> getResponseClass() {
-        return HifiveOrderSheetMusicResponse.class;
+    public Class<HFOrderSheetMusicResponse> getResponseClass() {
+        return HFOrderSheetMusicResponse.class;
     }
 
     @Override

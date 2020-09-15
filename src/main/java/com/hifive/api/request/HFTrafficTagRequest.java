@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveTrafficTagResponse;
+import com.hifive.api.response.HFTrafficTagResponse;
 
 import java.util.Map;
 
-public class HFTrafficTagRequest extends HFBaseRequest<HifiveTrafficTagResponse> {
+public class HFTrafficTagRequest extends HFBaseRequest<HFTrafficTagResponse> {
 
 
     @Override
@@ -35,8 +35,8 @@ public class HFTrafficTagRequest extends HFBaseRequest<HifiveTrafficTagResponse>
     }
 
 
-    public Class<HifiveTrafficTagResponse> getResponseClass() {
-        return HifiveTrafficTagResponse.class;
+    public Class<HFTrafficTagResponse> getResponseClass() {
+        return HFTrafficTagResponse.class;
     }
 
     @Override

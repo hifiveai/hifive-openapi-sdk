@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveChannelSheetResponse;
+import com.hifive.api.response.HFChannelSheetResponse;
 
 import java.util.Map;
 
-public class HFChannelSheetRequest extends HFPageRequest<HifiveChannelSheetResponse> {
+public class HFChannelSheetRequest extends HFPageRequest<HFChannelSheetResponse> {
 
     private String groupId;
 
@@ -70,8 +70,8 @@ public class HFChannelSheetRequest extends HFPageRequest<HifiveChannelSheetRespo
     }
 
 
-    public Class<HifiveChannelSheetResponse> getResponseClass() {
-        return HifiveChannelSheetResponse.class;
+    public Class<HFChannelSheetResponse> getResponseClass() {
+        return HFChannelSheetResponse.class;
     }
 
     @Override

@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveTagSheetResponse;
+import com.hifive.api.response.HFTagSheetResponse;
 
 import java.util.Map;
 
-public class HFTagSheetRequest extends HFBaseRequest<HifiveTagSheetResponse> {
+public class HFTagSheetRequest extends HFBaseRequest<HFTagSheetResponse> {
 
 
     private String tagId;
@@ -86,8 +86,8 @@ public class HFTagSheetRequest extends HFBaseRequest<HifiveTagSheetResponse> {
     }
 
 
-    public Class<HifiveTagSheetResponse> getResponseClass() {
-        return HifiveTagSheetResponse.class;
+    public Class<HFTagSheetResponse> getResponseClass() {
+        return HFTagSheetResponse.class;
     }
 
     @Override

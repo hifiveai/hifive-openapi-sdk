@@ -2,10 +2,10 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveOrderTagMusicResponse;
+import com.hifive.api.response.HFOrderTagMusicResponse;
 import java.util.Map;
 
-public class HFOrderTagMusicRequest extends HFPageRequest<HifiveOrderTagMusicResponse> {
+public class HFOrderTagMusicRequest extends HFPageRequest<HFOrderTagMusicResponse> {
 
     /**
      * 标签、歌单名、歌名语言版本，英文版本数据可能空
@@ -66,8 +66,8 @@ public class HFOrderTagMusicRequest extends HFPageRequest<HifiveOrderTagMusicRes
     }
 
 
-    public Class<HifiveOrderTagMusicResponse> getResponseClass() {
-        return HifiveOrderTagMusicResponse.class;
+    public Class<HFOrderTagMusicResponse> getResponseClass() {
+        return HFOrderTagMusicResponse.class;
     }
 
     @Override

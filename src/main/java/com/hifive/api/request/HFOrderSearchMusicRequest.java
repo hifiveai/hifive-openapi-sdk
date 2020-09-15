@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveOrderSearchMusicResponse;
+import com.hifive.api.response.HFOrderSearchMusicResponse;
 
 import java.util.Map;
 
-public class HFOrderSearchMusicRequest extends HFPageRequest<HifiveOrderSearchMusicResponse> {
+public class HFOrderSearchMusicRequest extends HFPageRequest<HFOrderSearchMusicResponse> {
 
 
     private String keyword;
@@ -64,8 +64,8 @@ public class HFOrderSearchMusicRequest extends HFPageRequest<HifiveOrderSearchMu
     }
 
 
-    public Class<HifiveOrderSearchMusicResponse> getResponseClass() {
-        return HifiveOrderSearchMusicResponse.class;
+    public Class<HFOrderSearchMusicResponse> getResponseClass() {
+        return HFOrderSearchMusicResponse.class;
     }
 
     @Override

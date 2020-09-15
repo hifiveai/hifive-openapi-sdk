@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveChannelResponse;
+import com.hifive.api.response.HFChannelResponse;
 
 import java.util.Map;
 
-public class HFChannelRequest extends HFBaseRequest<HifiveChannelResponse> {
+public class HFChannelRequest extends HFBaseRequest<HFChannelResponse> {
 
 
     @Override
@@ -36,8 +36,8 @@ public class HFChannelRequest extends HFBaseRequest<HifiveChannelResponse> {
     }
 
 
-    public Class<HifiveChannelResponse> getResponseClass() {
-        return HifiveChannelResponse.class;
+    public Class<HFChannelResponse> getResponseClass() {
+        return HFChannelResponse.class;
     }
 
     @Override

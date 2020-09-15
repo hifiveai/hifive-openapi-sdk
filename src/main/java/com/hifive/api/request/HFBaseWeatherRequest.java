@@ -2,10 +2,10 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveBaseWeatherResponse;
+import com.hifive.api.response.HFBaseWeatherResponse;
 import java.util.Map;
 
-public class HFBaseWeatherRequest extends HFBaseRequest<HifiveBaseWeatherResponse> {
+public class HFBaseWeatherRequest extends HFBaseRequest<HFBaseWeatherResponse> {
 
     /**
      * 经纬度信息 latitude/longitude
@@ -46,8 +46,8 @@ public class HFBaseWeatherRequest extends HFBaseRequest<HifiveBaseWeatherRespons
     }
 
 
-    public Class<HifiveBaseWeatherResponse> getResponseClass() {
-        return HifiveBaseWeatherResponse.class;
+    public Class<HFBaseWeatherResponse> getResponseClass() {
+        return HFBaseWeatherResponse.class;
     }
 
     @Override

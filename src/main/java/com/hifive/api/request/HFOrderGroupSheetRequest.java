@@ -2,11 +2,11 @@ package com.hifive.api.request;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.response.HifiveOrderGroupSheetResponse;
+import com.hifive.api.response.HFOrderGroupSheetResponse;
 
 import java.util.Map;
 
-public class HFOrderGroupSheetRequest extends HFPageRequest<HifiveOrderGroupSheetResponse> {
+public class HFOrderGroupSheetRequest extends HFPageRequest<HFOrderGroupSheetResponse> {
 
     private String groupId;
 
@@ -70,8 +70,8 @@ public class HFOrderGroupSheetRequest extends HFPageRequest<HifiveOrderGroupShee
     }
 
 
-    public Class<HifiveOrderGroupSheetResponse> getResponseClass() {
-        return HifiveOrderGroupSheetResponse.class;
+    public Class<HFOrderGroupSheetResponse> getResponseClass() {
+        return HFOrderGroupSheetResponse.class;
     }
 
     @Override
