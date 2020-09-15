@@ -5,7 +5,7 @@ import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HifiveBehaviorResponse;
 import java.util.Map;
 
-public class HifiveBehaviorRequest extends HifiveBaseRequest<HifiveBehaviorResponse> {
+public class hifiveBaseReportRequest extends HifiveBaseRequest<HifiveBehaviorResponse> {
 
     /**
      * 描述⽤户⾏为

@@ -15,7 +15,7 @@ import java.util.Map;
  * @author auto create
  * @since 1.0, 2013-12-08 16:51:41
  */
-public class HifiveUserGetRequest extends HifiveBaseRequest<HifiveUserGetResponse>  {
+public class HifiveBaseLoginRequest extends HifiveBaseRequest<HifiveUserGetResponse>  {
 
     private HifiveHashMap udfParams; // add user-defined text parameters
     private Long timestamp;

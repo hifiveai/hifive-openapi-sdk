@@ -18,8 +18,8 @@ public class DefaultClientTest {
         hifiveHQListenRequestTest(client);
     }
 
-    private static void hifiveUserGetRequestTest(HifiveClient client) {
-        HifiveUserGetRequest request = new HifiveUserGetRequest();
+    private static void HifiveBaseLoginRequest(HifiveClient client) {
+        HifiveBaseLoginRequest request = new HifiveBaseLoginRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setBirthday(202012121);
         request.setCountry("乐山");
@@ -39,8 +39,8 @@ public class DefaultClientTest {
         }
     }
 
-    private static void hifiveBehaviorRequestTest(HifiveClient client) {
-        HifiveBehaviorRequest request = new HifiveBehaviorRequest();
+    private static void hifiveBaseReportRequest(HifiveClient client) {
+        hifiveBaseReportRequest request = new hifiveBaseReportRequest();
         request.setMethod(HifiveRequest.METHOD_POST);
         request.setAction(1009);
         request.setTargetId("B75C80A41E3A");
