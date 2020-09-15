@@ -15,7 +15,59 @@ public class DefaultClientTest {
         System.out.println(System.currentTimeMillis());
         HifiveClient client = new DefaultHifiveClient(url, appkey, secret);
         //HifiveBaseLoginRequest(client);
+        HifiveBaseLoginRequest(client);
+        hifiveBaseReportRequest(client);
+        hifiveBaseHotRequestTest(client);
+        hifiveBaseFavoriteRequestTest(client);
+        hifiveBaseVisualRequestTest(client);
+        hifiveBaseWeatherRequestTest(client);
+
+        hifiveMusicConfigRequestTest(client);
+        hifiveSearchMusicRequestTest(client);
+        hifiveSheetTagRequestTest(client);
+        hifiveTagSheetRequestTest(client);
+        hifiveSheetMusicRequestTest(client);
+        HifiveOrderAuthorizationRequestTest(client);
+
+
+        hifiveChannelRequestTest(client);
+        hifiveChannelSheetRequestTest(client);
+        hifiveHQListenSliceRequestTest(client);
+        hifiveHQListenRequestTest(client);
+        hifiveOrderMusicRequestTest(client);
+        hifiveOrderPublishRequestTest(client);
+
+
+        hifiveOrderDetailRequestTest(client);
         hifiveOrderRefundRequestTest(client);
+        hifiveOrderTagRequestTest(client);
+        hifiveTrafficTagRequestTest(client);
+        hifiveTrafficGroupRequestTest(client);
+        hifiveOrderGroupRequestTest(client);
+
+
+        hifiveTrafficTagSheetRequestTest(client);
+        hifiveOrderTagSheetRequestTest(client);
+        hifiveTrafficGroupSheetRequestTest(client);
+        hifiveOrderGroupSheetRequestTest(client);
+        hifiveTrafficSheetMusicRequestTest(client);
+        hifiveOrderSheetMusicRequestTest(client);
+
+
+        hifiveOrderListenRequestTest(client);
+        hifiveTrafficListenRequestTest(client);
+        hifiveOrderListenSliceRequestTest(client);
+        hifiveTrafficListenSliceRequestTest(client);
+        hifiveOrderListenMixedRequestTest(client);
+        hifiveTrafficListenMixedRequestTest(client);
+
+
+        hifiveOrderSearchMusicRequestTest(client);
+        hifiveTrafficSearchMusicRequestTest(client);
+        hifiveTrafficTagMusicRequestTest(client);
+        hifiveOrderTagMusicRequestTest(client);
+        hifiveTrafficDownloadRequestTest(client);
+
     }
 
     private static void HifiveBaseLoginRequest(HifiveClient client) {
