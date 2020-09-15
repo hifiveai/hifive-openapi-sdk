@@ -81,11 +81,11 @@ public class HifiveHQListenSliceRequest extends HifiveBaseRequest<HifiveHQListen
         this.audioRate = audioRate;
     }
 
-    public Boolean getMixed() {
+    public Boolean getIsMixed() {
         return isMixed;
     }
 
-    public void setMixed(Boolean mixed) {
+    public void setIsMixed(Boolean mixed) {
         isMixed = mixed;
     }
 
@@ -111,7 +111,7 @@ public class HifiveHQListenSliceRequest extends HifiveBaseRequest<HifiveHQListen
                 put("musicId", getMusicId());
                 put("audioFormat", getAudioFormat());
                 put("audioRate", getAudioRate());
-                put("isMixed", getMixed());
+                put("isMixed", getIsMixed());
                 put("auditionBegin", getAuditionBegin());
                 put("auditionEnd", getAuditionEnd());
             }

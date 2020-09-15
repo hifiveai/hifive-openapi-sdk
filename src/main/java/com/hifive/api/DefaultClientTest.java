@@ -275,7 +275,7 @@ public class DefaultClientTest {
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);
-        request.setMixed(true);
+        request.setIsMixed(true);
         request.setAuditionBegin(2);
         request.setAuditionEnd(100);
         try {
