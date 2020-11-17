@@ -2,7 +2,7 @@ package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
 import com.hifive.api.domain.common.HFMusicInfoDetail;
-import com.hifive.api.domain.common.HFPage;
+import com.hifive.api.domain.common.HifivePage;
 import com.hifive.api.domain.common.TrafficTagSheet;
 import com.hifive.api.internal.mapping.ApiField;
 
@@ -17,13 +17,13 @@ public class HFOrderTagSheetResponse extends HFResponse {
 
 
     @ApiField("data")
-    HFPage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage;
+    HifivePage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage;
 
-    public HFPage<TrafficTagSheet<HFMusicInfoDetail>> getHifivePage() {
+    public HifivePage<TrafficTagSheet<HFMusicInfoDetail>> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HFPage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage) {
+    public void setHifivePage(HifivePage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage) {
         this.hifivePage = hifivePage;
     }
 }

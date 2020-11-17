@@ -2,7 +2,7 @@ package com.hifive.api.response;
 
 import com.hifive.api.HFResponse;
 import com.hifive.api.domain.ai.HFRecommendMusicDetail;
-import com.hifive.api.domain.common.HFPage;
+import com.hifive.api.domain.common.HifivePage;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
@@ -14,13 +14,13 @@ import com.hifive.api.internal.mapping.ApiField;
 public class HFBaseFavoriteResponse extends HFResponse {
 
     @ApiField("data")
-    HFPage<HFRecommendMusicDetail> hifivePage;
+    HifivePage<HFRecommendMusicDetail> hifivePage;
 
-    public HFPage<HFRecommendMusicDetail> getHifivePage() {
+    public HifivePage<HFRecommendMusicDetail> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HFPage<HFRecommendMusicDetail> hifivePage) {
+    public void setHifivePage(HifivePage<HFRecommendMusicDetail> hifivePage) {
         this.hifivePage = hifivePage;
     }
 }

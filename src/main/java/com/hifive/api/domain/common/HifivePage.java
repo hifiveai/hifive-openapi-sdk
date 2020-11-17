@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Objects;
 
 @AllArgsConstructor
-public class HFPage<T> extends HFObject {
+public class HifivePage<T> extends HFObject {
     @ApiListField("record")
     private List<T> record;
     @ApiField("meta")
     private HifiveMeta meta;
 
-    public HFPage(){
+    public HifivePage(){
         record = new ArrayList<>();
         meta = new HifiveMeta();
         meta.setCurrentPage(1L);

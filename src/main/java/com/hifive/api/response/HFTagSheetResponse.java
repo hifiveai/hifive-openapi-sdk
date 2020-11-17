@@ -15,13 +15,13 @@ public class HFTagSheetResponse extends HFResponse {
 
 
     @ApiField("data")
-    HFPage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage;
+    HifivePage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage;
 
-    public HFPage<TrafficTagSheet<HFMusicInfoDetail>> getHifivePage() {
+    public HifivePage<TrafficTagSheet<HFMusicInfoDetail>> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HFPage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage) {
+    public void setHifivePage(HifivePage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage) {
         this.hifivePage = hifivePage;
     }
 }
