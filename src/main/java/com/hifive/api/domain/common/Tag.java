@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Tag implements Serializable {
@@ -29,4 +28,28 @@ public class Tag implements Serializable {
      */
     @ApiListField("child")
     private List<Tag> child;
+
+    public Long getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(Long tagId) {
+        this.tagId = tagId;
+    }
+
+    public String getTagName() {
+        return tagName;
+    }
+
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
+    }
+
+    public List<Tag> getChild() {
+        return child;
+    }
+
+    public void setChild(List<Tag> child) {
+        this.child = child;
+    }
 }

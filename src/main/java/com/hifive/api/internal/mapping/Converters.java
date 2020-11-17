@@ -4,8 +4,8 @@ package com.hifive.api.internal.mapping;
 import com.hifive.api.ApiException;
 import com.hifive.api.Constants;
 import com.hifive.api.HFResponse;
-import com.hifive.api.internal.util.StringUtils;
-import org.springframework.util.ReflectionUtils;
+import com.hifive.utils.ReflectionUtils;
+import com.hifive.utils.StringUtils;
 
 import java.beans.BeanInfo;
 import java.beans.Introspector;
@@ -201,7 +201,7 @@ public class Converters {
                                     method.invoke(rsp, listObjs);
                                 }
                             } else {
-                                String name = org.springframework.util.StringUtils.uncapitalize(clazz.getName().substring(clazz.getName().lastIndexOf(".") + 1));
+                                String name = StringUtils.uncapitalize(clazz.getName().substring(clazz.getName().lastIndexOf(".") + 1));
                                 fieldType = tClass.get(name);
                                 if (fieldType != null) {
                                     if (fieldType instanceof ParameterizedType) {
@@ -218,7 +218,7 @@ public class Converters {
                                                 paramType =   (ParameterizedType)genericTypes[0];
                                                 Type rawType = paramType.getRawType();
                                                 Class<?> subType = (Class<?>) rawType;
-                                                name = org.springframework.util.StringUtils.uncapitalize(subType.getTypeName().substring(subType.getTypeName().lastIndexOf(".") + 1));
+                                                name = StringUtils.uncapitalize(subType.getTypeName().substring(subType.getTypeName().lastIndexOf(".") + 1));
                                                 tClass.put(name,paramType.getActualTypeArguments()[0]);
                                                 List<?> listObjs = reader.getListObjects(listName, itemName, subType);
                                                 if (listObjs != null) {

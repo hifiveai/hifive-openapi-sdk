@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class WeatherView implements Serializable {
@@ -23,4 +22,20 @@ public class WeatherView implements Serializable {
      */
     @ApiListField("tips")
     private List<Tip> tips;
+
+    public String getBackground() {
+        return background;
+    }
+
+    public void setBackground(String background) {
+        this.background = background;
+    }
+
+    public List<Tip> getTips() {
+        return tips;
+    }
+
+    public void setTips(List<Tip> tips) {
+        this.tips = tips;
+    }
 }

@@ -5,6 +5,7 @@ import com.hifive.api.internal.parser.json.ObjectJsonParser;
 import com.hifive.api.internal.parser.xml.ObjectXmlParser;
 import com.hifive.api.internal.util.*;
 import com.hifive.utils.HttpClientUtils;
+import com.hifive.utils.HttpKit;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -191,9 +192,9 @@ public class DefaultHFClient implements HFClient {
                 rsp = WebUtils.doPost(urlSb.toString(), appParams, fileParams, Constants.CHARSET_UTF8, connectTimeout, readTimeout, requestHolder.getApplicationHeaders());
             } else {
                 if (method.equals(HFRequest.METHOD_POST)) {
-                    rsp = HttpClientUtils.post(serverUrl, requestHolder.getApplicationHeaders(), appParams);
+                    rsp = HttpKit.post(serverUrl, appParams, null, requestHolder.getApplicationHeaders());
                 } else {
-                    rsp = HttpClientUtils.get(serverUrl, requestHolder.getApplicationHeaders(), appParams);
+                    rsp = HttpKit.get(serverUrl, appParams, requestHolder.getApplicationHeaders());
                 }
             }
         } catch (IOException e) {

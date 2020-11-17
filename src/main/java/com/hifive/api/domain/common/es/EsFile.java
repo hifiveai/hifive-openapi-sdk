@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 /**
  * Es中的文件
  */
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class EsFile {
@@ -24,4 +23,20 @@ public class EsFile {
      */
     @ApiField("ext")
     private String ext;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getExt() {
+        return ext;
+    }
+
+    public void setExt(String ext) {
+        this.ext = ext;
+    }
 }

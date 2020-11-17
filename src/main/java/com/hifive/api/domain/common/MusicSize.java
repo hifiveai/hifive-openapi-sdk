@@ -6,11 +6,18 @@ import com.hifive.api.internal.mapping.ApiField;
 import lombok.Data;
 
 
-@Data
 @JsonIgnoreProperties({"coverUrl"})
 public class MusicSize extends HFBaseMusicSize {
 
     /** 歌曲ID **/
     @ApiField("musicId")
     private String musicId;
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
 }

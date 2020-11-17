@@ -10,7 +10,6 @@ import java.io.Serializable;
 /**
  * ES中的歌单封面
  */
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class EsCover implements Serializable {
@@ -25,4 +24,20 @@ public class EsCover implements Serializable {
      */
     @ApiField("size")
     private String size;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
 }

@@ -11,7 +11,6 @@ import java.io.Serializable;
 /**
  * 艺人
  */
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class HifiveMusicPerson implements Serializable {
@@ -32,4 +31,28 @@ public class HifiveMusicPerson implements Serializable {
      */
     @ApiField("avatar")
     private String avatar;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
 }

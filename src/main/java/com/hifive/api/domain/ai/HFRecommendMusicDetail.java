@@ -10,7 +10,6 @@ import lombok.EqualsAndHashCode;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
 public class HFRecommendMusicDetail extends HFRecommendMusic {
 
     /**
@@ -41,4 +40,44 @@ public class HFRecommendMusicDetail extends HFRecommendMusic {
     @ApiListField("version")
     private List<HFMusicVersion> version;
 
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public Integer getAuditionBegin() {
+        return auditionBegin;
+    }
+
+    public void setAuditionBegin(Integer auditionBegin) {
+        this.auditionBegin = auditionBegin;
+    }
+
+    public Integer getAuditionEnd() {
+        return auditionEnd;
+    }
+
+    public void setAuditionEnd(Integer auditionEnd) {
+        this.auditionEnd = auditionEnd;
+    }
+
+    public List<EsCover> getCover() {
+        return cover;
+    }
+
+    public void setCover(List<EsCover> cover) {
+        this.cover = cover;
+    }
+
+    public List<HFMusicVersion> getVersion() {
+        return version;
+    }
+
+    public void setVersion(List<HFMusicVersion> version) {
+        this.version = version;
+    }
 }

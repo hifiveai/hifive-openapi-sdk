@@ -14,11 +14,11 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HFClient client = new DefaultHFClient(url, appkey, secret);
+        hifiveTagSheetRequestTest(client);
         //HifiveBaseLoginRequest(client);
-        HifiveBaseLoginRequest(client);
-     /*   hifiveBaseReportRequest(client);
-        hifiveBaseHotRequestTest(client);
-        hifiveBaseFavoriteRequestTest(client);
+      //  HifiveBaseLoginRequest(client);
+        /*hifiveSearchMusicRequestTest(client);*/
+        /*hifiveBaseFavoriteRequestTest(client);
         hifiveBaseVisualRequestTest(client);
         hifiveBaseWeatherRequestTest(client);
 
@@ -97,7 +97,7 @@ public class DefaultClientTest {
         request.setAction(1009);
         request.setTargetId("B75C80A41E3A");
         request.setClientId("1223234343");
-        request.setToken("a0ef39d567c08eadb3da1f1b60728e67");
+        request.setToken("4db2ca603b2887cb302e8a55614445fd");
         try {
             HFBehaviorResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -129,7 +129,7 @@ public class DefaultClientTest {
         request.setPage(1);
         request.setPageSize(20);
         request.setClientId("1223234343");
-        request.setToken("4f6d6841972afd2ea9ccebad56143ac8");
+        request.setToken("b227395ef5037e6f16bce9d0e5e29b90");
         try {
             HFBaseFavoriteResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -141,7 +141,7 @@ public class DefaultClientTest {
     private static void hifiveBaseVisualRequestTest(HFClient client) {
         HFBaseVisualRequest request = new HFBaseVisualRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setLocation("30.779164,103.94547");
         request.setToken("4f6d6841972afd2ea9ccebad56143ac8");
         try {
@@ -156,7 +156,7 @@ public class DefaultClientTest {
     private static void hifiveBaseWeatherRequestTest(HFClient client) {
         HFBaseWeatherRequest request = new HFBaseWeatherRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setLocation("30.779164,103.94547");
         request.setToken("hifiveBaseWeatherRequestTest");
         try {
@@ -171,7 +171,7 @@ public class DefaultClientTest {
     private static void hifiveMusicConfigRequestTest(HFClient client) {
         HFMusicConfigRequest request = new HFMusicConfigRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         try {
             HFMusicConfigResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -191,7 +191,7 @@ public class DefaultClientTest {
         request.setPriceToCent(1000000L);
         request.setBpmFrom(1);
         request.setBpmTo(100);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         try {
             HFSearchMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -204,7 +204,7 @@ public class DefaultClientTest {
     private static void hifiveSheetTagRequestTest(HFClient client) {
         HFSheetTagRequest request = new HFSheetTagRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         try {
             HFSheetTagResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -217,7 +217,7 @@ public class DefaultClientTest {
     private static void hifiveTagSheetRequestTest(HFClient client) {
         HFTagSheetRequest request = new HFTagSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setRecoNum(2);
         try {
             HFTagSheetResponse response = client.execute(request);
@@ -230,7 +230,7 @@ public class DefaultClientTest {
     private static void hifiveSheetMusicRequestTest(HFClient client) {
         HFSheetMusicRequest request = new HFSheetMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setSheetId(1203L);
         try {
             HFSheetMusicResponse response = client.execute(request);
@@ -244,7 +244,7 @@ public class DefaultClientTest {
     private static void HifiveOrderAuthorizationRequestTest(HFClient client) {
         HFOrderAuthorizationRequest request = new HFOrderAuthorizationRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setCompanyName("嗨翻屋d1g");
         request.setArea(AreaEnum.GLOBLE.getValue());
@@ -264,7 +264,7 @@ public class DefaultClientTest {
     private static void hifiveChannelRequestTest(HFClient client) {
         HFChannelRequest request = new HFChannelRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         try {
             HFChannelResponse response = client.execute(request);
@@ -278,7 +278,7 @@ public class DefaultClientTest {
     private static void hifiveChannelSheetRequestTest(HFClient client) {
         HFChannelSheetRequest request = new HFChannelSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setGroupId("csa0t86qv24");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
@@ -333,7 +333,7 @@ public class DefaultClientTest {
     private static void hifiveOrderMusicRequestTest(HFClient client) {
         HFOrderMusicRequest request = new HFOrderMusicRequest();
         request.setMethod(HFRequest.METHOD_POST);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setOrderId("14345565455656gd");
         request.setSubject("nYyple");
         request.setClientId("DXQOY");
@@ -356,7 +356,7 @@ public class DefaultClientTest {
     private static void hifiveOrderPublishRequestTest(HFClient client) {
         HFOrderPublishRequest request = new HFOrderPublishRequest();
         request.setMethod(HFRequest.METHOD_POST);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setOrderId("1434556569145");
         request.setClientId("DXQOY");
         request.setWorkId("uEC00xeWbExGNilHpSN7MoM3AalWqwUp1");
@@ -372,7 +372,7 @@ public class DefaultClientTest {
     private static void hifiveOrderDetailRequestTest(HFClient client) {
         HFOrderDetailRequest request = new HFOrderDetailRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setOrderId("1434556569145");
         try {
             HFOrderDetailResponse response = client.execute(request);
@@ -385,7 +385,7 @@ public class DefaultClientTest {
     private static void hifiveOrderRefundRequestTest(HFClient client) {
         HFOrderRefundRequest request = new HFOrderRefundRequest();
         request.setMethod(HFRequest.METHOD_POST);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setOrderId("1434556569145");
         try {
             HFOrderRefundResponse response = client.execute(request);
@@ -399,7 +399,7 @@ public class DefaultClientTest {
     private static void hifiveOrderTagRequestTest(HFClient client) {
         HFOrderTagRequest request = new HFOrderTagRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         try {
             HFOrderTagResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -412,7 +412,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficTagRequestTest(HFClient client) {
         HFTrafficTagRequest request = new HFTrafficTagRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         try {
             HFTrafficTagResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -425,7 +425,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficGroupRequestTest(HFClient client) {
         HFTrafficGroupRequest request = new HFTrafficGroupRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         try {
             HFTrafficGroupResponse response = client.execute(request);
@@ -438,7 +438,7 @@ public class DefaultClientTest {
     private static void hifiveOrderGroupRequestTest(HFClient client) {
         HFOrderGroupRequest request = new HFOrderGroupRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         try {
             HFOrderGroupResponse response = client.execute(request);
@@ -452,7 +452,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficTagSheetRequestTest(HFClient client) {
         HFTrafficTagSheetRequest request = new HFTrafficTagSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setRecoNum(2);
         try {
             HFTrafficTagSheetResponse response = client.execute(request);
@@ -466,7 +466,7 @@ public class DefaultClientTest {
     private static void hifiveOrderTagSheetRequestTest(HFClient client) {
         HFOrderTagSheetRequest request = new HFOrderTagSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setRecoNum(2);
         try {
             HFOrderTagSheetResponse response = client.execute(request);
@@ -480,7 +480,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficGroupSheetRequestTest(HFClient client) {
         HFTrafficGroupSheetRequest request = new HFTrafficGroupSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setGroupId("csa0t86qv24");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
@@ -498,7 +498,7 @@ public class DefaultClientTest {
     private static void hifiveOrderGroupSheetRequestTest(HFClient client) {
         HFOrderGroupSheetRequest request = new HFOrderGroupSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setGroupId("csa0t86qv24");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
@@ -517,7 +517,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficSheetMusicRequestTest(HFClient client) {
         HFTrafficSheetMusicRequest request = new HFTrafficSheetMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setSheetId(1203L);
         try {
             HFTrafficSheetMusicResponse response = client.execute(request);
@@ -530,7 +530,7 @@ public class DefaultClientTest {
     private static void hifiveOrderSheetMusicRequestTest(HFClient client) {
         HFOrderSheetMusicRequest request = new HFOrderSheetMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
         request.setSheetId(1203L);
         try {
             HFOrderSheetMusicResponse response = client.execute(request);
@@ -544,7 +544,7 @@ public class DefaultClientTest {
     private static void hifiveOrderListenRequestTest(HFClient client) {
         HFOrderListenRequest request = new HFOrderListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -562,7 +562,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficListenRequestTest(HFClient client) {
         HFTrafficListenRequest request = new HFTrafficListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -580,7 +580,7 @@ public class DefaultClientTest {
     private static void hifiveOrderListenSliceRequestTest(HFClient client) {
         HFOrderListenSliceRequest request = new HFOrderListenSliceRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -600,7 +600,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficListenSliceRequestTest(HFClient client) {
         HFTrafficListenSliceRequest request = new HFTrafficListenSliceRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -620,7 +620,7 @@ public class DefaultClientTest {
     private static void hifiveOrderListenMixedRequestTest(HFClient client) {
         HFOrderListenMixedRequest request = new HFOrderListenMixedRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -638,7 +638,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficListenMixedRequestTest(HFClient client) {
         HFTrafficListenMixedRequest request = new HFTrafficListenMixedRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
@@ -655,7 +655,7 @@ public class DefaultClientTest {
     private static void hifiveOrderSearchMusicRequestTest(HFClient client) {
         HFOrderSearchMusicRequest request = new HFOrderSearchMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setKeyword("a");
 
@@ -672,7 +672,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficSearchMusicRequestTest(HFClient client) {
         HFTrafficSearchMusicRequest request = new HFTrafficSearchMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setKeyword("a");
 
@@ -688,7 +688,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficTagMusicRequestTest(HFClient client) {
         HFTrafficTagMusicRequest request = new HFTrafficTagMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setTagId("5440");
 
@@ -705,7 +705,7 @@ public class DefaultClientTest {
     private static void hifiveOrderTagMusicRequestTest(HFClient client) {
         HFOrderTagMusicRequest request = new HFOrderTagMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setTagId("5440");
 
@@ -722,7 +722,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficDownloadRequestTest(HFClient client) {
         HFTrafficDownloadRequest request = new HFTrafficDownloadRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1234567");
+        request.setClientId("1223234343");
 
         request.setMusicId("B7B810AABADF");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);

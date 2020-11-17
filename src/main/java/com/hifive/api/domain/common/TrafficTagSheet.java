@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class TrafficTagSheet<T extends HFBaseMusicInfo> extends HFObject {
@@ -71,4 +70,85 @@ public class TrafficTagSheet<T extends HFBaseMusicInfo> extends HFObject {
      **/
     @ApiListField("cover")
     private List<EsCover> cover;
+
+
+    public Long getSheetId() {
+        return sheetId;
+    }
+
+    public void setSheetId(Long sheetId) {
+        this.sheetId = sheetId;
+    }
+
+    public String getSheetName() {
+        return sheetName;
+    }
+
+    public void setSheetName(String sheetName) {
+        this.sheetName = sheetName;
+    }
+
+    public Integer getMusicTotal() {
+        return musicTotal;
+    }
+
+    public void setMusicTotal(Integer musicTotal) {
+        this.musicTotal = musicTotal;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    public Integer getFree() {
+        return free;
+    }
+
+    public void setFree(Integer free) {
+        this.free = free;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
+    }
+
+    public List<Tag> getTag() {
+        return tag;
+    }
+
+    public void setTag(List<Tag> tag) {
+        this.tag = tag;
+    }
+
+    public List<T> getMusic() {
+        return music;
+    }
+
+    public void setMusic(List<T> music) {
+        this.music = music;
+    }
+
+    public List<EsCover> getCover() {
+        return cover;
+    }
+
+    public void setCover(List<EsCover> cover) {
+        this.cover = cover;
+    }
 }

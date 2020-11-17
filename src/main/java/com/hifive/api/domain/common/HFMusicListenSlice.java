@@ -13,7 +13,6 @@ import lombok.Data;
  * @author yong.huang
  * @Date: 2020/07/02
  */
-@Data
 @JsonIgnoreProperties({"coverUrl","waveUrl"})
 public class HFMusicListenSlice extends HFBaseMusicSize {
 
@@ -26,4 +25,20 @@ public class HFMusicListenSlice extends HFBaseMusicSize {
     /** "range":bytes=0-29999,文件分片起止字节 **/
     @ApiField("range")
     private String range;
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
+
+    public String getRange() {
+        return range;
+    }
+
+    public void setRange(String range) {
+        this.range = range;
+    }
 }

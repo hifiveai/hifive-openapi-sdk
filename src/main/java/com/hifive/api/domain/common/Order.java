@@ -17,7 +17,6 @@ import java.util.List;
  * @author yong.huang
  *@Date:
  **/
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order extends HFObject {
@@ -39,5 +38,68 @@ public class Order extends HFObject {
     private Integer status;
     @ApiListField("music")
     private List<HFMusicFile> music;
-    
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public Integer getTotalFee() {
+        return totalFee;
+    }
+
+    public void setTotalFee(Integer totalFee) {
+        this.totalFee = totalFee;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getHForderId() {
+        return HForderId;
+    }
+
+    public void setHForderId(String HForderId) {
+        this.HForderId = HForderId;
+    }
+
+    public String getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public List<HFMusicFile> getMusic() {
+        return music;
+    }
+
+    public void setMusic(List<HFMusicFile> music) {
+        this.music = music;
+    }
 }

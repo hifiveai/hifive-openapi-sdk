@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class EsMusic {
@@ -144,4 +143,188 @@ public class EsMusic {
      **/
     @ApiListField("version")
     private List<HFMusicVersion> version;
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
+
+    public String getMusicName() {
+        return musicName;
+    }
+
+    public void setMusicName(String musicName) {
+        this.musicName = musicName;
+    }
+
+    public String getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(String albumId) {
+        this.albumId = albumId;
+    }
+
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
+    }
+
+    public List<HifiveMusicPerson> getArtist() {
+        return artist;
+    }
+
+    public void setArtist(List<HifiveMusicPerson> artist) {
+        this.artist = artist;
+    }
+
+    public List<HifiveMusicPerson> getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(List<HifiveMusicPerson> author) {
+        this.author = author;
+    }
+
+    public List<HifiveMusicPerson> getComposer() {
+        return composer;
+    }
+
+    public void setComposer(List<HifiveMusicPerson> composer) {
+        this.composer = composer;
+    }
+
+    public List<HifiveMusicPerson> getArranger() {
+        return arranger;
+    }
+
+    public void setArranger(List<HifiveMusicPerson> arranger) {
+        this.arranger = arranger;
+    }
+
+    public List<EsCover> getCover() {
+        return cover;
+    }
+
+    public void setCover(List<EsCover> cover) {
+        this.cover = cover;
+    }
+
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getComposerName() {
+        return composerName;
+    }
+
+    public void setComposerName(String composerName) {
+        this.composerName = composerName;
+    }
+
+    public String getArrangerName() {
+        return arrangerName;
+    }
+
+    public void setArrangerName(String arrangerName) {
+        this.arrangerName = arrangerName;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
+
+    public String getFileUrl() {
+        return fileUrl;
+    }
+
+    public void setFileUrl(String fileUrl) {
+        this.fileUrl = fileUrl;
+    }
+
+    public String getWaveUrl() {
+        return waveUrl;
+    }
+
+    public void setWaveUrl(String waveUrl) {
+        this.waveUrl = waveUrl;
+    }
+
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public Integer getAuditionBegin() {
+        return auditionBegin;
+    }
+
+    public void setAuditionBegin(Integer auditionBegin) {
+        this.auditionBegin = auditionBegin;
+    }
+
+    public Integer getAuditionEnd() {
+        return auditionEnd;
+    }
+
+    public void setAuditionEnd(Integer auditionEnd) {
+        this.auditionEnd = auditionEnd;
+    }
+
+    public Integer getBpm() {
+        return bpm;
+    }
+
+    public void setBpm(Integer bpm) {
+        this.bpm = bpm;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public List<Tag> getTag() {
+        return tag;
+    }
+
+    public void setTag(List<Tag> tag) {
+        this.tag = tag;
+    }
+
+    public List<HFMusicVersion> getVersion() {
+        return version;
+    }
+
+    public void setVersion(List<HFMusicVersion> version) {
+        this.version = version;
+    }
 }

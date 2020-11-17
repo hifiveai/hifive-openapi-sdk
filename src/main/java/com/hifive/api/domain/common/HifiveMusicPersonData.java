@@ -8,7 +8,6 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 public class HifiveMusicPersonData {
 
@@ -20,5 +19,21 @@ public class HifiveMusicPersonData {
     public HifiveMusicPersonData(){
         names = "";
         person = new ArrayList<>();
+    }
+
+    public String getNames() {
+        return names;
+    }
+
+    public void setNames(String names) {
+        this.names = names;
+    }
+
+    public List<HifiveMusicPerson> getPerson() {
+        return person;
+    }
+
+    public void setPerson(List<HifiveMusicPerson> person) {
+        this.person = person;
     }
 }

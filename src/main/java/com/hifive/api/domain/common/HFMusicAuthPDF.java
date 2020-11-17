@@ -5,7 +5,6 @@ import com.hifive.api.internal.mapping.ApiListField;
 import lombok.Data;
 import java.util.List;
 
-@Data
 public class HFMusicAuthPDF extends HFObject {
 
     @ApiListField("fileUrl")
@@ -18,5 +17,7 @@ public class HFMusicAuthPDF extends HFObject {
     public void setFileUrl(List<String> fileUrl) {
         this.fileUrl = fileUrl;
     }
+
+
 }
 

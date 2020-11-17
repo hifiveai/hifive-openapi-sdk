@@ -9,7 +9,6 @@ import lombok.EqualsAndHashCode;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
 public class HFMusicDetail extends HFBaseMusicDetails {
     /**
      * 歌曲编号
@@ -75,4 +74,100 @@ public class HFMusicDetail extends HFBaseMusicDetails {
      */
     @ApiListField("version")
     private List<HFBaseVersion> version;
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
+
+    public String getMusicName() {
+        return musicName;
+    }
+
+    public void setMusicName(String musicName) {
+        this.musicName = musicName;
+    }
+
+    public String getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(String albumId) {
+        this.albumId = albumId;
+    }
+
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
+    }
+
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getComposerName() {
+        return composerName;
+    }
+
+    public void setComposerName(String composerName) {
+        this.composerName = composerName;
+    }
+
+    public String getArrangerName() {
+        return arrangerName;
+    }
+
+    public void setArrangerName(String arrangerName) {
+        this.arrangerName = arrangerName;
+    }
+
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public Integer getBpm() {
+        return bpm;
+    }
+
+    public void setBpm(Integer bpm) {
+        this.bpm = bpm;
+    }
+
+    public List<Tag> getTag() {
+        return tag;
+    }
+
+    public void setTag(List<Tag> tag) {
+        this.tag = tag;
+    }
+
+    public List<HFBaseVersion> getVersion() {
+        return version;
+    }
+
+    public void setVersion(List<HFBaseVersion> version) {
+        this.version = version;
+    }
 }

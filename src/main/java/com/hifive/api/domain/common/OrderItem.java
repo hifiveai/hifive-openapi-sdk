@@ -14,7 +14,6 @@ import java.io.Serializable;
  * @author yong.huang
  *@Date:
  **/
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItem implements Serializable {
@@ -48,4 +47,7 @@ public class OrderItem implements Serializable {
     public void setTradeNo(String tradeNo) {
         this.tradeNo = tradeNo;
     }
+
+
+
 }

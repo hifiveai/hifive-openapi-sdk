@@ -8,7 +8,6 @@ import lombok.Data;
 
 import java.util.List;
 
-@Data
 public class HFMusicInfoDetail extends HFBaseMusic {
 
     /**
@@ -58,5 +57,69 @@ public class HFMusicInfoDetail extends HFBaseMusic {
     @ApiListField("arranger")
     private List<HifiveMusicPerson> arranger;
 
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public List<Tag> getTag() {
+        return tag;
+    }
+
+    public void setTag(List<Tag> tag) {
+        this.tag = tag;
+    }
+
+    public List<HFMusicVersion> getVersion() {
+        return version;
+    }
+
+    public void setVersion(List<HFMusicVersion> version) {
+        this.version = version;
+    }
+
+    public List<EsCover> getCover() {
+        return cover;
+    }
+
+    public void setCover(List<EsCover> cover) {
+        this.cover = cover;
+    }
+
+    public List<HifiveMusicPerson> getArtist() {
+        return artist;
+    }
+
+    public void setArtist(List<HifiveMusicPerson> artist) {
+        this.artist = artist;
+    }
+
+    public List<HifiveMusicPerson> getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(List<HifiveMusicPerson> author) {
+        this.author = author;
+    }
+
+    public List<HifiveMusicPerson> getComposer() {
+        return composer;
+    }
+
+    public void setComposer(List<HifiveMusicPerson> composer) {
+        this.composer = composer;
+    }
+
+    public List<HifiveMusicPerson> getArranger() {
+        return arranger;
+    }
+
+    public void setArranger(List<HifiveMusicPerson> arranger) {
+        this.arranger = arranger;
+    }
 }
 

@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
  * @author yong.huang
  *@Date:
  **/
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderWord extends HFObject {
@@ -27,4 +26,20 @@ public class OrderWord extends HFObject {
      **/
     @ApiField("workId")
     private String workId;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getWorkId() {
+        return workId;
+    }
+
+    public void setWorkId(String workId) {
+        this.workId = workId;
+    }
 }

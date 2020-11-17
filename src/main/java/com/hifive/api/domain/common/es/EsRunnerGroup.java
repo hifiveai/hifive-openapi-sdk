@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * Es中的运营组
  */
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class EsRunnerGroup {
@@ -50,4 +49,52 @@ public class EsRunnerGroup {
      */
     @ApiListField("sheet")
     private List<EsSort> sheet;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public EsCover getCover() {
+        return cover;
+    }
+
+    public void setCover(EsCover cover) {
+        this.cover = cover;
+    }
+
+    public List<EsSort> getSheet() {
+        return sheet;
+    }
+
+    public void setSheet(List<EsSort> sheet) {
+        this.sheet = sheet;
+    }
 }

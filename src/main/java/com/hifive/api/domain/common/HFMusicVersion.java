@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class HFMusicVersion extends HFObject {
@@ -52,4 +51,68 @@ public class HFMusicVersion extends HFObject {
      */
     @ApiField("auditionEnd")
     private  Integer auditionEnd;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
+
+    public Integer getFree() {
+        return free;
+    }
+
+    public void setFree(Integer free) {
+        this.free = free;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
+    }
+
+    public Boolean getMajorVersion() {
+        return majorVersion;
+    }
+
+    public void setMajorVersion(Boolean majorVersion) {
+        this.majorVersion = majorVersion;
+    }
+
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public Integer getAuditionBegin() {
+        return auditionBegin;
+    }
+
+    public void setAuditionBegin(Integer auditionBegin) {
+        this.auditionBegin = auditionBegin;
+    }
+
+    public Integer getAuditionEnd() {
+        return auditionEnd;
+    }
+
+    public void setAuditionEnd(Integer auditionEnd) {
+        this.auditionEnd = auditionEnd;
+    }
 }

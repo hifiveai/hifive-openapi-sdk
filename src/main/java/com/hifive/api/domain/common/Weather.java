@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Weather extends HFObject {
@@ -79,4 +78,92 @@ public class Weather extends HFObject {
     @ApiListField("tips")
     @JsonIgnore
     private List<Tip> tips;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getWeatherName() {
+        return weatherName;
+    }
+
+    public void setWeatherName(String weatherName) {
+        this.weatherName = weatherName;
+    }
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(String temperature) {
+        this.temperature = temperature;
+    }
+
+    public String getWindDirection() {
+        return windDirection;
+    }
+
+    public void setWindDirection(String windDirection) {
+        this.windDirection = windDirection;
+    }
+
+    public String getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(String humidity) {
+        this.humidity = humidity;
+    }
+
+    public String getAirQuality() {
+        return airQuality;
+    }
+
+    public void setAirQuality(String airQuality) {
+        this.airQuality = airQuality;
+    }
+
+    public Integer getAirQualityLevel() {
+        return airQualityLevel;
+    }
+
+    public void setAirQualityLevel(Integer airQualityLevel) {
+        this.airQualityLevel = airQualityLevel;
+    }
+
+    public String getWeatherIcon() {
+        return weatherIcon;
+    }
+
+    public void setWeatherIcon(String weatherIcon) {
+        this.weatherIcon = weatherIcon;
+    }
+
+    public String getWeatherTitle() {
+        return weatherTitle;
+    }
+
+    public void setWeatherTitle(String weatherTitle) {
+        this.weatherTitle = weatherTitle;
+    }
+
+    public String getWeatherDesc() {
+        return weatherDesc;
+    }
+
+    public void setWeatherDesc(String weatherDesc) {
+        this.weatherDesc = weatherDesc;
+    }
+
+    public List<Tip> getTips() {
+        return tips;
+    }
+
+    public void setTips(List<Tip> tips) {
+        this.tips = tips;
+    }
 }

@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 /**
  * Es中的歌词
  */
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class EsLyric {
@@ -23,4 +22,20 @@ public class EsLyric {
      */
     @ApiField("staticUrl")
     private String staticUrl;
+
+    public String getDynamicUrl() {
+        return dynamicUrl;
+    }
+
+    public void setDynamicUrl(String dynamicUrl) {
+        this.dynamicUrl = dynamicUrl;
+    }
+
+    public String getStaticUrl() {
+        return staticUrl;
+    }
+
+    public void setStaticUrl(String staticUrl) {
+        this.staticUrl = staticUrl;
+    }
 }

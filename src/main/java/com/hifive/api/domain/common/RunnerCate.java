@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@Data
 @NoArgsConstructor                 //无参构造
 @AllArgsConstructor
 public class RunnerCate implements Serializable {
@@ -29,4 +28,28 @@ public class RunnerCate implements Serializable {
      */
     @ApiField("coverUrl")
     private String coverUrl;
+
+    public String getCateId() {
+        return cateId;
+    }
+
+    public void setCateId(String cateId) {
+        this.cateId = cateId;
+    }
+
+    public String getCateName() {
+        return cateName;
+    }
+
+    public void setCateName(String cateName) {
+        this.cateName = cateName;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
 }

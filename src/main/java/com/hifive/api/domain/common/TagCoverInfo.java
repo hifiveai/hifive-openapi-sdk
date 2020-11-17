@@ -11,11 +11,18 @@ import lombok.NoArgsConstructor;
  * @author yong.huang
  *@Date:
  **/
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class TagCoverInfo extends Tag {
 
     @ApiField("coverUrl")
     private String coverUrl;
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
 }

@@ -9,9 +9,18 @@ import lombok.Data;
  * @author yong.huang
  *@Date:
  **/
-@Data
 public class OrderStatus extends Order {
 
     @ApiField("status")
     private Integer status;
+
+    @Override
+    public Integer getStatus() {
+        return status;
+    }
+
+    @Override
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 }

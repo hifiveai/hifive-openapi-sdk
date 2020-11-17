@@ -12,7 +12,6 @@ import lombok.Data;
  * @author yong.huang
  * @Date:
  **/
-@Data
 public class DownloadHF extends HFBaseDownload {
 
     /** 音乐id **/
@@ -22,4 +21,20 @@ public class DownloadHF extends HFBaseDownload {
     /** 过期时间 **/
     @ApiField("fileSize")
     private Long fileSize;
+
+    public String getMusicId() {
+        return musicId;
+    }
+
+    public void setMusicId(String musicId) {
+        this.musicId = musicId;
+    }
+
+    public Long getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+    }
 }

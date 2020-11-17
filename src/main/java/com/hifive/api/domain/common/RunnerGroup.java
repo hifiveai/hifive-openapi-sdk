@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
  * @author yong.huang
  * @Date:  2020/06/29
  **/
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class RunnerGroup extends HFObject {
@@ -34,4 +33,28 @@ public class RunnerGroup extends HFObject {
      */
     @ApiField("coverUrl")
     private String coverUrl;
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
 }

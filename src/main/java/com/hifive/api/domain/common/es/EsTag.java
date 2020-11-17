@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 /**
  * Es 中的标签
  */
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class EsTag {
@@ -35,4 +34,36 @@ public class EsTag {
      */
     @ApiField("name")
     private String name;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getPid() {
+        return pid;
+    }
+
+    public void setPid(Long pid) {
+        this.pid = pid;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

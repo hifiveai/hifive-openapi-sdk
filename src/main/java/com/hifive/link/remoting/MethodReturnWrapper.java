@@ -1,6 +1,0 @@
-package com.hifive.link.remoting;
-
-@SuppressWarnings("serial")
-public class MethodReturnWrapper extends MethodReturn {
-	public String Exception;
-}

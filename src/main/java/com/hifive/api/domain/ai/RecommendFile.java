@@ -6,10 +6,25 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-@Data
 public class RecommendFile implements Serializable {
     @ApiField("songId")
     private String songId;
     @ApiField("rmdRate")
     private String rmdRate;
+
+    public String getSongId() {
+        return songId;
+    }
+
+    public void setSongId(String songId) {
+        this.songId = songId;
+    }
+
+    public String getRmdRate() {
+        return rmdRate;
+    }
+
+    public void setRmdRate(String rmdRate) {
+        this.rmdRate = rmdRate;
+    }
 }

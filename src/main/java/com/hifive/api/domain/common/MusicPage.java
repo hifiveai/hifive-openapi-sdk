@@ -59,4 +59,6 @@ public class MusicPage extends HFObject {
         meta.setCurrentPage(currentPage);
         meta.setTotalCount(total);
     }
+
+
 }

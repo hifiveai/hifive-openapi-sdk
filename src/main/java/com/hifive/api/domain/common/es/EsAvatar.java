@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 /**
  * Es 艺人头像文件信息
  */
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class EsAvatar {
@@ -30,4 +29,28 @@ public class EsAvatar {
      */
     @ApiField("url")
     private String url;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

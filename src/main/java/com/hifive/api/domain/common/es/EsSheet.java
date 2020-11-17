@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class EsSheet {
@@ -79,4 +78,92 @@ public class EsSheet {
      **/
     @ApiField("size")
     private String size ;
+
+    public Long getListId() {
+        return listId;
+    }
+
+    public void setListId(Long listId) {
+        this.listId = listId;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public Integer getMusicCount() {
+        return musicCount;
+    }
+
+    public void setMusicCount(Integer musicCount) {
+        this.musicCount = musicCount;
+    }
+
+    public String getSheetName() {
+        return sheetName;
+    }
+
+    public void setSheetName(String sheetName) {
+        this.sheetName = sheetName;
+    }
+
+    public List<String> getRunnerGroupId() {
+        return runnerGroupId;
+    }
+
+    public void setRunnerGroupId(List<String> runnerGroupId) {
+        this.runnerGroupId = runnerGroupId;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
+
+    public List<Tag> getTag() {
+        return tag;
+    }
+
+    public void setTag(List<Tag> tag) {
+        this.tag = tag;
+    }
+
+    public List<Long> getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(List<Long> tagId) {
+        this.tagId = tagId;
+    }
+
+    public List<EsSort> getMusic() {
+        return music;
+    }
+
+    public void setMusic(List<EsSort> music) {
+        this.music = music;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
 }

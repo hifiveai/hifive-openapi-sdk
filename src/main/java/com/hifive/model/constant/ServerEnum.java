@@ -1,6 +1,5 @@
 package com.hifive.model.constant;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 public enum ServerEnum {
 

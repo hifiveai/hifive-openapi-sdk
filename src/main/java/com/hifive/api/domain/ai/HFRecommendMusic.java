@@ -6,11 +6,19 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
 public class HFRecommendMusic extends HFMusicInfo {
     /**
      * 歌曲匹配度
      */
     @ApiField("match")
     private Double match;
+
+
+    public Double getMatch() {
+        return match;
+    }
+
+    public void setMatch(Double match) {
+        this.match = match;
+    }
 }
