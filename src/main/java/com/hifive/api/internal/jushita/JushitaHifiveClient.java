@@ -17,10 +17,10 @@ public class JushitaHifiveClient {
 
 	private static final String SYNC_CENTER_URL = "http://eai.tmall.com/api";
 
-	private DefaultHifiveClient client;
+	private DefaultHFClient client;
 
 	public JushitaHifiveClient(String serverUrl, String appKey, String appSecret) {
-		this.client = new DefaultHifiveClient(serverUrl, appKey, appSecret);
+		this.client = new DefaultHFClient(serverUrl, appKey, appSecret);
 	}
 
 	public JushitaHifiveClient(String appKey, String appSecret) {
@@ -28,15 +28,15 @@ public class JushitaHifiveClient {
 	}
 
 	public JushitaHifiveClient(String serverUrl, String appKey, String appSecret, int connectTimeout, int readTimeout) {
-		this.client = new DefaultHifiveClient(serverUrl, appKey, appSecret, null, connectTimeout, readTimeout);
+		this.client = new DefaultHFClient(serverUrl, appKey, appSecret, null, connectTimeout, readTimeout);
 	}
 
 	public JushitaHifiveClient(String serverUrl, String appKey, String appSecret,String format ,int connectTimeout, int readTimeout) {
-		this.client = new DefaultHifiveClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout);
+		this.client = new DefaultHFClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout);
 	}
 	
 	public JushitaHifiveClient(String serverUrl, String appKey, String appSecret,String format ,int connectTimeout, int readTimeout,String signMethod) {
-		this.client = new DefaultHifiveClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout,signMethod);
+		this.client = new DefaultHFClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout,signMethod);
 	}
 	
 	public void execute(String apiName, Map<String, String> params, String session) throws ApiException {

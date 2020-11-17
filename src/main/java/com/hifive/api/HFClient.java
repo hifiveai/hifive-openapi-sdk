@@ -7,7 +7,7 @@ package com.hifive.api;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public interface HifiveClient {
+public interface HFClient {
 	
 	/**
 	 * 执行TOP公开API请求。

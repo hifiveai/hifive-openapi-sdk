@@ -16,7 +16,7 @@ import java.util.Map;
  * @author yong.huang
  * @since 1.0, Sep 13, 2009
  */
-public class DefaultHifiveClient implements HifiveClient {
+public class DefaultHFClient implements HFClient {
 
     private static final String APP_KEY = "app_key";
     private static final String FORMAT = "format";
@@ -39,25 +39,25 @@ public class DefaultHifiveClient implements HifiveClient {
     private boolean needCheckRequest = true;
     private boolean needEnableParser = true;
 
-    public DefaultHifiveClient(String serverUrl, String appKey, String appSecret) {
+    public DefaultHFClient(String serverUrl, String appKey, String appSecret) {
         this.appKey = appKey;
         this.appSecret = appSecret;
         this.serverUrl = serverUrl;
     }
 
 
-    public DefaultHifiveClient(String serverUrl, String appKey, String appSecret, String format) {
+    public DefaultHFClient(String serverUrl, String appKey, String appSecret, String format) {
         this(serverUrl, appKey, appSecret);
         this.format = format;
     }
 
-    public DefaultHifiveClient(String serverUrl, String appKey, String appSecret, String format, int connectTimeout, int readTimeout) {
+    public DefaultHFClient(String serverUrl, String appKey, String appSecret, String format, int connectTimeout, int readTimeout) {
         this(serverUrl, appKey, appSecret, format);
         this.connectTimeout = connectTimeout;
         this.readTimeout = readTimeout;
     }
 
-    public DefaultHifiveClient(String serverUrl, String appKey, String appSecret, String format, int connectTimeout, int readTimeout, String signMethod) {
+    public DefaultHFClient(String serverUrl, String appKey, String appSecret, String format, int connectTimeout, int readTimeout, String signMethod) {
         this(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout);
         this.signMethod = signMethod;
     }

@@ -5,7 +5,6 @@ package com.hifive.api.internal.translate;
 import com.hifive.api.*;
 import com.hifive.api.internal.parser.json.ObjectJsonParser;
 import com.hifive.api.internal.parser.xml.ObjectXmlParser;
-import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.internal.util.HifiveLogger;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class TqlHifiveClient {
 
 	private final static Pattern CRLF_SEPARTOR = Pattern.compile("\r\n");
 
-	private DefaultHifiveClient client;
+	private DefaultHFClient client;
 	private String appSecret;
 	private String format = Constants.FORMAT_JSON;
 	private boolean needCheckRequest = true;
@@ -28,25 +27,25 @@ public class TqlHifiveClient {
 
 	public TqlHifiveClient(String serverUrl, String appKey, String appSecret) {
 		this.appSecret = appSecret;
-		this.client = new DefaultHifiveClient(serverUrl, appKey, appSecret);
+		this.client = new DefaultHFClient(serverUrl, appKey, appSecret);
 	}
 
 	public TqlHifiveClient(String serverUrl, String appKey, String appSecret, String format) {
 		this.format = format;
 		this.appSecret = appSecret;
-		this.client = new DefaultHifiveClient(serverUrl, appKey, appSecret, format);
+		this.client = new DefaultHFClient(serverUrl, appKey, appSecret, format);
 	}
 
 	public TqlHifiveClient(String serverUrl, String appKey, String appSecret, String format, int connectTimeout, int readTimeout) {
 		this.format = format;
 		this.appSecret = appSecret;
-		this.client = new DefaultHifiveClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout);
+		this.client = new DefaultHFClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout);
 	}
 
 	public TqlHifiveClient(String serverUrl, String appKey, String appSecret, String format, int connectTimeout, int readTimeout, String signMethod) {
 		this.format = format;
 		this.appSecret = appSecret;
-		this.client = new DefaultHifiveClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout, signMethod);
+		this.client = new DefaultHFClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout, signMethod);
 	}
 
 	public <T extends HifiveResponse> List<T> execute(HifiveRequest<T> request) throws ApiException {
