@@ -1,11 +1,10 @@
 package com.hifive.api.domain.common;
 
-import com.hifive.api.HifiveObject;
-import com.hifive.api.domain.ai.HifiveRecommendMusicDetail;
+import com.hifive.api.HFObject;
+import com.hifive.api.domain.ai.HFRecommendMusicDetail;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +17,11 @@ import java.util.Objects;
  * @since 1.0, Sep 12, 2009
  */
 @AllArgsConstructor
-public class RecomandMusicPage extends HifiveObject{
+public class RecomandMusicPage extends HFObject {
 
     @ApiListField("record")
     @ApiField("hifive_recommend_music_detail")
-    private List<HifiveRecommendMusicDetail> record;
+    private List<HFRecommendMusicDetail> record;
     @ApiField("meta")
     private HifiveMeta meta;
 
@@ -33,11 +32,11 @@ public class RecomandMusicPage extends HifiveObject{
         meta.setTotalCount(0L);
     }
 
-    public List<HifiveRecommendMusicDetail> getRecord() {
+    public List<HFRecommendMusicDetail> getRecord() {
         return record;
     }
 
-    public void setRecord(List<HifiveRecommendMusicDetail> record) {
+    public void setRecord(List<HFRecommendMusicDetail> record) {
         this.record = record;
     }
 

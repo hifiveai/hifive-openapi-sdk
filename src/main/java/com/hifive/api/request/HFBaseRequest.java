@@ -1,14 +1,14 @@
 package com.hifive.api.request;
 
 import com.hifive.api.HFRequest;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author yong.huang
  */
-public abstract class HFBaseRequest<T extends HifiveResponse> implements HFRequest<T> {
+public abstract class HFBaseRequest<T extends HFResponse> implements HFRequest<T> {
 
     private String clientId;
 

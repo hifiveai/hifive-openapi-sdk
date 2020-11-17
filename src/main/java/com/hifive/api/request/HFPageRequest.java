@@ -1,8 +1,8 @@
 package com.hifive.api.request;
 
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 
-public abstract class HFPageRequest<T extends HifiveResponse> extends HFBaseRequest<T> {
+public abstract class HFPageRequest<T extends HFResponse> extends HFBaseRequest<T> {
 
     protected Integer page;
 

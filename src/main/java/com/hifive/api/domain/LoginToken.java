@@ -1,13 +1,13 @@
 package com.hifive.api.domain;
 
-import com.hifive.api.HifiveObject;
+import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
 
 
 /**
  * 登陆token
  */
-public class LoginToken extends HifiveObject {
+public class LoginToken extends HFObject {
     @ApiField("token")
     private String token;
 

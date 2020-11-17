@@ -3,7 +3,7 @@ package com.hifive.api.internal.mapping;
 
 import com.hifive.api.ApiException;
 import com.hifive.api.Constants;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.internal.util.StringUtils;
 import org.springframework.util.ReflectionUtils;
 
@@ -84,8 +84,8 @@ public class Converters {
                 String listName = null;
 
                 Field field;
-                if (baseFields.contains(itemName) && HifiveResponse.class.isAssignableFrom(clazz)) {
-                    field = HifiveResponse.class.getDeclaredField(itemName);
+                if (baseFields.contains(itemName) && HFResponse.class.isAssignableFrom(clazz)) {
+                    field = HFResponse.class.getDeclaredField(itemName);
                 } else {
                     //field = clazz.getDeclaredField(itemName);
                     field = ReflectionUtils.findField(clazz, itemName);

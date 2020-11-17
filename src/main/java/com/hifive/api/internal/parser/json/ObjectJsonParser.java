@@ -2,8 +2,8 @@ package com.hifive.api.internal.parser.json;
 
 
 import com.hifive.api.ApiException;
-import com.hifive.api.HifiveParser;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFParser;
+import com.hifive.api.HFResponse;
 import com.hifive.api.internal.mapping.Converter;
 
 /**
@@ -12,7 +12,7 @@ import com.hifive.api.internal.mapping.Converter;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class ObjectJsonParser<T extends HifiveResponse> implements HifiveParser<T> {
+public class ObjectJsonParser<T extends HFResponse> implements HFParser<T> {
 
 	private Class<T> clazz;
 

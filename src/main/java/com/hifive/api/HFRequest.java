@@ -9,7 +9,7 @@ import java.util.Map;
  * @author carver.gu
  * @since 1.0, Sep 12, 2009
  */
-public interface HFRequest<T extends HifiveResponse> {
+public interface HFRequest<T extends HFResponse> {
 
 
     public static final String METHOD_POST = "POST";

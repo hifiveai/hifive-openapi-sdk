@@ -48,13 +48,13 @@ public class TqlHifiveClient {
 		this.client = new DefaultHFClient(serverUrl, appKey, appSecret, format, connectTimeout, readTimeout, signMethod);
 	}
 
-	public <T extends HifiveResponse> List<T> execute(HFRequest<T> request) throws ApiException {
+	public <T extends HFResponse> List<T> execute(HFRequest<T> request) throws ApiException {
 		return execute(request, null);
 	}
 
-	public <T extends HifiveResponse> List<T> execute(HFRequest<T> request, String session) throws ApiException {
+	public <T extends HFResponse> List<T> execute(HFRequest<T> request, String session) throws ApiException {
 		List<T> results = new ArrayList<T>();
-		HifiveParser<T> parser = null;
+		HFParser<T> parser = null;
 		boolean needParser = this.needEnableParser;
 		if (needParser && request.getResponseClass().equals(TqlResponse.class)) {
 			needParser = false;

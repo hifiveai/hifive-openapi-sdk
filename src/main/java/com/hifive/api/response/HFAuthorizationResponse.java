@@ -1,10 +1,7 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
-import com.hifive.api.domain.common.HifiveMusicAuthPDF;
-import com.hifive.api.domain.common.HifiveMusicInfoDetail;
-import com.hifive.api.domain.common.HifivePage;
-import com.hifive.api.domain.common.TrafficTagSheet;
+import com.hifive.api.HFResponse;
+import com.hifive.api.domain.common.HFMusicAuthPDF;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
@@ -13,16 +10,16 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HFAuthorizationResponse extends HifiveResponse {
+public class HFAuthorizationResponse extends HFResponse {
 
     @ApiField("data")
-    HifiveMusicAuthPDF hifiveMusicAuthPDF;
+    HFMusicAuthPDF hifiveMusicAuthPDF;
 
-    public HifiveMusicAuthPDF getHifiveMusicAuthPDF() {
+    public HFMusicAuthPDF getHifiveMusicAuthPDF() {
         return hifiveMusicAuthPDF;
     }
 
-    public void setHifiveMusicAuthPDF(HifiveMusicAuthPDF hifiveMusicAuthPDF) {
+    public void setHifiveMusicAuthPDF(HFMusicAuthPDF hifiveMusicAuthPDF) {
         this.hifiveMusicAuthPDF = hifiveMusicAuthPDF;
     }
 }

@@ -1,19 +1,18 @@
 package com.hifive.api.domain.common;
 
-import com.hifive.api.HifiveObject;
+import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CateSheet extends HifiveObject {
+public class CateSheet extends HFObject {
     /**
      * 分类编号
      */

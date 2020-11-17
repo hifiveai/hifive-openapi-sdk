@@ -1,8 +1,8 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
-import com.hifive.api.domain.common.HifiveMusicInfoDetail;
-import com.hifive.api.domain.common.HifivePage;
+import com.hifive.api.HFResponse;
+import com.hifive.api.domain.common.HFMusicInfoDetail;
+import com.hifive.api.domain.common.HFPage;
 import com.hifive.api.domain.common.TrafficTagSheet;
 import com.hifive.api.internal.mapping.ApiField;
 
@@ -13,17 +13,17 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HFChannelSheetResponse extends HifiveResponse {
+public class HFChannelSheetResponse extends HFResponse {
 
     @ApiField("data")
-    HifivePage<TrafficTagSheet<HifiveMusicInfoDetail>> hifivePage;
+    HFPage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage;
 
 
-    public HifivePage<TrafficTagSheet<HifiveMusicInfoDetail>> getHifivePage() {
+    public HFPage<TrafficTagSheet<HFMusicInfoDetail>> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HifivePage<TrafficTagSheet<HifiveMusicInfoDetail>> hifivePage) {
+    public void setHifivePage(HFPage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage) {
         this.hifivePage = hifivePage;
     }
 }

@@ -1,6 +1,6 @@
 package com.hifive.api.domain.common.es;
 
-import com.hifive.api.domain.common.HifiveMusicVersion;
+import com.hifive.api.domain.common.HFMusicVersion;
 import com.hifive.api.domain.common.HifiveMusicPerson;
 import com.hifive.api.domain.common.Tag;
 import com.hifive.api.internal.mapping.ApiField;
@@ -143,5 +143,5 @@ public class EsMusic {
      *@Date:
      **/
     @ApiListField("version")
-    private List<HifiveMusicVersion> version;
+    private List<HFMusicVersion> version;
 }

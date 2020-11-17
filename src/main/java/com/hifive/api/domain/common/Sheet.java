@@ -1,6 +1,6 @@
 package com.hifive.api.domain.common;
 
-import com.hifive.api.domain.common.base.HifiveBaseMusicInfo;
+import com.hifive.api.domain.common.base.HFBaseMusicInfo;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sheet<T extends HifiveBaseMusicInfo> implements Serializable {
+public class Sheet<T extends HFBaseMusicInfo> implements Serializable {
     /**
      * 歌单编号
      */

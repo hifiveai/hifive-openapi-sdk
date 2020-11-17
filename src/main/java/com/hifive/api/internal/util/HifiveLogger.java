@@ -1,7 +1,7 @@
 package com.hifive.api.internal.util;
 
 import com.hifive.api.Constants;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -187,7 +187,7 @@ public class HifiveLogger {
     /**
      * 发生特别错误时记录完整错误现场
      */
-    public static void logErrorScene(Map<String, Object> rt, HifiveResponse tRsp, String appSecret) {
+    public static void logErrorScene(Map<String, Object> rt, HFResponse tRsp, String appSecret) {
         if (!needEnableLogger) {
             return;
         }

@@ -1,10 +1,10 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.domain.common.WeatherView;
 import com.hifive.api.internal.mapping.ApiField;
 
-public class HFBaseVisualResponse extends HifiveResponse {
+public class HFBaseVisualResponse extends HFResponse {
 
     @ApiField("data")
     WeatherView weatherView;

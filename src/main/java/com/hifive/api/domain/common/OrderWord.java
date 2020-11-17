@@ -1,12 +1,10 @@
 package com.hifive.api.domain.common;
 
-import com.hifive.api.HifiveObject;
+import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
 
 /** <p>
  *   订单绑定作品
@@ -17,7 +15,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderWord extends HifiveObject {
+public class OrderWord extends HFObject {
 
     /**
      * 订单id

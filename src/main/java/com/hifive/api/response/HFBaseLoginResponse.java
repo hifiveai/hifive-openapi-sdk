@@ -1,7 +1,7 @@
 package com.hifive.api.response;
 
 
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.domain.LoginToken;
 import com.hifive.api.internal.mapping.ApiField;
 
@@ -11,7 +11,7 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author auto create
  * @since 1.0, null
  */
-public class HFBaseLoginResponse extends HifiveResponse {
+public class HFBaseLoginResponse extends HFResponse {
 
     private static final long serialVersionUID = 8416376835315756311L;
 

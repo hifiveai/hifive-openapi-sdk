@@ -4,7 +4,7 @@ package com.hifive.api.internal.translate;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.Constants;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.HFRequest;
 import com.hifive.api.internal.util.RequestCheckUtils;
@@ -18,7 +18,7 @@ public class ScheduleApiRequest implements HFRequest<ScheduleApiResponse> {
 	private Long timestamp;
 	private String tql;
 	private Date schedule;
-	private HFRequest<? extends HifiveResponse> HifiveRequest;
+	private HFRequest<? extends HFResponse> HifiveRequest;
 	private Map<String,String> headerMap=new HifiveHashMap();
 	
 	
@@ -38,7 +38,7 @@ public class ScheduleApiRequest implements HFRequest<ScheduleApiResponse> {
 		this.schedule = schedule;
 	}
 
-	public void setHifiveRequest(HFRequest<? extends HifiveResponse> HFRequest) throws ApiRuleException {
+	public void setHifiveRequest(HFRequest<? extends HFResponse> HFRequest) throws ApiRuleException {
 		this.HifiveRequest = HFRequest;
 		HFRequest.check();
 	}

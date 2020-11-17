@@ -1,10 +1,8 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
-import com.hifive.api.domain.ai.HifiveRecommendMusicDetail;
-import com.hifive.api.domain.common.HifiveMusicInfoDetail;
-import com.hifive.api.domain.common.HifivePage;
-import com.hifive.api.domain.common.RecomandMusicPage;
+import com.hifive.api.HFResponse;
+import com.hifive.api.domain.ai.HFRecommendMusicDetail;
+import com.hifive.api.domain.common.HFPage;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
@@ -13,16 +11,16 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HFBaseFavoriteResponse extends HifiveResponse {
+public class HFBaseFavoriteResponse extends HFResponse {
 
     @ApiField("data")
-    HifivePage<HifiveRecommendMusicDetail> hifivePage;
+    HFPage<HFRecommendMusicDetail> hifivePage;
 
-    public HifivePage<HifiveRecommendMusicDetail> getHifivePage() {
+    public HFPage<HFRecommendMusicDetail> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HifivePage<HifiveRecommendMusicDetail> hifivePage) {
+    public void setHifivePage(HFPage<HFRecommendMusicDetail> hifivePage) {
         this.hifivePage = hifivePage;
     }
 }

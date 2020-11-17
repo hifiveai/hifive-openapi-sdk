@@ -1,16 +1,14 @@
 package com.hifive.api.domain.common;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.hifive.api.HifiveObject;
+import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.util.List;
 
 /** <p>
@@ -22,7 +20,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Order extends HifiveObject {
+public class Order extends HFObject {
     @ApiField("subject")
     private String subject;
     @ApiField("totalFee")
@@ -40,6 +38,6 @@ public class Order extends HifiveObject {
     @ApiField("status")
     private Integer status;
     @ApiListField("music")
-    private List<HifiveMusicFile> music;
+    private List<HFMusicFile> music;
     
 }

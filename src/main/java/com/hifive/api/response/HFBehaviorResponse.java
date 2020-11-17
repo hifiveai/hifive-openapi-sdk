@@ -1,6 +1,6 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 
-public class HFBehaviorResponse extends HifiveResponse {
+public class HFBehaviorResponse extends HFResponse {
 }

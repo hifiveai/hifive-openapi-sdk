@@ -1,7 +1,7 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
-import com.hifive.api.domain.HifiveMusicSize;
+import com.hifive.api.HFResponse;
+import com.hifive.api.domain.HFMusicSize;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
@@ -10,18 +10,18 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HFTrafficListenMixedResponse extends HifiveResponse {
+public class HFTrafficListenMixedResponse extends HFResponse {
 
 
 
     @ApiField("data")
-    HifiveMusicSize hifiveMusicSize;
+    HFMusicSize hifiveMusicSize;
 
-    public HifiveMusicSize getHifiveMusicSize() {
+    public HFMusicSize getHifiveMusicSize() {
         return hifiveMusicSize;
     }
 
-    public void setHifiveMusicSize(HifiveMusicSize hifiveMusicSize) {
+    public void setHifiveMusicSize(HFMusicSize hifiveMusicSize) {
         this.hifiveMusicSize = hifiveMusicSize;
     }
 }

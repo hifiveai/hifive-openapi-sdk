@@ -3,7 +3,7 @@ package com.hifive.api.internal.parser.json;
 
 
 import com.hifive.api.ApiException;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.internal.mapping.Converter;
 import com.hifive.api.internal.mapping.Converters;
 import com.hifive.api.internal.mapping.Reader;
@@ -11,9 +11,7 @@ import com.hifive.api.internal.util.json.ExceptionErrorListener;
 import com.hifive.api.internal.util.json.JSONReader;
 import com.hifive.api.internal.util.json.JSONValidatingReader;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +23,7 @@ import java.util.Map;
  */
 public class JsonConverter implements Converter {
 
-	public <T extends HifiveResponse> T toResponse(String rsp, Class<T> clazz) throws ApiException {
+	public <T extends HFResponse> T toResponse(String rsp, Class<T> clazz) throws ApiException {
 		JSONReader reader = new JSONValidatingReader(new ExceptionErrorListener());
 		Object rootObj = reader.read(rsp);
 		if (rootObj instanceof Map<?, ?>) {

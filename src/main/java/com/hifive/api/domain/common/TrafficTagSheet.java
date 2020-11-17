@@ -1,22 +1,21 @@
 package com.hifive.api.domain.common;
 
 
-import com.hifive.api.HifiveObject;
-import com.hifive.api.domain.common.base.HifiveBaseMusicInfo;
-import com.hifive.api.domain.common.base.HifiveBaseMusicSize;
+import com.hifive.api.HFObject;
+import com.hifive.api.domain.common.base.HFBaseMusicInfo;
 import com.hifive.api.domain.common.es.EsCover;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.io.Serializable;
+
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TrafficTagSheet<T extends HifiveBaseMusicInfo> extends HifiveObject {
+public class TrafficTagSheet<T extends HFBaseMusicInfo> extends HFObject {
     /**
      * 歌单编号
      */

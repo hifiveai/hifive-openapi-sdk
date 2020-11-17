@@ -1,7 +1,7 @@
 package com.hifive.api.internal.translate;
 
 
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.internal.mapping.ApiField;
 
 import java.util.Date;
@@ -11,7 +11,7 @@ import java.util.Date;
  * 
  * @author auto create
  */
-public class ScheduleApiResponse extends HifiveResponse {
+public class ScheduleApiResponse extends HFResponse {
 
 	private static final long serialVersionUID = 5788818741119374931L;
 

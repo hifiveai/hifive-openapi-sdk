@@ -1,7 +1,6 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
-import com.hifive.api.domain.common.RecomandMusicPage;
+import com.hifive.api.HFResponse;
 import com.hifive.api.domain.common.TagPrice;
 import com.hifive.api.internal.mapping.ApiField;
 
@@ -11,7 +10,7 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HFMusicConfigResponse extends HifiveResponse {
+public class HFMusicConfigResponse extends HFResponse {
 
     @ApiField("data")
     TagPrice tagPrice;

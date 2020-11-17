@@ -62,12 +62,12 @@ public class DefaultHFClient implements HFClient {
         this.signMethod = signMethod;
     }
 
-    public <T extends HifiveResponse> T execute(HFRequest<T> request) throws ApiException {
+    public <T extends HFResponse> T execute(HFRequest<T> request) throws ApiException {
         return execute(request, null);
     }
 
-    public <T extends HifiveResponse> T execute(HFRequest<T> request, String session) throws ApiException {
-        HifiveParser<T> parser = null;
+    public <T extends HFResponse> T execute(HFRequest<T> request, String session) throws ApiException {
+        HFParser<T> parser = null;
         if (this.needEnableParser) {
             if (Constants.FORMAT_XML.equals(this.format)) {
                 parser = new ObjectXmlParser<T>(request.getResponseClass());
@@ -78,7 +78,7 @@ public class DefaultHFClient implements HFClient {
         return _execute(request, parser, session);
     }
 
-    private <T extends HifiveResponse> T _execute(HFRequest<T> request, HifiveParser<T> parser, String session) throws ApiException {
+    private <T extends HFResponse> T _execute(HFRequest<T> request, HFParser<T> parser, String session) throws ApiException {
         if (this.needCheckRequest) {
             try {
                 request.check();// if check failed,will throw ApiRuleException.
@@ -121,7 +121,7 @@ public class DefaultHFClient implements HFClient {
         return tRsp;
     }
 
-    public <T extends HifiveResponse> Map<String, Object> doExcute(HFRequest<T> request, String session) throws ApiException {
+    public <T extends HFResponse> Map<String, Object> doExcute(HFRequest<T> request, String session) throws ApiException {
         Map<String, Object> result = new HashMap<String, Object>();
         RequestParametersHolder requestHolder = new RequestParametersHolder();
         HifiveHashMap appParams = new HifiveHashMap(request.getTextParams());
@@ -185,8 +185,8 @@ public class DefaultHFClient implements HFClient {
         String rsp = null;
         try {
             // 是否需要上传文件
-            if (request instanceof HifiveUploadRequest) {
-                HifiveUploadRequest<T> uRequest = (HifiveUploadRequest<T>) request;
+            if (request instanceof HFUploadRequest) {
+                HFUploadRequest<T> uRequest = (HFUploadRequest<T>) request;
                 Map<String, FileItem> fileParams = HifiveUtils.cleanupMap(uRequest.getFileParams());
                 rsp = WebUtils.doPost(urlSb.toString(), appParams, fileParams, Constants.CHARSET_UTF8, connectTimeout, readTimeout, requestHolder.getApplicationHeaders());
             } else {

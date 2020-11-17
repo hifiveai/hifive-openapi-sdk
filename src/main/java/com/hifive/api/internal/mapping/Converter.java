@@ -1,7 +1,7 @@
 package com.hifive.api.internal.mapping;
 
 import com.hifive.api.ApiException;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 
 
 /**
@@ -20,6 +20,6 @@ public interface Converter {
 	 * @param clazz 领域类型
 	 * @return 响应对象
 	 */
-	public <T  extends HifiveResponse> T toResponse(String rsp, Class<T> clazz) throws ApiException;
+	public <T  extends HFResponse> T toResponse(String rsp, Class<T> clazz) throws ApiException;
 
 }

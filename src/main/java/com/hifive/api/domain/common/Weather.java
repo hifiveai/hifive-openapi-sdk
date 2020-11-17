@@ -1,7 +1,7 @@
 package com.hifive.api.domain.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.hifive.api.HifiveObject;
+import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Weather extends HifiveObject {
+public class Weather extends HFObject {
     /**
      * 所在城市
      */

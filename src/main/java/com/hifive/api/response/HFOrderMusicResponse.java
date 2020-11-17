@@ -1,6 +1,6 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.domain.common.Order;
 import com.hifive.api.internal.mapping.ApiField;
 
@@ -10,7 +10,7 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HFOrderMusicResponse extends HifiveResponse {
+public class HFOrderMusicResponse extends HFResponse {
 
     @ApiField("data")
     Order order;

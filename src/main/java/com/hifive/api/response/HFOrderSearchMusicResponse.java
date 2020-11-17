@@ -1,9 +1,8 @@
 package com.hifive.api.response;
 
-import com.hifive.api.HifiveResponse;
-import com.hifive.api.domain.common.HifiveMusicInfoDetail;
-import com.hifive.api.domain.common.HifivePage;
-import com.hifive.api.domain.common.MusicPage;
+import com.hifive.api.HFResponse;
+import com.hifive.api.domain.common.HFMusicInfoDetail;
+import com.hifive.api.domain.common.HFPage;
 import com.hifive.api.internal.mapping.ApiField;
 
 /**
@@ -12,16 +11,16 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-public class HFOrderSearchMusicResponse extends HifiveResponse {
+public class HFOrderSearchMusicResponse extends HFResponse {
 
     @ApiField("data")
-    HifivePage<HifiveMusicInfoDetail> hifivePage;
+    HFPage<HFMusicInfoDetail> hifivePage;
 
-    public HifivePage<HifiveMusicInfoDetail> getHifivePage() {
+    public HFPage<HFMusicInfoDetail> getHifivePage() {
         return hifivePage;
     }
 
-    public void setHifivePage(HifivePage<HifiveMusicInfoDetail> hifivePage) {
+    public void setHifivePage(HFPage<HFMusicInfoDetail> hifivePage) {
         this.hifivePage = hifivePage;
     }
 }

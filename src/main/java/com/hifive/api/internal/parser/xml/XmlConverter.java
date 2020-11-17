@@ -3,7 +3,7 @@ package com.hifive.api.internal.parser.xml;
 
 import com.hifive.api.ApiException;
 import com.hifive.api.Constants;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.internal.mapping.Converter;
 import com.hifive.api.internal.mapping.Converters;
 import com.hifive.api.internal.mapping.Reader;
@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class XmlConverter implements Converter {
 
-	public <T extends HifiveResponse> T toResponse(String rsp, Class<T> clazz) throws ApiException {
+	public <T extends HFResponse> T toResponse(String rsp, Class<T> clazz) throws ApiException {
 		Element root = XmlUtils.getRootElementFromString(rsp);
 		return getModelFromXML(root, clazz);
 	}

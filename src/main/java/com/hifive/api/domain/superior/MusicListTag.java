@@ -1,7 +1,7 @@
 package com.hifive.api.domain.superior;
 
 
-import com.hifive.api.HifiveObject;
+import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
 /**
  * TOP API: hifive.user.get request
@@ -9,7 +9,7 @@ import com.hifive.api.internal.mapping.ApiField;
  * @author yong.huang
  * @since 1.0, 2013-12-08 16:51:41
  */
-public class MusicListTag extends HifiveObject {
+public class MusicListTag extends HFObject {
     /**
      * 频道类别id
      */

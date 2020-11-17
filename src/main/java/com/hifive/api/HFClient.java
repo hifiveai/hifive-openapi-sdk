@@ -16,7 +16,7 @@ public interface HFClient {
 	 * @return
 	 * @throws ApiException
 	 */
-	public <T extends HifiveResponse> T execute(HFRequest<T> request) throws ApiException ;
+	public <T extends HFResponse> T execute(HFRequest<T> request) throws ApiException ;
 	/**
 	 * 执行TOP隐私API请求。
 	 * @param <T>
@@ -25,5 +25,5 @@ public interface HFClient {
 	 * @return
 	 * @throws ApiException
 	 */
-	public <T extends HifiveResponse> T execute(HFRequest<T> request, String session) throws ApiException ;
+	public <T extends HFResponse> T execute(HFRequest<T> request, String session) throws ApiException ;
 }

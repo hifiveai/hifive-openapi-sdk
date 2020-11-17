@@ -3,7 +3,7 @@ package com.hifive.api.internal.util;
 
 import com.hifive.api.ApiException;
 import com.hifive.api.Constants;
-import com.hifive.api.HifiveResponse;
+import com.hifive.api.HFResponse;
 import com.hifive.api.internal.parser.json.ObjectJsonParser;
 import com.hifive.api.internal.util.json.JSONReader;
 import com.hifive.api.internal.util.json.JSONValidatingReader;
@@ -413,7 +413,7 @@ public abstract class HifiveUtils {
      * @param clazz API响应类
      * @return API响应对象
      */
-    public static <T extends HifiveResponse> T parseResponse(String json, Class<T> clazz) throws ApiException {
+    public static <T extends HFResponse> T parseResponse(String json, Class<T> clazz) throws ApiException {
         ObjectJsonParser<T> parser = new ObjectJsonParser<T>(clazz);
         T rsp = parser.parse(json);
         return rsp;
