@@ -19,7 +19,7 @@ public interface HifiveBaseClient {
      * @return
      * @throws HifiveApiException
      */
-    public <T extends HifiveResponse> T execute(HifiveRequest<T> request) throws HifiveApiException;
+    public <T extends HifiveResponse> T execute(HFRequest<T> request) throws HifiveApiException;
 
     /**
      * 
@@ -29,7 +29,7 @@ public interface HifiveBaseClient {
      * @return
      * @throws HifiveApiException
      */
-    public <T extends HifiveResponse> T execute(HifiveRequest<T> request, String authToken)
+    public <T extends HifiveResponse> T execute(HFRequest<T> request, String authToken)
                                                                                              throws HifiveApiException;
 
     /**
@@ -42,6 +42,6 @@ public interface HifiveBaseClient {
      * @return
      * @throws HifiveApiException
      */
-    public <T extends HifiveResponse> T execute(HifiveRequest<T> request, String authToken,
+    public <T extends HifiveResponse> T execute(HFRequest<T> request, String authToken,
                                                 String version) throws HifiveApiException;
 }

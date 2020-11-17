@@ -4,7 +4,6 @@ package com.hifive.api.response;
 import com.hifive.api.HifiveResponse;
 import com.hifive.api.domain.LoginToken;
 import com.hifive.api.internal.mapping.ApiField;
-import com.hifive.api.internal.mapping.ApiListField;
 
 /**
  * TOP API: alipay.user.get response.
@@ -12,7 +11,7 @@ import com.hifive.api.internal.mapping.ApiListField;
  * @author auto create
  * @since 1.0, null
  */
-public class HFUserGetResponse extends HifiveResponse {
+public class HFBaseLoginResponse extends HifiveResponse {
 
     private static final long serialVersionUID = 8416376835315756311L;
 

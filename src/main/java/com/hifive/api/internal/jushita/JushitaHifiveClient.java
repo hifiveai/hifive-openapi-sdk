@@ -47,7 +47,7 @@ public class JushitaHifiveClient {
 		return ;
 	}
 
-	public <T extends HifiveResponse> T execute(HifiveRequest<T> request, String session) throws ApiException {
+	public <T extends HifiveResponse> T execute(HFRequest<T> request, String session) throws ApiException {
 		this.client.setNeedCheckRequest(true);
 		this.client.setNeedEnableParser(true);
 		return client.execute(request, session);
@@ -59,7 +59,7 @@ public class JushitaHifiveClient {
 		return client.execute(request, session);
 	}
 	
-	public static class JushitaRequest<T extends HifiveResponse> implements HifiveRequest<T> {
+	public static class JushitaRequest<T extends HifiveResponse> implements HFRequest<T> {
 		private String apiName;
 		private Map<String, String> params;
 		private Class<T> clazz;

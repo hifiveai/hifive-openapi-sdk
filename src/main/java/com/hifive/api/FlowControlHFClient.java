@@ -32,11 +32,11 @@ public class FlowControlHFClient extends DefaultHFClient {
 		this.semaphore = new Semaphore(concurrentNum);
 	}
 
-	public <T extends HifiveResponse> T execute(HifiveRequest<T> request) throws ApiException {
+	public <T extends HifiveResponse> T execute(HFRequest<T> request) throws ApiException {
 		return this.execute(request, null);
 	}
 
-	public <T extends HifiveResponse> T execute(final HifiveRequest<T> request, final String session) throws ApiException {
+	public <T extends HifiveResponse> T execute(final HFRequest<T> request, final String session) throws ApiException {
 		try {
 			this.semaphore.acquire();
 			try {

@@ -6,19 +6,19 @@ import com.hifive.api.ApiRuleException;
 import com.hifive.api.Constants;
 import com.hifive.api.HifiveResponse;
 import com.hifive.api.internal.util.HifiveHashMap;
-import com.hifive.api.HifiveRequest;
+import com.hifive.api.HFRequest;
 import com.hifive.api.internal.util.RequestCheckUtils;
 
 import java.util.Date;
 import java.util.Map;
 
-public class ScheduleApiRequest implements HifiveRequest<ScheduleApiResponse> {
+public class ScheduleApiRequest implements HFRequest<ScheduleApiResponse> {
 
 	private HifiveHashMap udfParams;
 	private Long timestamp;
 	private String tql;
 	private Date schedule;
-	private HifiveRequest<? extends HifiveResponse> HifiveRequest;
+	private HFRequest<? extends HifiveResponse> HifiveRequest;
 	private Map<String,String> headerMap=new HifiveHashMap();
 	
 	
@@ -38,9 +38,9 @@ public class ScheduleApiRequest implements HifiveRequest<ScheduleApiResponse> {
 		this.schedule = schedule;
 	}
 
-	public void setHifiveRequest(HifiveRequest<? extends HifiveResponse> HifiveRequest) throws ApiRuleException {
-		this.HifiveRequest = HifiveRequest;
-		HifiveRequest.check();
+	public void setHifiveRequest(HFRequest<? extends HifiveResponse> HFRequest) throws ApiRuleException {
+		this.HifiveRequest = HFRequest;
+		HFRequest.check();
 	}
 
 	public String getApiMethodName() {

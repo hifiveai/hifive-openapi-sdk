@@ -8,7 +8,7 @@ import java.util.Map;
  * @author carver.gu
  * @since 1.0, Sep 12, 2009
  */
-public interface HifiveUploadRequest<T extends HifiveResponse> extends HifiveRequest<T> {
+public interface HifiveUploadRequest<T extends HifiveResponse> extends HFRequest<T> {
 
 	/**
 	 * 获取所有的Key-Value形式的文件请求参数集合。其中：

@@ -1,7 +1,5 @@
 package com.hifive.api;
 
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;
 
@@ -11,7 +9,7 @@ import java.util.Map;
  * @author carver.gu
  * @since 1.0, Sep 12, 2009
  */
-public interface HifiveRequest<T extends HifiveResponse> {
+public interface HFRequest<T extends HifiveResponse> {
 
 
     public static final String METHOD_POST = "POST";

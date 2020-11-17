@@ -4,14 +4,14 @@ package com.hifive.api.internal.translate;
 
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.Constants;
-import com.hifive.api.HifiveRequest;
+import com.hifive.api.HFRequest;
 import com.hifive.api.HifiveResponse;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.internal.util.RequestCheckUtils;
 
 import java.util.Map;
 
-public class TqlRequest<T extends HifiveResponse> implements HifiveRequest<T> {
+public class TqlRequest<T extends HifiveResponse> implements HFRequest<T> {
 
 	private HifiveHashMap udfParams;
 	private Long timestamp;

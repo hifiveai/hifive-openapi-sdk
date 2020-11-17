@@ -62,11 +62,11 @@ public class DefaultHFClient implements HFClient {
         this.signMethod = signMethod;
     }
 
-    public <T extends HifiveResponse> T execute(HifiveRequest<T> request) throws ApiException {
+    public <T extends HifiveResponse> T execute(HFRequest<T> request) throws ApiException {
         return execute(request, null);
     }
 
-    public <T extends HifiveResponse> T execute(HifiveRequest<T> request, String session) throws ApiException {
+    public <T extends HifiveResponse> T execute(HFRequest<T> request, String session) throws ApiException {
         HifiveParser<T> parser = null;
         if (this.needEnableParser) {
             if (Constants.FORMAT_XML.equals(this.format)) {
@@ -78,7 +78,7 @@ public class DefaultHFClient implements HFClient {
         return _execute(request, parser, session);
     }
 
-    private <T extends HifiveResponse> T _execute(HifiveRequest<T> request, HifiveParser<T> parser, String session) throws ApiException {
+    private <T extends HifiveResponse> T _execute(HFRequest<T> request, HifiveParser<T> parser, String session) throws ApiException {
         if (this.needCheckRequest) {
             try {
                 request.check();// if check failed,will throw ApiRuleException.
@@ -121,7 +121,7 @@ public class DefaultHFClient implements HFClient {
         return tRsp;
     }
 
-    public <T extends HifiveResponse> Map<String, Object> doExcute(HifiveRequest<T> request, String session) throws ApiException {
+    public <T extends HifiveResponse> Map<String, Object> doExcute(HFRequest<T> request, String session) throws ApiException {
         Map<String, Object> result = new HashMap<String, Object>();
         RequestParametersHolder requestHolder = new RequestParametersHolder();
         HifiveHashMap appParams = new HifiveHashMap(request.getTextParams());
@@ -153,7 +153,7 @@ public class DefaultHFClient implements HFClient {
 
         String method = request.getMethod();// 允许用户设置时间戳
         if (StringUtils.isEmpty(method)) {
-            method = HifiveRequest.METHOD_GET;
+            method = HFRequest.METHOD_GET;
         }
         requestHolder.setMethod(method);
 
@@ -190,7 +190,7 @@ public class DefaultHFClient implements HFClient {
                 Map<String, FileItem> fileParams = HifiveUtils.cleanupMap(uRequest.getFileParams());
                 rsp = WebUtils.doPost(urlSb.toString(), appParams, fileParams, Constants.CHARSET_UTF8, connectTimeout, readTimeout, requestHolder.getApplicationHeaders());
             } else {
-                if (method.equals(HifiveRequest.METHOD_POST)) {
+                if (method.equals(HFRequest.METHOD_POST)) {
                     rsp = HttpClientUtils.post(serverUrl, requestHolder.getApplicationHeaders(), appParams);
                 } else {
                     rsp = HttpClientUtils.get(serverUrl, requestHolder.getApplicationHeaders(), appParams);
