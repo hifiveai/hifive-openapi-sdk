@@ -16,7 +16,7 @@ public class DefaultClientTest {
         HFClient client = new DefaultHFClient(url, appkey, secret);
         //HifiveBaseLoginRequest(client);
         HifiveBaseLoginRequest(client);
-        hifiveBaseReportRequest(client);
+     /*   hifiveBaseReportRequest(client);
         hifiveBaseHotRequestTest(client);
         hifiveBaseFavoriteRequestTest(client);
         hifiveBaseVisualRequestTest(client);
@@ -66,7 +66,7 @@ public class DefaultClientTest {
         hifiveTrafficSearchMusicRequestTest(client);
         hifiveTrafficTagMusicRequestTest(client);
         hifiveOrderTagMusicRequestTest(client);
-        hifiveTrafficDownloadRequestTest(client);
+        hifiveTrafficDownloadRequestTest(client);*/
 
     }
 

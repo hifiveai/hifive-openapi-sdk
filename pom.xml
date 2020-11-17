@@ -9,8 +9,8 @@
         <version>2.1.6.RELEASE</version>
     </parent>
     <groupId>com.hifive</groupId>
-    <artifactId>hifive-openapi-sdk</artifactId>
-    <name>hifive-openapi-sdk</name>
+    <artifactId>hifive-openapi</artifactId>
+    <name>hifive-openapi</name>
     <version>4.0.1</version>
     <description>Starter of log recorder.</description>
     <packaging>jar</packaging>

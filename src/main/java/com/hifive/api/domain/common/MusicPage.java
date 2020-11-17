@@ -16,7 +16,6 @@ import java.util.Objects;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-@Data
 @AllArgsConstructor
 public class MusicPage extends HifiveObject{
 

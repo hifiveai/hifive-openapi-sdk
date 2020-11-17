@@ -17,7 +17,6 @@ import java.util.Objects;
  * @author yong.huang
  * @since 1.0, Sep 12, 2009
  */
-@Data
 @AllArgsConstructor
 public class RecomandMusicPage extends HifiveObject{
 
@@ -62,4 +61,6 @@ public class RecomandMusicPage extends HifiveObject{
         meta.setCurrentPage(currentPage);
         meta.setTotalCount(total);
     }
+
+
 }
