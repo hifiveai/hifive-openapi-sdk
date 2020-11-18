@@ -159,47 +159,4 @@
             </plugin>
         </plugins>
     </build>
-
-
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-        </repository>
-        <repository>
-            <id>oss</id>
-            <name>oss</name>
-            <url>https://oss.sonatype.org/content/groups/public</url>
-        </repository>
-        <repository>
-            <id>aliyun</id>
-            <name>aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>deploymentRepo</id>
-            <name>hifive Release Repository</name>
-            <url>http://172.16.52.62:8081/repository/maven-public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>deploymentRepo</id>
-            <name>hifive Release Repository</name>
-            <url>http://172.16.52.62:8081/repository/hifive_repository/</url>
-        </repository>
-        <snapshotRepository>
-            <id>deploymentRepo</id>
-            <name>hifive Release Repository</name>
-            <url>http://172.16.52.62:8081/repository/hifive_repository_snapshot/</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>
