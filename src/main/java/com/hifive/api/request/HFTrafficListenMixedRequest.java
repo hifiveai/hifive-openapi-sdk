@@ -49,7 +49,6 @@ public class HFTrafficListenMixedRequest extends HFBaseRequest<HFTrafficListenMi
     }
 
 
-
     public String getAudioFormat() {
         return audioFormat;
     }

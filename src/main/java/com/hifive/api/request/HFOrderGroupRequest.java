@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HFOrderGroupResponse;
+
 import java.util.Map;
 
 public class HFOrderGroupRequest extends HFBaseRequest<HFOrderGroupResponse> {
@@ -23,7 +24,6 @@ public class HFOrderGroupRequest extends HFBaseRequest<HFOrderGroupResponse> {
     public void setTimestamp(Long timestamp) {
 
     }
-
 
 
     public Map<String, String> getTextParams() {

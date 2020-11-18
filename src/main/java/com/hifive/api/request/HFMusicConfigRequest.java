@@ -43,7 +43,6 @@ public class HFMusicConfigRequest extends HFBaseRequest<HFMusicConfigResponse> {
     }
 
 
-
     @Override
     public void putOtherTextParam(String key, String value) {
 

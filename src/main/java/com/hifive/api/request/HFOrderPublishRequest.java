@@ -11,13 +11,11 @@ public class HFOrderPublishRequest extends HFBaseRequest<HFOrderPublishResponse>
 
     /**
      * 订单id
-     *
      **/
     private String orderId;
 
     /**
      * workId
-     *
      **/
     private String workId;
 
@@ -36,7 +34,6 @@ public class HFOrderPublishRequest extends HFBaseRequest<HFOrderPublishResponse>
     public void setTimestamp(Long timestamp) {
 
     }
-
 
 
     public String getOrderId() {

@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HFTrafficDownloadResponse;
+
 import java.util.Map;
 
 public class HFTrafficDownloadRequest extends HFBaseRequest<HFTrafficDownloadResponse> {
@@ -46,7 +47,6 @@ public class HFTrafficDownloadRequest extends HFBaseRequest<HFTrafficDownloadRes
     public void setMusicId(String musicId) {
         this.musicId = musicId;
     }
-
 
 
     public String getAudioFormat() {

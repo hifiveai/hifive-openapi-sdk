@@ -220,15 +220,12 @@ public class HFBaseLoginRequest extends HFBaseRequest<HFBaseLoginResponse> {
     }
 
 
-
-
     public void putOtherTextParam(String key, String value) {
         if (this.udfParams == null) {
             this.udfParams = new HifiveHashMap();
         }
         this.udfParams.put(key, value);
     }
-
 
 
     public Class<HFBaseLoginResponse> getResponseClass() {

@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HFBaseWeatherResponse;
+
 import java.util.Map;
 
 public class HFBaseWeatherRequest extends HFBaseRequest<HFBaseWeatherResponse> {
@@ -54,7 +55,6 @@ public class HFBaseWeatherRequest extends HFBaseRequest<HFBaseWeatherResponse> {
     public void check() throws ApiRuleException {
 
     }
-
 
 
     @Override

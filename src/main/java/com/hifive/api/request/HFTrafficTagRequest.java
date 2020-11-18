@@ -45,7 +45,6 @@ public class HFTrafficTagRequest extends HFBaseRequest<HFTrafficTagResponse> {
     }
 
 
-
     @Override
     public void putOtherTextParam(String key, String value) {
 

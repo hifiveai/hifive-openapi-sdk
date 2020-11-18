@@ -2,6 +2,7 @@ package com.hifive.api.domain.common.base;
 
 import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
+
 /**
  * 音乐地址类
  *

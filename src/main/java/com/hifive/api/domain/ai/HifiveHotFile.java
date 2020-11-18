@@ -1,7 +1,9 @@
 package com.hifive.api.domain.ai;
 
 import com.hifive.api.internal.mapping.ApiField;
+
 import java.io.Serializable;
+
 /**
  * 热门音乐文件
  *

@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HFAuthorizationResponse;
+
 import java.util.Map;
 
 public class HFOrderAuthorizationRequest extends HFBaseRequest<HFAuthorizationResponse> {

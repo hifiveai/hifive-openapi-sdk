@@ -17,7 +17,7 @@ public class DefaultClientTest {
         hifiveBaseFavoriteRequestTest(client);
         //hifiveTagSheetRequestTest(client);
         //HifiveBaseLoginRequest(client);
-      //  HifiveBaseLoginRequest(client);
+        //  HifiveBaseLoginRequest(client);
         /*hifiveSearchMusicRequestTest(client);*/
         /*hifiveBaseFavoriteRequestTest(client);
         hifiveBaseVisualRequestTest(client);

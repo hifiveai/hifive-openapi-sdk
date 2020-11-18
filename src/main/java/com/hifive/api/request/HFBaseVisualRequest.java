@@ -57,7 +57,6 @@ public class HFBaseVisualRequest extends HFBaseRequest<HFBaseVisualResponse> {
     }
 
 
-
     @Override
     public void putOtherTextParam(String key, String value) {
 

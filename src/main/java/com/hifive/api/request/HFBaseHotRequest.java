@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HFHotResponse;
+
 import java.util.Map;
 
 public class HFBaseHotRequest extends HFPageRequest<HFHotResponse> {
@@ -52,9 +53,9 @@ public class HFBaseHotRequest extends HFPageRequest<HFHotResponse> {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("Duration", getDuration());
-                put("StartTime",getStartTime());
+                put("StartTime", getStartTime());
                 put("Page", getPage());
-                put("PageSize",getPageSize());
+                put("PageSize", getPageSize());
             }
         };
         return txtParams;
@@ -69,9 +70,7 @@ public class HFBaseHotRequest extends HFPageRequest<HFHotResponse> {
     public void check() throws ApiRuleException {
 
 
-
     }
-
 
 
     @Override

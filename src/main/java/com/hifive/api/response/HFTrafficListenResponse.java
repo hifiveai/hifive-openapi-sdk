@@ -13,7 +13,6 @@ import com.hifive.api.internal.mapping.ApiField;
 public class HFTrafficListenResponse extends HFResponse {
 
 
-
     @ApiField("data")
     HFMusicSize hifiveMusicSize;
 

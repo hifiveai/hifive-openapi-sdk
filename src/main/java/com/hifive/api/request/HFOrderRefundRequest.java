@@ -11,10 +11,8 @@ public class HFOrderRefundRequest extends HFBaseRequest<HFOrderRefundResponse> {
 
     /**
      * 订单id
-     *
      **/
     private String orderId;
-
 
 
     @Override
@@ -32,7 +30,6 @@ public class HFOrderRefundRequest extends HFBaseRequest<HFOrderRefundResponse> {
     public void setTimestamp(Long timestamp) {
 
     }
-
 
 
     public String getOrderId() {

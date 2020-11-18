@@ -15,7 +15,6 @@ import java.util.List;
 public class HFOrderGroupResponse extends HFResponse {
 
 
-
     @ApiListField("data")
     List<RunnerGroup> runnerGroups;
 

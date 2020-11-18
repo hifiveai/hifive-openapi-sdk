@@ -6,7 +6,6 @@ import com.hifive.model.HttpRespInfo;
 import com.hifive.model.constant.ServerEnum;
 import com.hifive.model.constant.StringConstants;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.*;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -14,7 +13,6 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
@@ -200,7 +198,7 @@ public class HttpClientUtils {
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.error(" 发送 http-post 请求, 发生异常 " +
-                    "参数 url : " + url + ", headers : " + JSON.toJSONString(headers) + ", params : " + JSON.toJSONString(params) + ", e : " +errorMsg(e));
+                    "参数 url : " + url + ", headers : " + JSON.toJSONString(headers) + ", params : " + JSON.toJSONString(params) + ", e : " + errorMsg(e));
             return null;
         } finally {
             post.releaseConnection();
@@ -247,7 +245,7 @@ public class HttpClientUtils {
             return resp.getContent();
         } catch (Exception e) {
             e.printStackTrace();
-            LOGGER.error(" 发送 http-post 请求, 发生异常 " + "参数 url : " + url + ", headers : " + JSON.toJSONString(headers) + ", params : " + requestBody + ", e : " +errorMsg(e));
+            LOGGER.error(" 发送 http-post 请求, 发生异常 " + "参数 url : " + url + ", headers : " + JSON.toJSONString(headers) + ", params : " + requestBody + ", e : " + errorMsg(e));
             return null;
         }
     }
@@ -310,7 +308,6 @@ public class HttpClientUtils {
     }
 
 
-
     /**
      * @param url
      * @param content
@@ -342,7 +339,7 @@ public class HttpClientUtils {
             } else {
                 LOGGER.error(" 发送 http-post 请求, 拿到了错误码 : " + status + ", " +
                         "参数 url : " + url + ", content : " + content);
-                throw new ApplicationException(ServerEnum.SERVER_ERROR," 发送 http-post 请求, 拿到了错误码 : " + status, status + "");
+                throw new ApplicationException(ServerEnum.SERVER_ERROR, " 发送 http-post 请求, 拿到了错误码 : " + status, status + "");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -353,7 +350,6 @@ public class HttpClientUtils {
         }
         return result;
     }
-
 
 
     /**

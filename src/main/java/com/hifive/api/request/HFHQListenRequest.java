@@ -30,7 +30,6 @@ public class HFHQListenRequest extends HFBaseRequest<HFHQListenResponse> {
     }
 
 
-
     public String getMusicId() {
         return musicId;
     }
@@ -38,7 +37,6 @@ public class HFHQListenRequest extends HFBaseRequest<HFHQListenResponse> {
     public void setMusicId(String musicId) {
         this.musicId = musicId;
     }
-
 
 
     public String getAudioFormat() {

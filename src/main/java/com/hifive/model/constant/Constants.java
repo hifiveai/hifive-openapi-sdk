@@ -59,7 +59,6 @@ public class Constants {
     public static final String ECHACHE_XML = "ehcache.xml";
 
 
-
     public static final String ECHACHE = "ehcache";
 
 
@@ -71,7 +70,7 @@ public class Constants {
     /**
      * HIFIVE音乐开放平台产品ID
      */
-    public static final Long  OPENAPI_PRODUCT_ID = 5L;
+    public static final Long OPENAPI_PRODUCT_ID = 5L;
 
     /**
      * QPS_间隔时间（毫秒级）
@@ -89,14 +88,14 @@ public class Constants {
     public final static Integer ZUUL_JOB_LOCK_TIME_OUT = 60;
 
 
-    public final static Integer ZUUL_JOB_TIME_OUT = 60*1000;
+    public final static Integer ZUUL_JOB_TIME_OUT = 60 * 1000;
 
     public final static String ZUUL_COMPANY_JOB_LOCK = "ZUUL_COMPANY_JOB_LOCK";
 
     public final static Integer ZUUL_COMPANY_JOB_LOCK_TIME_OUT = 60;
 
 
-    public final static Integer ZUUL_COMPANY_JOB_TIME_OUT = 60*1000;
+    public final static Integer ZUUL_COMPANY_JOB_TIME_OUT = 60 * 1000;
 
 
 }

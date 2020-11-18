@@ -30,7 +30,7 @@ public class HFBaseFavoriteRequest extends HFPageRequest<HFBaseFavoriteResponse>
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("Page", getPage());
-                put("PageSize",getPageSize());
+                put("PageSize", getPageSize());
             }
         };
         return txtParams;
@@ -45,7 +45,6 @@ public class HFBaseFavoriteRequest extends HFPageRequest<HFBaseFavoriteResponse>
     public void check() throws ApiRuleException {
 
     }
-
 
 
     @Override

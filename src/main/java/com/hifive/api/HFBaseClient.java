@@ -6,14 +6,11 @@ package com.hifive.api;
 
 
 /**
- * 
  * @author runzhi
  */
 public interface HFBaseClient {
 
     /**
-     * 
-     * 
      * @param <T>
      * @param request
      * @return
@@ -22,19 +19,15 @@ public interface HFBaseClient {
     public <T extends HFResponse> T execute(HFRequest<T> request) throws HFApiException;
 
     /**
-     * 
-     * 
      * @param <T>
      * @param request
      * @return
      * @throws HFApiException
      */
     public <T extends HFResponse> T execute(HFRequest<T> request, String authToken)
-                                                                                             throws HFApiException;
+            throws HFApiException;
 
     /**
-     * 
-     * 
      * @param <T>
      * @param request
      * @param authToken

@@ -13,7 +13,6 @@ import com.hifive.api.internal.mapping.ApiField;
 public class HFTagSheetResponse extends HFResponse {
 
 
-
     @ApiField("data")
     HifivePage<TrafficTagSheet<HFMusicInfoDetail>> hifivePage;
 

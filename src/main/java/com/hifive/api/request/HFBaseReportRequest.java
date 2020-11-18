@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HFBehaviorResponse;
+
 import java.util.Map;
 
 public class HFBaseReportRequest extends HFBaseRequest<HFBehaviorResponse> {
@@ -54,7 +55,7 @@ public class HFBaseReportRequest extends HFBaseRequest<HFBehaviorResponse> {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("Action", getAction());
-                put("TargetId",getTargetId());
+                put("TargetId", getTargetId());
                 put("content", getContent());
                 put("context", getContext());
             }

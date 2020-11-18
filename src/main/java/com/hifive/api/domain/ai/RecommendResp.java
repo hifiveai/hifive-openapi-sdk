@@ -2,8 +2,10 @@ package com.hifive.api.domain.ai;
 
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
+
 import java.io.Serializable;
 import java.util.List;
+
 /**
  * 推荐歌曲响应
  *

@@ -9,7 +9,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ReflectionUtils {
 
-    /** @deprecated */
+    /**
+     * @deprecated
+     */
     @Deprecated
     public static final ReflectionUtils.MethodFilter NON_BRIDGED_METHODS = (method) -> {
         return !method.isBridge();
@@ -36,11 +38,11 @@ public class ReflectionUtils {
             throw new IllegalStateException("Could not access method: " + ex.getMessage());
         } else {
             if (ex instanceof InvocationTargetException) {
-                handleInvocationTargetException((InvocationTargetException)ex);
+                handleInvocationTargetException((InvocationTargetException) ex);
             }
 
             if (ex instanceof RuntimeException) {
-                throw (RuntimeException)ex;
+                throw (RuntimeException) ex;
             } else {
                 throw new UndeclaredThrowableException(ex);
             }
@@ -53,9 +55,9 @@ public class ReflectionUtils {
 
     public static void rethrowRuntimeException(Throwable ex) {
         if (ex instanceof RuntimeException) {
-            throw (RuntimeException)ex;
+            throw (RuntimeException) ex;
         } else if (ex instanceof Error) {
-            throw (Error)ex;
+            throw (Error) ex;
         } else {
             throw new UndeclaredThrowableException(ex);
         }
@@ -63,9 +65,9 @@ public class ReflectionUtils {
 
     public static void rethrowException(Throwable ex) throws Exception {
         if (ex instanceof Exception) {
-            throw (Exception)ex;
+            throw (Exception) ex;
         } else if (ex instanceof Error) {
-            throw (Error)ex;
+            throw (Error) ex;
         } else {
             throw new UndeclaredThrowableException(ex);
         }
@@ -92,12 +94,12 @@ public class ReflectionUtils {
     @Nullable
     public static Method findMethod(Class<?> clazz, String name, @Nullable Class<?>... paramTypes) {
 
-        for(Class searchType = clazz; searchType != null; searchType = searchType.getSuperclass()) {
+        for (Class searchType = clazz; searchType != null; searchType = searchType.getSuperclass()) {
             Method[] methods = searchType.isInterface() ? searchType.getMethods() : getDeclaredMethods(searchType);
             Method[] var5 = methods;
             int var6 = methods.length;
 
-            for(int var7 = 0; var7 < var6; ++var7) {
+            for (int var7 = 0; var7 < var6; ++var7) {
                 Method method = var5[var7];
                 if (name.equals(method.getName()) && (paramTypes == null || Arrays.equals(paramTypes, method.getParameterTypes()))) {
                     return method;
@@ -123,14 +125,18 @@ public class ReflectionUtils {
         }
     }
 
-    /** @deprecated */
+    /**
+     * @deprecated
+     */
     @Deprecated
     @Nullable
     public static Object invokeJdbcMethod(Method method, @Nullable Object target) throws SQLException {
         return invokeJdbcMethod(method, target);
     }
 
-    /** @deprecated */
+    /**
+     * @deprecated
+     */
     @Deprecated
     @Nullable
     public static Object invokeJdbcMethod(Method method, @Nullable Object target, @Nullable Object... args) throws SQLException {
@@ -140,7 +146,7 @@ public class ReflectionUtils {
             handleReflectionException(var4);
         } catch (InvocationTargetException var5) {
             if (var5.getTargetException() instanceof SQLException) {
-                throw (SQLException)var5.getTargetException();
+                throw (SQLException) var5.getTargetException();
             }
 
             handleInvocationTargetException(var5);
@@ -154,7 +160,7 @@ public class ReflectionUtils {
         Class[] var3 = declaredExceptions;
         int var4 = declaredExceptions.length;
 
-        for(int var5 = 0; var5 < var4; ++var5) {
+        for (int var5 = 0; var5 < var4; ++var5) {
             Class<?> declaredException = var3[var5];
             if (declaredException.isAssignableFrom(exceptionType)) {
                 return true;
@@ -169,7 +175,7 @@ public class ReflectionUtils {
         Method[] var3 = methods;
         int var4 = methods.length;
 
-        for(int var5 = 0; var5 < var4; ++var5) {
+        for (int var5 = 0; var5 < var4; ++var5) {
             Method method = var3[var5];
 
             try {
@@ -182,7 +188,7 @@ public class ReflectionUtils {
     }
 
     public static void doWithMethods(Class<?> clazz, ReflectionUtils.MethodCallback mc) {
-        doWithMethods(clazz, mc, (ReflectionUtils.MethodFilter)null);
+        doWithMethods(clazz, mc, (ReflectionUtils.MethodFilter) null);
     }
 
     public static void doWithMethods(Class<?> clazz, ReflectionUtils.MethodCallback mc, @Nullable ReflectionUtils.MethodFilter mf) {
@@ -191,7 +197,7 @@ public class ReflectionUtils {
         int var5 = methods.length;
 
         int var6;
-        for(var6 = 0; var6 < var5; ++var6) {
+        for (var6 = 0; var6 < var5; ++var6) {
             Method method = var4[var6];
             if (mf == null || mf.matches(method)) {
                 try {
@@ -208,7 +214,7 @@ public class ReflectionUtils {
             Class[] var10 = clazz.getInterfaces();
             var5 = var10.length;
 
-            for(var6 = 0; var6 < var5; ++var6) {
+            for (var6 = 0; var6 < var5; ++var6) {
                 Class<?> superIfc = var10[var6];
                 doWithMethods(superIfc, mc, mf);
             }
@@ -219,7 +225,7 @@ public class ReflectionUtils {
     public static Method[] getAllDeclaredMethods(Class<?> leafClass) {
         List<Method> methods = new ArrayList(32);
         doWithMethods(leafClass, methods::add);
-        return (Method[])methods.toArray(EMPTY_METHOD_ARRAY);
+        return (Method[]) methods.toArray(EMPTY_METHOD_ARRAY);
     }
 
     public static Method[] getUniqueDeclaredMethods(Class<?> leafClass) {
@@ -229,8 +235,8 @@ public class ReflectionUtils {
             Method methodBeingOverriddenWithCovariantReturnType = null;
             Iterator var4 = methods.iterator();
 
-            while(var4.hasNext()) {
-                Method existingMethod = (Method)var4.next();
+            while (var4.hasNext()) {
+                Method existingMethod = (Method) var4.next();
                 if (method.getName().equals(existingMethod.getName()) && Arrays.equals(method.getParameterTypes(), existingMethod.getParameterTypes())) {
                     if (existingMethod.getReturnType() != method.getReturnType() && existingMethod.getReturnType().isAssignableFrom(method.getReturnType())) {
                         methodBeingOverriddenWithCovariantReturnType = existingMethod;
@@ -251,11 +257,11 @@ public class ReflectionUtils {
             }
 
         });
-        return (Method[])methods.toArray(EMPTY_METHOD_ARRAY);
+        return (Method[]) methods.toArray(EMPTY_METHOD_ARRAY);
     }
 
     private static Method[] getDeclaredMethods(Class<?> clazz) {
-        Method[] result = (Method[])declaredMethodsCache.get(clazz);
+        Method[] result = (Method[]) declaredMethodsCache.get(clazz);
         if (result == null) {
             try {
                 Method[] declaredMethods = clazz.getDeclaredMethods();
@@ -265,8 +271,8 @@ public class ReflectionUtils {
                     System.arraycopy(declaredMethods, 0, result, 0, declaredMethods.length);
                     int index = declaredMethods.length;
 
-                    for(Iterator var5 = defaultMethods.iterator(); var5.hasNext(); ++index) {
-                        Method defaultMethod = (Method)var5.next();
+                    for (Iterator var5 = defaultMethods.iterator(); var5.hasNext(); ++index) {
+                        Method defaultMethod = (Method) var5.next();
                         result[index] = defaultMethod;
                     }
                 } else {
@@ -288,12 +294,12 @@ public class ReflectionUtils {
         Class[] var2 = clazz.getInterfaces();
         int var3 = var2.length;
 
-        for(int var4 = 0; var4 < var3; ++var4) {
+        for (int var4 = 0; var4 < var3; ++var4) {
             Class<?> ifc = var2[var4];
             Method[] var6 = ifc.getMethods();
             int var7 = var6.length;
 
-            for(int var8 = 0; var8 < var7; ++var8) {
+            for (int var8 = 0; var8 < var7; ++var8) {
                 Method ifcMethod = var6[var8];
                 if (!Modifier.isAbstract(ifcMethod.getModifiers())) {
                     if (result == null) {
@@ -335,7 +341,7 @@ public class ReflectionUtils {
             return false;
         } else {
             int i;
-            for(i = name.length() - 1; i >= 0 && Character.isDigit(name.charAt(i)); --i) {
+            for (i = name.length() - 1; i >= 0 && Character.isDigit(name.charAt(i)); --i) {
             }
 
             return i > "CGLIB$".length() && i < name.length() - 1 && name.charAt(i) == '$';
@@ -351,17 +357,17 @@ public class ReflectionUtils {
 
     @Nullable
     public static Field findField(Class<?> clazz, String name) {
-        return findField(clazz, name, (Class)null);
+        return findField(clazz, name, (Class) null);
     }
 
     @Nullable
     public static Field findField(Class<?> clazz, @Nullable String name, @Nullable Class<?> type) {
-        for(Class searchType = clazz; Object.class != searchType && searchType != null; searchType = searchType.getSuperclass()) {
+        for (Class searchType = clazz; Object.class != searchType && searchType != null; searchType = searchType.getSuperclass()) {
             Field[] fields = getDeclaredFields(searchType);
             Field[] var5 = fields;
             int var6 = fields.length;
 
-            for(int var7 = 0; var7 < var6; ++var7) {
+            for (int var7 = 0; var7 < var6; ++var7) {
                 Field field = var5[var7];
                 if ((name == null || name.equals(field.getName())) && (type == null || type.equals(field.getType()))) {
                     return field;
@@ -395,7 +401,7 @@ public class ReflectionUtils {
         Field[] var2 = getDeclaredFields(clazz);
         int var3 = var2.length;
 
-        for(int var4 = 0; var4 < var3; ++var4) {
+        for (int var4 = 0; var4 < var3; ++var4) {
             Field field = var2[var4];
 
             try {
@@ -408,7 +414,7 @@ public class ReflectionUtils {
     }
 
     public static void doWithFields(Class<?> clazz, ReflectionUtils.FieldCallback fc) {
-        doWithFields(clazz, fc, (ReflectionUtils.FieldFilter)null);
+        doWithFields(clazz, fc, (ReflectionUtils.FieldFilter) null);
     }
 
     public static void doWithFields(Class<?> clazz, ReflectionUtils.FieldCallback fc, @Nullable ReflectionUtils.FieldFilter ff) {
@@ -419,7 +425,7 @@ public class ReflectionUtils {
             Field[] var5 = fields;
             int var6 = fields.length;
 
-            for(int var7 = 0; var7 < var6; ++var7) {
+            for (int var7 = 0; var7 < var6; ++var7) {
                 Field field = var5[var7];
                 if (ff == null || ff.matches(field)) {
                     try {
@@ -431,12 +437,12 @@ public class ReflectionUtils {
             }
 
             targetClass = targetClass.getSuperclass();
-        } while(targetClass != null && targetClass != Object.class);
+        } while (targetClass != null && targetClass != Object.class);
 
     }
 
     private static Field[] getDeclaredFields(Class<?> clazz) {
-        Field[] result = (Field[])declaredFieldsCache.get(clazz);
+        Field[] result = (Field[]) declaredFieldsCache.get(clazz);
         if (result == null) {
             try {
                 result = clazz.getDeclaredFields();

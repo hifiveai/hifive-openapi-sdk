@@ -26,7 +26,6 @@ public class HFTrafficGroupRequest extends HFBaseRequest<HFTrafficGroupResponse>
     }
 
 
-
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {

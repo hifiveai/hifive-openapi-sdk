@@ -12,15 +12,25 @@ import java.util.Map;
  */
 public class HttpRespInfo implements Serializable {
 
-    /** 协议类型 */
+    /**
+     * 协议类型
+     */
     private String protocol;
-    /** 状态码 */
+    /**
+     * 状态码
+     */
     private String statusCode;
-    /** reasonPhrase */
+    /**
+     * reasonPhrase
+     */
     private String reasonPhrase;
-    /** 相关的响应头 */
+    /**
+     * 相关的响应头
+     */
     private Map<String, String> headers;
-    /** 响应体 */
+    /**
+     * 响应体
+     */
     private String content;
 
     public HttpRespInfo() {

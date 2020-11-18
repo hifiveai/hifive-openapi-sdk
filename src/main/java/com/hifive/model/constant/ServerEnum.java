@@ -13,12 +13,12 @@ public enum ServerEnum {
     ACCESS_DENY(405, "您的服务暂未开通，请检查接口的授权状态"),
 
 
-    FUNCTION_NOTFOUND(422,"找不到服务模块，请检查url是否正确"),
-    FUNCITON_CALLNUM_TOOMORE(423,"已达到今天调用上限"),
+    FUNCTION_NOTFOUND(422, "找不到服务模块，请检查url是否正确"),
+    FUNCITON_CALLNUM_TOOMORE(423, "已达到今天调用上限"),
 
     SERVER_ERROR(500, "系统繁忙，请稍后重试"),
     PARAM_ILLEGAL(503, "非法参数"),
-    SERVER_BUSY(504,"当前排队人数过多，请稍后再试"),
+    SERVER_BUSY(504, "当前排队人数过多，请稍后再试"),
 
 
     ;

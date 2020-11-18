@@ -4,12 +4,14 @@ package com.hifive.utils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
+
 /**
  * <p>
- *   签名工具类
+ * 签名工具类
  * </p>
+ *
  * @author yong.huang
- *@Date:
+ * @Date:
  **/
 public class SignUtil {
 
@@ -18,7 +20,7 @@ public class SignUtil {
     /**
      * 封装协议头
      **/
-    public static String headersBase64(String method,Map<String, String> headers) {
+    public static String headersBase64(String method, Map<String, String> headers) {
         StringBuffer buffer = new StringBuffer();
         buffer.append(method).append(" ");
         buffer.append(headers.get("X-HF-Action")).append(" ");
@@ -42,7 +44,7 @@ public class SignUtil {
         List<String> result = new ArrayList<>();
 
         for (String key : keys) {
-            if (StringUtils.isNotBlank(key) || StringUtils.isNotEmpty( param.get(key))) {
+            if (StringUtils.isNotBlank(key) || StringUtils.isNotEmpty(param.get(key))) {
                 result.add(key + "=" + param.get(key));
             }
         }

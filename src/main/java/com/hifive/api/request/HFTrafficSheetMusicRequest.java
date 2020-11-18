@@ -49,9 +49,9 @@ public class HFTrafficSheetMusicRequest extends HFPageRequest<HFTrafficSheetMusi
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("sheetId", getSheetId());
-                put("language",getPageSize());
+                put("language", getPageSize());
                 put("Page", getPage());
-                put("PageSize",getPageSize());
+                put("PageSize", getPageSize());
             }
         };
         return txtParams;
@@ -66,7 +66,6 @@ public class HFTrafficSheetMusicRequest extends HFPageRequest<HFTrafficSheetMusi
     public void check() throws ApiRuleException {
 
     }
-
 
 
     @Override

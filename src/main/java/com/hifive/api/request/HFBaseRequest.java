@@ -12,7 +12,7 @@ public abstract class HFBaseRequest<T extends HFResponse> implements HFRequest<T
 
     private String clientId;
 
-    private String version ="V4.0.1";
+    private String version = "V4.0.1";
 
     private String nonce;
 

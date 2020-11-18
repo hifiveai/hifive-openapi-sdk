@@ -15,7 +15,6 @@ import java.util.List;
 public class HFTrafficGroupResponse extends HFResponse {
 
 
-
     @ApiListField("data")
     List<RunnerGroup> runnerGroups;
 

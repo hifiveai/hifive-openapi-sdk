@@ -26,7 +26,6 @@ public class HFChannelRequest extends HFBaseRequest<HFChannelResponse> {
     }
 
 
-
     public Map<String, String> getTextParams() {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {

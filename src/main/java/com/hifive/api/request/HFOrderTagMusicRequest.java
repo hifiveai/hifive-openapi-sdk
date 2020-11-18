@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HFOrderTagMusicResponse;
+
 import java.util.Map;
 
 public class HFOrderTagMusicRequest extends HFPageRequest<HFOrderTagMusicResponse> {
@@ -11,7 +12,6 @@ public class HFOrderTagMusicRequest extends HFPageRequest<HFOrderTagMusicRespons
      * 标签、歌单名、歌名语言版本，英文版本数据可能空
      */
     private Integer language;
-
 
 
     private String tagId;
@@ -33,7 +33,6 @@ public class HFOrderTagMusicRequest extends HFPageRequest<HFOrderTagMusicRespons
     }
 
 
-
     public Integer getLanguage() {
         return language;
     }
@@ -41,7 +40,6 @@ public class HFOrderTagMusicRequest extends HFPageRequest<HFOrderTagMusicRespons
     public void setLanguage(Integer language) {
         this.language = language;
     }
-
 
 
     public String getTagId() {

@@ -5,6 +5,7 @@ import com.hifive.api.domain.common.es.EsCover;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import lombok.EqualsAndHashCode;
+
 import java.util.List;
 
 /**

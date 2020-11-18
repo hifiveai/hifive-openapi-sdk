@@ -40,7 +40,7 @@ public class StringUtils {
     private static boolean containsText(CharSequence str) {
         int strLen = str.length();
 
-        for(int i = 0; i < strLen; ++i) {
+        for (int i = 0; i < strLen; ++i) {
             if (!Character.isWhitespace(str.charAt(i))) {
                 return true;
             }
@@ -55,7 +55,7 @@ public class StringUtils {
         } else {
             int strLen = str.length();
 
-            for(int i = 0; i < strLen; ++i) {
+            for (int i = 0; i < strLen; ++i) {
                 if (Character.isWhitespace(str.charAt(i))) {
                     return true;
                 }
@@ -66,7 +66,7 @@ public class StringUtils {
     }
 
     public static boolean containsWhitespace(@Nullable String str) {
-        return containsWhitespace((CharSequence)str);
+        return containsWhitespace((CharSequence) str);
     }
 
     public static String trimWhitespace(String str) {
@@ -76,10 +76,10 @@ public class StringUtils {
             int beginIndex = 0;
 
             int endIndex;
-            for(endIndex = str.length() - 1; beginIndex <= endIndex && Character.isWhitespace(str.charAt(beginIndex)); ++beginIndex) {
+            for (endIndex = str.length() - 1; beginIndex <= endIndex && Character.isWhitespace(str.charAt(beginIndex)); ++beginIndex) {
             }
 
-            while(endIndex > beginIndex && Character.isWhitespace(str.charAt(endIndex))) {
+            while (endIndex > beginIndex && Character.isWhitespace(str.charAt(endIndex))) {
                 --endIndex;
             }
 
@@ -94,7 +94,7 @@ public class StringUtils {
             int len = str.length();
             StringBuilder sb = new StringBuilder(str.length());
 
-            for(int i = 0; i < len; ++i) {
+            for (int i = 0; i < len; ++i) {
                 char c = str.charAt(i);
                 if (!Character.isWhitespace(c)) {
                     sb.append(c);
@@ -111,7 +111,7 @@ public class StringUtils {
         } else {
             StringBuilder sb = new StringBuilder(str);
 
-            while(sb.length() > 0 && Character.isWhitespace(sb.charAt(0))) {
+            while (sb.length() > 0 && Character.isWhitespace(sb.charAt(0))) {
                 sb.deleteCharAt(0);
             }
 
@@ -125,7 +125,7 @@ public class StringUtils {
         } else {
             StringBuilder sb = new StringBuilder(str);
 
-            while(sb.length() > 0 && Character.isWhitespace(sb.charAt(sb.length() - 1))) {
+            while (sb.length() > 0 && Character.isWhitespace(sb.charAt(sb.length() - 1))) {
                 sb.deleteCharAt(sb.length() - 1);
             }
 
@@ -139,7 +139,7 @@ public class StringUtils {
         } else {
             StringBuilder sb = new StringBuilder(str);
 
-            while(sb.length() > 0 && sb.charAt(0) == leadingCharacter) {
+            while (sb.length() > 0 && sb.charAt(0) == leadingCharacter) {
                 sb.deleteCharAt(0);
             }
 
@@ -153,7 +153,7 @@ public class StringUtils {
         } else {
             StringBuilder sb = new StringBuilder(str);
 
-            while(sb.length() > 0 && sb.charAt(sb.length() - 1) == trailingCharacter) {
+            while (sb.length() > 0 && sb.charAt(sb.length() - 1) == trailingCharacter) {
                 sb.deleteCharAt(sb.length() - 1);
             }
 
@@ -173,7 +173,7 @@ public class StringUtils {
         if (index + substring.length() > str.length()) {
             return false;
         } else {
-            for(int i = 0; i < substring.length(); ++i) {
+            for (int i = 0; i < substring.length(); ++i) {
                 if (str.charAt(index + i) != substring.charAt(i)) {
                     return false;
                 }
@@ -188,7 +188,7 @@ public class StringUtils {
             int count = 0;
 
             int idx;
-            for(int pos = 0; (idx = str.indexOf(sub, pos)) != -1; pos = idx + sub.length()) {
+            for (int pos = 0; (idx = str.indexOf(sub, pos)) != -1; pos = idx + sub.length()) {
                 ++count;
             }
 
@@ -212,7 +212,7 @@ public class StringUtils {
                 StringBuilder sb = new StringBuilder(capacity);
                 int pos = 0;
 
-                for(int patLen = oldPattern.length(); index >= 0; index = inString.indexOf(oldPattern, pos)) {
+                for (int patLen = oldPattern.length(); index >= 0; index = inString.indexOf(oldPattern, pos)) {
                     sb.append(inString.substring(pos, index));
                     sb.append(newPattern);
                     pos = index + patLen;
@@ -234,7 +234,7 @@ public class StringUtils {
         if (hasLength(inString) && hasLength(charsToDelete)) {
             StringBuilder sb = new StringBuilder(inString.length());
 
-            for(int i = 0; i < inString.length(); ++i) {
+            for (int i = 0; i < inString.length(); ++i) {
                 char c = inString.charAt(i);
                 if (charsToDelete.indexOf(c) == -1) {
                     sb.append(c);
@@ -254,7 +254,7 @@ public class StringUtils {
 
     @Nullable
     public static Object quoteIfString(@Nullable Object obj) {
-        return obj instanceof String ? quote((String)obj) : obj;
+        return obj instanceof String ? quote((String) obj) : obj;
     }
 
     public static String unqualify(String qualifiedName) {
@@ -353,11 +353,11 @@ public class StringUtils {
         }
         char[] chars = obj.toString().toCharArray();
         int length = chars.length;
-        if(length < 1)
+        if (length < 1)
             return false;
 
         int i = 0;
-        if(length > 1 && chars[0] == '-')
+        if (length > 1 && chars[0] == '-')
             i = 1;
 
         for (; i < length; i++) {
@@ -376,7 +376,7 @@ public class StringUtils {
             ByteArrayOutputStream bos = new ByteArrayOutputStream(length);
             boolean changed = false;
 
-            for(int i = 0; i < length; ++i) {
+            for (int i = 0; i < length; ++i) {
                 int ch = source.charAt(i);
                 if (ch == '%') {
                     if (i + 2 >= length) {
@@ -391,7 +391,7 @@ public class StringUtils {
                         throw new IllegalArgumentException("Invalid encoded sequence \"" + source.substring(i) + "\"");
                     }
 
-                    bos.write((char)((u << 4) + l));
+                    bos.write((char) ((u << 4) + l));
                     i += 2;
                     changed = true;
                 } else {
@@ -450,7 +450,7 @@ public class StringUtils {
     }
 
     private static void validateLocalePart(String localePart) {
-        for(int i = 0; i < localePart.length(); ++i) {
+        for (int i = 0; i < localePart.length(); ++i) {
             char ch = localePart.charAt(i);
             if (ch != ' ' && ch != '_' && ch != '-' && ch != '#' && !Character.isLetterOrDigit(ch)) {
                 throw new IllegalArgumentException("Locale part \"" + localePart + "\" contains invalid characters");
@@ -459,7 +459,9 @@ public class StringUtils {
 
     }
 
-    /** @deprecated */
+    /**
+     * @deprecated
+     */
     @Deprecated
     public static String toLanguageTag(Locale locale) {
         return locale.getLanguage() + (hasText(locale.getCountry()) ? "-" + locale.getCountry() : "");
@@ -475,11 +477,11 @@ public class StringUtils {
     }
 
     public static String[] toStringArray(@Nullable Collection<String> collection) {
-        return collection != null ? (String[])collection.toArray(new String[0]) : new String[0];
+        return collection != null ? (String[]) collection.toArray(new String[0]) : new String[0];
     }
 
     public static String[] toStringArray(@Nullable Enumeration<String> enumeration) {
-        return enumeration != null ? toStringArray((Collection)Collections.list(enumeration)) : new String[0];
+        return enumeration != null ? toStringArray((Collection) Collections.list(enumeration)) : new String[0];
     }
 
 
@@ -500,8 +502,6 @@ public class StringUtils {
     }
 
 
-
-
     public static String[] tokenizeToStringArray(@Nullable String str, String delimiters) {
         return tokenizeToStringArray(str, delimiters, true, true);
     }
@@ -513,18 +513,18 @@ public class StringUtils {
             StringTokenizer st = new StringTokenizer(str, delimiters);
             ArrayList tokens = new ArrayList();
 
-            while(true) {
+            while (true) {
                 String token;
                 do {
                     if (!st.hasMoreTokens()) {
-                        return toStringArray((Collection)tokens);
+                        return toStringArray((Collection) tokens);
                     }
 
                     token = st.nextToken();
                     if (trimTokens) {
                         token = token.trim();
                     }
-                } while(ignoreEmptyTokens && token.length() <= 0);
+                } while (ignoreEmptyTokens && token.length() <= 0);
 
                 tokens.add(token);
             }
@@ -532,7 +532,7 @@ public class StringUtils {
     }
 
     public static String[] delimitedListToStringArray(@Nullable String str, @Nullable String delimiter) {
-        return delimitedListToStringArray(str, delimiter, (String)null);
+        return delimitedListToStringArray(str, delimiter, (String) null);
     }
 
     public static String[] delimitedListToStringArray(@Nullable String str, @Nullable String delimiter, @Nullable String charsToDelete) {
@@ -544,12 +544,12 @@ public class StringUtils {
             List<String> result = new ArrayList();
             int pos;
             if (delimiter.isEmpty()) {
-                for(pos = 0; pos < str.length(); ++pos) {
+                for (pos = 0; pos < str.length(); ++pos) {
                     result.add(deleteAny(str.substring(pos, pos + 1), charsToDelete));
                 }
             } else {
                 int delPos;
-                for(pos = 0; (delPos = str.indexOf(delimiter, pos)) != -1; pos = delPos + delimiter.length()) {
+                for (pos = 0; (delPos = str.indexOf(delimiter, pos)) != -1; pos = delPos + delimiter.length()) {
                     result.add(deleteAny(str.substring(pos, delPos), charsToDelete));
                 }
 
@@ -558,7 +558,7 @@ public class StringUtils {
                 }
             }
 
-            return toStringArray((Collection)result);
+            return toStringArray((Collection) result);
         }
     }
 

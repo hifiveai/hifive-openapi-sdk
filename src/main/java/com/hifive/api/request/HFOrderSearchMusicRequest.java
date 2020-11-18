@@ -17,7 +17,6 @@ public class HFOrderSearchMusicRequest extends HFPageRequest<HFOrderSearchMusicR
     private Integer language;
 
 
-
     @Override
     public String getApiMethodName() {
         return "OrderSearchMusic";

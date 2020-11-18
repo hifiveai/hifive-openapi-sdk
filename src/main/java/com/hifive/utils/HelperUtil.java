@@ -71,9 +71,7 @@ public class HelperUtil {
     }
 
 
-
-
-    public static String headersBase64(String method,Map<String, String> headers) {
+    public static String headersBase64(String method, Map<String, String> headers) {
         StringBuffer buffer = new StringBuffer();
         buffer.append(method).append(" ");
         buffer.append(headers.get("X-HF-Action")).append(" ");

@@ -17,7 +17,6 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.*;
 
 /**
- * 
  * @author runzhi
  */
 public class HFSignature {
@@ -49,13 +48,13 @@ public class HFSignature {
     }
 
     public static String rsaSign(String content, String privateKey, String charset)
-                                                                                   throws HFApiException {
+            throws HFApiException {
         try {
             PrivateKey priKey = getPrivateKeyFromPKCS8(HFConstants.SIGN_TYPE_RSA,
-                new ByteArrayInputStream(privateKey.getBytes()));
+                    new ByteArrayInputStream(privateKey.getBytes()));
 
             java.security.Signature signature = java.security.Signature
-                .getInstance(HFConstants.SIGN_ALGORITHMS);
+                    .getInstance(HFConstants.SIGN_ALGORITHMS);
 
             signature.initSign(priKey);
 
@@ -74,7 +73,7 @@ public class HFSignature {
     }
 
     public static PrivateKey getPrivateKeyFromPKCS8(String algorithm, InputStream ins)
-                                                                                      throws Exception {
+            throws Exception {
         if (ins == null || StringUtils.isEmpty(algorithm)) {
             return null;
         }

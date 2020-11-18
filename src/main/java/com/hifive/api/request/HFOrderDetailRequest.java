@@ -11,10 +11,8 @@ public class HFOrderDetailRequest extends HFBaseRequest<HFOrderDetailResponse> {
 
     /**
      * 订单id
-     *
      **/
     private String orderId;
-
 
 
     @Override
@@ -32,7 +30,6 @@ public class HFOrderDetailRequest extends HFBaseRequest<HFOrderDetailResponse> {
     public void setTimestamp(Long timestamp) {
 
     }
-
 
 
     public String getOrderId() {

@@ -49,7 +49,6 @@ public class HFOrderListenRequest extends HFBaseRequest<HFOrderListenResponse> {
     }
 
 
-
     public String getAudioFormat() {
         return audioFormat;
     }

@@ -7,7 +7,6 @@ package com.hifive.api;
 import java.io.*;
 
 /**
- * 
  * @author runzhi
  */
 public class StreamUtil {
@@ -64,9 +63,9 @@ public class StreamUtil {
     }
 
     public static String readText(InputStream in, String encoding, int bufferSize)
-                                                                                  throws IOException {
+            throws IOException {
         Reader reader = (encoding == null) ? new InputStreamReader(in) : new InputStreamReader(in,
-            encoding);
+                encoding);
 
         return readText(reader, bufferSize);
     }
@@ -84,7 +83,7 @@ public class StreamUtil {
 
     private static class SynchronizedOutputStream extends OutputStream {
         private OutputStream out;
-        private Object       lock;
+        private Object lock;
 
         SynchronizedOutputStream(OutputStream out) {
             this(out, out);

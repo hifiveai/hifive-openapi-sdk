@@ -3,6 +3,7 @@ package com.hifive.api.request;
 import com.hifive.api.ApiRuleException;
 import com.hifive.api.internal.util.HifiveHashMap;
 import com.hifive.api.response.HFSheetMusicResponse;
+
 import java.util.Map;
 
 public class HFSheetMusicRequest extends HFPageRequest<HFSheetMusicResponse> {
@@ -48,9 +49,9 @@ public class HFSheetMusicRequest extends HFPageRequest<HFSheetMusicResponse> {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("sheetId", getSheetId());
-                put("language",getPageSize());
+                put("language", getPageSize());
                 put("Page", getPage());
-                put("PageSize",getPageSize());
+                put("PageSize", getPageSize());
             }
         };
         return txtParams;
@@ -65,7 +66,6 @@ public class HFSheetMusicRequest extends HFPageRequest<HFSheetMusicResponse> {
     public void check() throws ApiRuleException {
 
     }
-
 
 
     @Override

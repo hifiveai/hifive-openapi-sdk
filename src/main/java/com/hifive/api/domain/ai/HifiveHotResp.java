@@ -4,6 +4,7 @@ import com.hifive.api.internal.mapping.ApiListField;
 
 import java.io.Serializable;
 import java.util.List;
+
 /**
  * 热门音乐
  *

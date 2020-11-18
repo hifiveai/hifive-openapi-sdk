@@ -45,7 +45,6 @@ public class HFOrderTagRequest extends HFBaseRequest<HFOrderTagResponse> {
     }
 
 
-
     @Override
     public void putOtherTextParam(String key, String value) {
 
