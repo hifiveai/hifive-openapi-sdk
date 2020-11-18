@@ -12,10 +12,10 @@ import com.hifive.api.internal.mapping.ApiField;
  * @since 1.0, Sep 12, 2009
  */
 public class HFHotResponse extends HFResponse {
-/*    @ApiField("data")
-    MusicPage page;*/
+    /*    @ApiField("data")
+        MusicPage page;*/
     @ApiField("data")
-HifivePage<HFMusicInfoDetail> hifivePage;
+    HifivePage<HFMusicInfoDetail> hifivePage;
 
     public HifivePage<HFMusicInfoDetail> getHifivePage() {
         return hifivePage;

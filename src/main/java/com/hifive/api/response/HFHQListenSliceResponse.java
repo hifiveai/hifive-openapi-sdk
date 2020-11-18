@@ -13,7 +13,6 @@ import com.hifive.api.internal.mapping.ApiField;
 public class HFHQListenSliceResponse extends HFResponse {
 
 
-
     @ApiField("data")
     HFMusicListenSlice hifiveMusicListenSlice;
 

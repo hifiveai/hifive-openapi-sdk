@@ -6,7 +6,6 @@ import com.hifive.api.domain.common.base.HFBaseMusicInfo;
 import com.hifive.api.domain.common.base.HFBaseVersion;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
-import lombok.Data;
 import java.util.List;
 
 
