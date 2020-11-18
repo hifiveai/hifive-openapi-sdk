@@ -3,7 +3,12 @@ package com.hifive.api.domain.common.base;
 
 import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
-
+/**
+ * 音乐详情
+ *
+ * @author yong.huang
+ * @since 1.0, Sep 13, 2009
+ */
 public abstract class HFBaseMusicDetails extends HFObject {
     /**
      * 封面

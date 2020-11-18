@@ -1,11 +1,13 @@
 package com.hifive.api.domain.ai;
 
 import com.hifive.api.internal.mapping.ApiField;
-import com.hifive.api.internal.mapping.ApiListField;
-import lombok.Data;
-
 import java.io.Serializable;
-
+/**
+ * 推荐歌曲
+ *
+ * @author yong.huang
+ * @since 1.0, Sep 13, 2009
+ */
 public class RecommendFile implements Serializable {
     @ApiField("songId")
     private String songId;

@@ -1,9 +1,13 @@
 package com.hifive.api.domain.ai;
 
 import com.hifive.api.internal.mapping.ApiField;
-
 import java.io.Serializable;
-
+/**
+ * 热门音乐文件
+ *
+ * @author yong.huang
+ * @since 1.0, Sep 13, 2009
+ */
 public class HifiveHotFile implements Serializable {
     @ApiField("id")
     private String id;

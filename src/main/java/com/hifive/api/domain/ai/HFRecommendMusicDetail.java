@@ -4,11 +4,15 @@ import com.hifive.api.domain.common.HFMusicVersion;
 import com.hifive.api.domain.common.es.EsCover;
 import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
-
 import java.util.List;
 
+/**
+ * 推荐详情
+ *
+ * @author yong.huang
+ * @since 1.0, Sep 13, 2009
+ */
 @EqualsAndHashCode(callSuper = true)
 public class HFRecommendMusicDetail extends HFRecommendMusic {
 

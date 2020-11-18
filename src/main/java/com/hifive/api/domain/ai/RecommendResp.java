@@ -4,7 +4,12 @@ import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import java.io.Serializable;
 import java.util.List;
-
+/**
+ * 推荐歌曲响应
+ *
+ * @author yong.huang
+ * @since 1.0, Sep 13, 2009
+ */
 public class RecommendResp implements Serializable {
     @ApiField("songListId")
     private String songListId;

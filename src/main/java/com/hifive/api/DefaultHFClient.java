@@ -4,7 +4,6 @@ package com.hifive.api;
 import com.hifive.api.internal.parser.json.ObjectJsonParser;
 import com.hifive.api.internal.parser.xml.ObjectXmlParser;
 import com.hifive.api.internal.util.*;
-import com.hifive.utils.HttpClientUtils;
 import com.hifive.utils.HttpKit;
 
 import java.io.IOException;

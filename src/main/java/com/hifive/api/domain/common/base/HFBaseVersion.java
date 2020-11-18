@@ -3,7 +3,12 @@ package com.hifive.api.domain.common.base;
 
 import com.hifive.api.HFObject;
 import com.hifive.api.internal.mapping.ApiField;
-
+/**
+ * 音乐版本信息
+ *
+ * @author yong.huang
+ * @since 1.0, Sep 13, 2009
+ */
 public class HFBaseVersion extends HFObject {
     @ApiField("id")
     private Integer id;
