@@ -1,6 +1,5 @@
 package com.hifive.utils;
 
-import com.sun.istack.internal.Nullable;
 
 import java.lang.reflect.*;
 import java.sql.SQLException;
@@ -86,13 +85,13 @@ public class ReflectionUtils {
 
     }
 
-    @Nullable
+    
     public static Method findMethod(Class<?> clazz, String name) {
         return findMethod(clazz, name);
     }
 
-    @Nullable
-    public static Method findMethod(Class<?> clazz, String name, @Nullable Class<?>... paramTypes) {
+    
+    public static Method findMethod(Class<?> clazz, String name,  Class<?>... paramTypes) {
 
         for (Class searchType = clazz; searchType != null; searchType = searchType.getSuperclass()) {
             Method[] methods = searchType.isInterface() ? searchType.getMethods() : getDeclaredMethods(searchType);
@@ -110,13 +109,13 @@ public class ReflectionUtils {
         return null;
     }
 
-    @Nullable
-    public static Object invokeMethod(Method method, @Nullable Object target) {
+    
+    public static Object invokeMethod(Method method,  Object target) {
         return invokeMethod(method, target);
     }
 
-    @Nullable
-    public static Object invokeMethod(Method method, @Nullable Object target, @Nullable Object... args) {
+    
+    public static Object invokeMethod(Method method,  Object target,  Object... args) {
         try {
             return method.invoke(target, args);
         } catch (Exception var4) {
@@ -129,8 +128,8 @@ public class ReflectionUtils {
      * @deprecated
      */
     @Deprecated
-    @Nullable
-    public static Object invokeJdbcMethod(Method method, @Nullable Object target) throws SQLException {
+    
+    public static Object invokeJdbcMethod(Method method,  Object target) throws SQLException {
         return invokeJdbcMethod(method, target);
     }
 
@@ -138,8 +137,8 @@ public class ReflectionUtils {
      * @deprecated
      */
     @Deprecated
-    @Nullable
-    public static Object invokeJdbcMethod(Method method, @Nullable Object target, @Nullable Object... args) throws SQLException {
+    
+    public static Object invokeJdbcMethod(Method method,  Object target,  Object... args) throws SQLException {
         try {
             return method.invoke(target, args);
         } catch (IllegalAccessException var4) {
@@ -191,7 +190,7 @@ public class ReflectionUtils {
         doWithMethods(clazz, mc, (ReflectionUtils.MethodFilter) null);
     }
 
-    public static void doWithMethods(Class<?> clazz, ReflectionUtils.MethodCallback mc, @Nullable ReflectionUtils.MethodFilter mf) {
+    public static void doWithMethods(Class<?> clazz, ReflectionUtils.MethodCallback mc,  ReflectionUtils.MethodFilter mf) {
         Method[] methods = getDeclaredMethods(clazz);
         Method[] var4 = methods;
         int var5 = methods.length;
@@ -288,7 +287,7 @@ public class ReflectionUtils {
         return result;
     }
 
-    @Nullable
+    
     private static List<Method> findConcreteMethodsOnInterfaces(Class<?> clazz) {
         List<Method> result = null;
         Class[] var2 = clazz.getInterfaces();
@@ -314,7 +313,7 @@ public class ReflectionUtils {
         return result;
     }
 
-    public static boolean isEqualsMethod(@Nullable Method method) {
+    public static boolean isEqualsMethod( Method method) {
         if (method != null && method.getName().equals("equals")) {
             Class<?>[] paramTypes = method.getParameterTypes();
             return paramTypes.length == 1 && paramTypes[0] == Object.class;
@@ -323,15 +322,15 @@ public class ReflectionUtils {
         }
     }
 
-    public static boolean isHashCodeMethod(@Nullable Method method) {
+    public static boolean isHashCodeMethod( Method method) {
         return method != null && method.getName().equals("hashCode") && method.getParameterCount() == 0;
     }
 
-    public static boolean isToStringMethod(@Nullable Method method) {
+    public static boolean isToStringMethod( Method method) {
         return method != null && method.getName().equals("toString") && method.getParameterCount() == 0;
     }
 
-    public static boolean isObjectMethod(@Nullable Method method) {
+    public static boolean isObjectMethod( Method method) {
         return method != null && (method.getDeclaringClass() == Object.class || isEqualsMethod(method) || isHashCodeMethod(method) || isToStringMethod(method));
     }
 
@@ -355,13 +354,13 @@ public class ReflectionUtils {
 
     }
 
-    @Nullable
+    
     public static Field findField(Class<?> clazz, String name) {
         return findField(clazz, name, (Class) null);
     }
 
-    @Nullable
-    public static Field findField(Class<?> clazz, @Nullable String name, @Nullable Class<?> type) {
+    
+    public static Field findField(Class<?> clazz,  String name,  Class<?> type) {
         for (Class searchType = clazz; Object.class != searchType && searchType != null; searchType = searchType.getSuperclass()) {
             Field[] fields = getDeclaredFields(searchType);
             Field[] var5 = fields;
@@ -378,7 +377,7 @@ public class ReflectionUtils {
         return null;
     }
 
-    public static void setField(Field field, @Nullable Object target, @Nullable Object value) {
+    public static void setField(Field field,  Object target,  Object value) {
         try {
             field.set(target, value);
         } catch (IllegalAccessException var4) {
@@ -387,8 +386,8 @@ public class ReflectionUtils {
         }
     }
 
-    @Nullable
-    public static Object getField(Field field, @Nullable Object target) {
+    
+    public static Object getField(Field field,  Object target) {
         try {
             return field.get(target);
         } catch (IllegalAccessException var3) {
@@ -417,7 +416,7 @@ public class ReflectionUtils {
         doWithFields(clazz, fc, (ReflectionUtils.FieldFilter) null);
     }
 
-    public static void doWithFields(Class<?> clazz, ReflectionUtils.FieldCallback fc, @Nullable ReflectionUtils.FieldFilter ff) {
+    public static void doWithFields(Class<?> clazz, ReflectionUtils.FieldCallback fc,  ReflectionUtils.FieldFilter ff) {
         Class targetClass = clazz;
 
         do {

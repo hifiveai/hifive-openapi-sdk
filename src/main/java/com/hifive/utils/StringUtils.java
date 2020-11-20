@@ -1,6 +1,5 @@
 package com.hifive.utils;
 
-import com.sun.istack.internal.Nullable;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.Charset;
@@ -17,23 +16,23 @@ public class StringUtils {
     public StringUtils() {
     }
 
-    public static boolean isEmpty(@Nullable Object str) {
+    public static boolean isEmpty(Object str) {
         return str == null || "".equals(str);
     }
 
-    public static boolean hasLength(@Nullable CharSequence str) {
+    public static boolean hasLength(CharSequence str) {
         return str != null && str.length() > 0;
     }
 
-    public static boolean hasLength(@Nullable String str) {
+    public static boolean hasLength(String str) {
         return str != null && !str.isEmpty();
     }
 
-    public static boolean hasText(@Nullable CharSequence str) {
+    public static boolean hasText(CharSequence str) {
         return str != null && str.length() > 0 && containsText(str);
     }
 
-    public static boolean hasText(@Nullable String str) {
+    public static boolean hasText(String str) {
         return str != null && !str.isEmpty() && containsText(str);
     }
 
@@ -49,7 +48,7 @@ public class StringUtils {
         return false;
     }
 
-    public static boolean containsWhitespace(@Nullable CharSequence str) {
+    public static boolean containsWhitespace(CharSequence str) {
         if (!hasLength(str)) {
             return false;
         } else {
@@ -65,7 +64,7 @@ public class StringUtils {
         }
     }
 
-    public static boolean containsWhitespace(@Nullable String str) {
+    public static boolean containsWhitespace(String str) {
         return containsWhitespace((CharSequence) str);
     }
 
@@ -161,11 +160,11 @@ public class StringUtils {
         }
     }
 
-    public static boolean startsWithIgnoreCase(@Nullable String str, @Nullable String prefix) {
+    public static boolean startsWithIgnoreCase(String str, String prefix) {
         return str != null && prefix != null && str.length() >= prefix.length() && str.regionMatches(true, 0, prefix, 0, prefix.length());
     }
 
-    public static boolean endsWithIgnoreCase(@Nullable String str, @Nullable String suffix) {
+    public static boolean endsWithIgnoreCase(String str, String suffix) {
         return str != null && suffix != null && str.length() >= suffix.length() && str.regionMatches(true, str.length() - suffix.length(), suffix, 0, suffix.length());
     }
 
@@ -198,7 +197,7 @@ public class StringUtils {
         }
     }
 
-    public static String replace(String inString, String oldPattern, @Nullable String newPattern) {
+    public static String replace(String inString, String oldPattern, String newPattern) {
         if (hasLength(inString) && hasLength(oldPattern) && newPattern != null) {
             int index = inString.indexOf(oldPattern);
             if (index == -1) {
@@ -230,7 +229,7 @@ public class StringUtils {
         return replace(inString, pattern, "");
     }
 
-    public static String deleteAny(String inString, @Nullable String charsToDelete) {
+    public static String deleteAny(String inString, String charsToDelete) {
         if (hasLength(inString) && hasLength(charsToDelete)) {
             StringBuilder sb = new StringBuilder(inString.length());
 
@@ -247,13 +246,13 @@ public class StringUtils {
         }
     }
 
-    @Nullable
-    public static String quote(@Nullable String str) {
+    
+    public static String quote(String str) {
         return str != null ? "'" + str + "'" : null;
     }
 
-    @Nullable
-    public static Object quoteIfString(@Nullable Object obj) {
+    
+    public static Object quoteIfString(Object obj) {
         return obj instanceof String ? quote((String) obj) : obj;
     }
 
@@ -295,8 +294,8 @@ public class StringUtils {
         }
     }
 
-    @Nullable
-    public static String getFilename(@Nullable String path) {
+    
+    public static String getFilename(String path) {
         if (path == null) {
             return null;
         } else {
@@ -305,8 +304,8 @@ public class StringUtils {
         }
     }
 
-    @Nullable
-    public static String getFilenameExtension(@Nullable String path) {
+    
+    public static String getFilenameExtension(String path) {
         if (path == null) {
             return null;
         } else {
@@ -403,7 +402,7 @@ public class StringUtils {
         }
     }
 
-    @Nullable
+    
     public static Locale parseLocale(String localeValue) {
         String[] tokens = tokenizeLocaleSource(localeValue);
         if (tokens.length == 1) {
@@ -417,7 +416,7 @@ public class StringUtils {
         return parseLocaleTokens(localeValue, tokens);
     }
 
-    @Nullable
+    
     public static Locale parseLocaleString(String localeString) {
         return parseLocaleTokens(localeString, tokenizeLocaleSource(localeString));
     }
@@ -426,7 +425,7 @@ public class StringUtils {
         return tokenizeToStringArray(localeSource, "_ ", false, false);
     }
 
-    @Nullable
+    
     private static Locale parseLocaleTokens(String localeString, String[] tokens) {
         String language = tokens.length > 0 ? tokens[0] : "";
         String country = tokens.length > 1 ? tokens[1] : "";
@@ -476,17 +475,17 @@ public class StringUtils {
         }
     }
 
-    public static String[] toStringArray(@Nullable Collection<String> collection) {
+    public static String[] toStringArray(Collection<String> collection) {
         return collection != null ? (String[]) collection.toArray(new String[0]) : new String[0];
     }
 
-    public static String[] toStringArray(@Nullable Enumeration<String> enumeration) {
+    public static String[] toStringArray(Enumeration<String> enumeration) {
         return enumeration != null ? toStringArray((Collection) Collections.list(enumeration)) : new String[0];
     }
 
 
-    @Nullable
-    public static String[] split(@Nullable String toSplit, @Nullable String delimiter) {
+    
+    public static String[] split(String toSplit, String delimiter) {
         if (hasLength(toSplit) && hasLength(delimiter)) {
             int offset = toSplit.indexOf(delimiter);
             if (offset < 0) {
@@ -502,11 +501,11 @@ public class StringUtils {
     }
 
 
-    public static String[] tokenizeToStringArray(@Nullable String str, String delimiters) {
+    public static String[] tokenizeToStringArray(String str, String delimiters) {
         return tokenizeToStringArray(str, delimiters, true, true);
     }
 
-    public static String[] tokenizeToStringArray(@Nullable String str, String delimiters, boolean trimTokens, boolean ignoreEmptyTokens) {
+    public static String[] tokenizeToStringArray(String str, String delimiters, boolean trimTokens, boolean ignoreEmptyTokens) {
         if (str == null) {
             return new String[0];
         } else {
@@ -531,11 +530,11 @@ public class StringUtils {
         }
     }
 
-    public static String[] delimitedListToStringArray(@Nullable String str, @Nullable String delimiter) {
+    public static String[] delimitedListToStringArray(String str, String delimiter) {
         return delimitedListToStringArray(str, delimiter, (String) null);
     }
 
-    public static String[] delimitedListToStringArray(@Nullable String str, @Nullable String delimiter, @Nullable String charsToDelete) {
+    public static String[] delimitedListToStringArray(String str, String delimiter, String charsToDelete) {
         if (str == null) {
             return new String[0];
         } else if (delimiter == null) {
@@ -562,11 +561,11 @@ public class StringUtils {
         }
     }
 
-    public static String[] commaDelimitedListToStringArray(@Nullable String str) {
+    public static String[] commaDelimitedListToStringArray(String str) {
         return delimitedListToStringArray(str, ",");
     }
 
-    public static Set<String> commaDelimitedListToSet(@Nullable String str) {
+    public static Set<String> commaDelimitedListToSet(String str) {
         String[] tokens = commaDelimitedListToStringArray(str);
         return new LinkedHashSet(Arrays.asList(tokens));
     }
