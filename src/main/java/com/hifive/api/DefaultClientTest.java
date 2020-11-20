@@ -14,7 +14,7 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        HifiveBaseLoginRequest(client);
+        hifiveSheetMusicRequestTest(client);
         //hifiveTagSheetRequestTest(client);
         //HifiveBaseLoginRequest(client);
         //  HifiveBaseLoginRequest(client);
@@ -233,6 +233,9 @@ public class DefaultClientTest {
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
         request.setSheetId(1203L);
+        request.setLanguage(1);
+        request.setPage(1);
+        request.setPageSize(5);
         try {
             HFSheetMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));

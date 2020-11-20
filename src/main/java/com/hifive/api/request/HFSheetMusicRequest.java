@@ -49,7 +49,7 @@ public class HFSheetMusicRequest extends HFPageRequest<HFSheetMusicResponse> {
         HifiveHashMap txtParams = new HifiveHashMap() {
             {
                 put("sheetId", getSheetId());
-                put("language", getPageSize());
+                put("language", getLanguage());
                 put("Page", getPage());
                 put("PageSize", getPageSize());
             }
