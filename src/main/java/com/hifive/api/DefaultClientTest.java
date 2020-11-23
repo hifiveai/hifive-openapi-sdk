@@ -14,7 +14,7 @@ public class DefaultClientTest {
         String secret = "2d241e8f934d47d5";
         System.out.println(System.currentTimeMillis());
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        hifiveTrafficListenRequestTest(client);
+        hifiveBaseHotRequestTest(client);
         //hifiveTagSheetRequestTest(client);
         //HifiveBaseLoginRequest(client);
         //  HifiveBaseLoginRequest(client);
