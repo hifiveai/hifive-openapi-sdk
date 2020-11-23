@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class Tip extends HFObject {
@@ -23,4 +23,28 @@ public class Tip extends HFObject {
      */
     @ApiField("desc")
     private String desc;
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getSuitable() {
+        return suitable;
+    }
+
+    public void setSuitable(String suitable) {
+        this.suitable = suitable;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 }

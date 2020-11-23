@@ -1,15 +1,12 @@
 package com.hifive.api.domain.common;
 
-import com.hifive.api.internal.mapping.ApiField;
 import com.hifive.api.internal.mapping.ApiListField;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class TagPrice implements Serializable {
@@ -26,4 +23,20 @@ public class TagPrice implements Serializable {
      **/
     @ApiListField("prices")
     private List<Long> prices;
+
+    public List<Tag> getTagList() {
+        return tagList;
+    }
+
+    public void setTagList(List<Tag> tagList) {
+        this.tagList = tagList;
+    }
+
+    public List<Long> getPrices() {
+        return prices;
+    }
+
+    public void setPrices(List<Long> prices) {
+        this.prices = prices;
+    }
 }
