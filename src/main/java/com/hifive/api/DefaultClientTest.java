@@ -9,12 +9,12 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) {
-        String url = "https://hifive-openapi-qa.hifiveai.com";
-        String appkey = "5216d02806d5464b943492838b7e4390";
-        String secret = "2d241e8f934d47d5";
+        String url = "https://gateway.open.hifiveai.com";
+        String appkey = "Ig4Uzegv";
+        String secret = "OtdYWbXr";
         System.out.println(System.currentTimeMillis());
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        hifiveBaseHotRequestTest(client);
+        hifiveHQListenRequestTest(client);
         //hifiveTagSheetRequestTest(client);
         //HifiveBaseLoginRequest(client);
         //  HifiveBaseLoginRequest(client);
@@ -269,7 +269,6 @@ public class DefaultClientTest {
         HFChannelRequest request = new HFChannelRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
-
         try {
             HFChannelResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -283,7 +282,7 @@ public class DefaultClientTest {
         HFChannelSheetRequest request = new HFChannelSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
         request.setClientId("1223234343");
-        request.setGroupId("csa0t86qv24");
+        request.setGroupId("fGGIsKue5VT");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
         request.setPage(1);
