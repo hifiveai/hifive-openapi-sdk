@@ -183,6 +183,7 @@ public class DefaultHFClient implements HFClient {
         }
 
         String rsp = null;
+        long time = System.currentTimeMillis();
         try {
             // 是否需要上传文件
             if (request instanceof HFUploadRequest) {
@@ -199,6 +200,8 @@ public class DefaultHFClient implements HFClient {
         } catch (IOException e) {
             throw new ApiException(e);
         }
+        long time2 = System.currentTimeMillis();
+        System.out.println("--------> "+(time2-time));
         result.put("rsp", rsp);
         result.put("textParams", appParams);
         result.put("url", urlSb.toString());

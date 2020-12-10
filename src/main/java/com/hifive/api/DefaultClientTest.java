@@ -8,13 +8,55 @@ import com.hifive.api.response.*;
 public class DefaultClientTest {
 
 
-    public static void main(String[] args) {
-        String url = "https://gateway.open.hifiveai.com";
+    public static void main(String[] args) throws InterruptedException {
+        String url = "https://hifive-gateway-pre.hifiveai.com";
         String appkey = "Ig4Uzegv";
         String secret = "OtdYWbXr";
-        System.out.println(System.currentTimeMillis());
+        System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        hifiveHQListenRequestTest(client);
+        for (int i = 0;i<10; i++) {
+
+            long time = System.currentTimeMillis();
+            hifiveHQListenRequestTest(client);
+            long time2 = System.currentTimeMillis();
+            System.out.println("hifiveHQListenRequestTest-----------------" + (time2 - time));
+            Thread.sleep(1000);
+        }
+        System.out.println("------------------------------------hifiveHQListenRequestTest");
+
+
+    /*    System.out.println("------------------------------------hifiveTrafficGroupRequestTest");
+        for (int i = 0;i<10; i++) {
+            long time = System.currentTimeMillis();
+            hifiveTrafficGroupRequestTest(client);
+            long time2 = System.currentTimeMillis();
+            System.out.println("hifiveTrafficGroupRequestTest-----------------" + (time2 - time));
+            Thread.sleep(1000);
+        }
+        System.out.println("------------------------------------hifiveTrafficGroupRequestTest");
+*/
+
+/*        System.out.println("------------------------------------hifiveTrafficGroupSheetRequestTest");
+        for (int i = 0;i<10; i++) {
+            long time = System.currentTimeMillis();
+            hifiveTrafficGroupSheetRequestTest(client);
+            long time2 = System.currentTimeMillis();
+            System.out.println("hifiveTrafficGroupSheetRequestTest-----------------" + (time2 - time));
+            Thread.sleep(1000);
+        }
+        System.out.println("------------------------------------hifiveTrafficGroupSheetRequestTest");*/
+
+/*
+        System.out.println("------------------------------------hifiveTrafficSheetMusicRequestTest");
+        for (int i = 0;i<10; i++) {
+            long time = System.currentTimeMillis();
+            hifiveTrafficSheetMusicRequestTest(client);
+            long time2 = System.currentTimeMillis();
+            System.out.println("hifiveTrafficSheetMusicRequestTest-----------------" + (time2 - time));
+            Thread.sleep(1000);
+        }
+        System.out.println("------------------------------------hifiveTrafficSheetMusicRequestTest");*/
+
         //hifiveTagSheetRequestTest(client);
         //HifiveBaseLoginRequest(client);
         //  HifiveBaseLoginRequest(client);
@@ -98,7 +140,7 @@ public class DefaultClientTest {
         request.setAction(1009);
         request.setTargetId("B75C80A41E3A");
         request.setClientId("1223234343");
-        request.setToken("4db2ca603b2887cb302e8a55614445fd");
+        request.setToken("22a772b569c714daa9d4d5a8a05e299f");
         try {
             HFBehaviorResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -300,13 +342,13 @@ public class DefaultClientTest {
     private static void hifiveHQListenRequestTest(HFClient client) {
         HFHQListenRequest request = new HFHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1223234343");
-        request.setMusicId("CF0A80E575FB");
-        request.setAudioFormat(AudioFormatEnum.MP3_128.format);
-        request.setAudioRate(AudioFormatEnum.MP3_128.rate);
+        request.setClientId("InstaOpen202012010000360001");
+        request.setMusicId("125F34CDDDF6");
+        /*request.setAudioFormat(AudioFormatEnum.MP3_128.format);
+        request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
             HFHQListenResponse response = client.execute(request);
-            System.out.println(JSON.toJSON(response));
+          //  System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
         }
@@ -316,9 +358,9 @@ public class DefaultClientTest {
     private static void hifiveHQListenSliceRequestTest(HFClient client) {
         HFHQListenSliceRequest request = new HFHQListenSliceRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1223234343");
+        request.setClientId("InstaOpen202012010000360001");
 
-        request.setMusicId("B7B810AABADF");
+        request.setMusicId("125F34CDDDF6");
         request.setAudioFormat(AudioFormatEnum.MP3_128.format);
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);
         request.setIsMixed(true);
@@ -428,7 +470,7 @@ public class DefaultClientTest {
     private static void hifiveTrafficGroupRequestTest(HFClient client) {
         HFTrafficGroupRequest request = new HFTrafficGroupRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1223234343");
+        request.setClientId("InstaOpen202012010000360001");
 
         try {
             HFTrafficGroupResponse response = client.execute(request);
@@ -483,8 +525,8 @@ public class DefaultClientTest {
     private static void hifiveTrafficGroupSheetRequestTest(HFClient client) {
         HFTrafficGroupSheetRequest request = new HFTrafficGroupSheetRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1223234343");
-        request.setGroupId("csa0t86qv24");
+        request.setClientId("InstaOpen202012010000360001");
+        request.setGroupId("fGGIsKue5VT");
         request.setLanguage(LangageEnum.CN.getValue());
         request.setRecoNum(10);
         request.setPage(1);
@@ -492,7 +534,7 @@ public class DefaultClientTest {
 
         try {
             HFTrafficGroupSheetResponse response = client.execute(request);
-            System.out.println(JSON.toJSON(response));
+           // System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
         }
@@ -520,11 +562,11 @@ public class DefaultClientTest {
     private static void hifiveTrafficSheetMusicRequestTest(HFClient client) {
         HFTrafficSheetMusicRequest request = new HFTrafficSheetMusicRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("1223234343");
-        request.setSheetId(1203L);
+        request.setClientId("InstaOpen202012010000360001");
+        request.setSheetId(1935L);
         try {
             HFTrafficSheetMusicResponse response = client.execute(request);
-            System.out.println(JSON.toJSON(response));
+            //System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
         }
