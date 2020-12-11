@@ -4,7 +4,8 @@ package com.hifive.api;
 import com.hifive.api.internal.parser.json.ObjectJsonParser;
 import com.hifive.api.internal.parser.xml.ObjectXmlParser;
 import com.hifive.api.internal.util.*;
-import com.hifive.utils.HttpKit;
+import com.hifive.net.HttpClientUtil;
+import com.hifive.net.HttpException;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -191,17 +192,28 @@ public class DefaultHFClient implements HFClient {
                 Map<String, FileItem> fileParams = HifiveUtils.cleanupMap(uRequest.getFileParams());
                 rsp = WebUtils.doPost(urlSb.toString(), appParams, fileParams, Constants.CHARSET_UTF8, connectTimeout, readTimeout, requestHolder.getApplicationHeaders());
             } else {
+                Map<String, Object> param = new HashMap<>();
+                appParams.entrySet().forEach(item -> {
+                    param.put(item.getKey(), item.getValue());
+                });
                 if (method.equals(HFRequest.METHOD_POST)) {
-                    rsp = HttpKit.post(serverUrl, appParams, null, requestHolder.getApplicationHeaders());
+                    //  rsp = HttpKit.post(serverUrl, appParams, null, requestHolder.getApplicationHeaders());
+                    rsp = HttpClientUtil.doPost(serverUrl, param, requestHolder.getApplicationHeaders());
                 } else {
-                    rsp = HttpKit.get(serverUrl, appParams, requestHolder.getApplicationHeaders());
+                    //rsp = HttpKit.get(serverUrl, param, requestHolder.getApplicationHeaders());
+                    rsp = HttpClientUtil.doGet(serverUrl, 0, param, requestHolder.getApplicationHeaders(), null, null);
                 }
+
+
             }
         } catch (IOException e) {
             throw new ApiException(e);
+        } catch (HttpException e) {
+            e.printStackTrace();
+            throw new ApiException(e);
         }
         long time2 = System.currentTimeMillis();
-        System.out.println("--------> "+(time2-time));
+        System.out.println("--------> " + (time2 - time));
         result.put("rsp", rsp);
         result.put("textParams", appParams);
         result.put("url", urlSb.toString());

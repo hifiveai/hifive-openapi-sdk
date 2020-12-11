@@ -16,46 +16,52 @@ public class DefaultClientTest {
         HFClient client = new DefaultHFClient(url, appkey, secret);
         for (int i = 0;i<10; i++) {
 
-            long time = System.currentTimeMillis();
+            //  long time = System.currentTimeMillis();
             hifiveHQListenRequestTest(client);
-            long time2 = System.currentTimeMillis();
-            System.out.println("hifiveHQListenRequestTest-----------------" + (time2 - time));
+            //long time2 = System.currentTimeMillis();
+            Thread.sleep(1000);
+        }
+        System.out.println("------------------------------------hifiveHQListenRequestTest");
+        for (int i = 0;i<10; i++) {
+
+          //  long time = System.currentTimeMillis();
+            hifiveHQListenRequestTest(client);
+            //long time2 = System.currentTimeMillis();
+            //System.out.println("hifiveHQListenRequestTest-----------------" + (time2 - time));
             Thread.sleep(1000);
         }
         System.out.println("------------------------------------hifiveHQListenRequestTest");
 
 
-    /*    System.out.println("------------------------------------hifiveTrafficGroupRequestTest");
+        System.out.println("------------------------------------hifiveTrafficGroupRequestTest");
         for (int i = 0;i<10; i++) {
-            long time = System.currentTimeMillis();
+         //   long time = System.currentTimeMillis();
             hifiveTrafficGroupRequestTest(client);
-            long time2 = System.currentTimeMillis();
-            System.out.println("hifiveTrafficGroupRequestTest-----------------" + (time2 - time));
+           // long time2 = System.currentTimeMillis();
+            //System.out.println("hifiveTrafficGroupRequestTest-----------------" + (time2 - time));
             Thread.sleep(1000);
         }
         System.out.println("------------------------------------hifiveTrafficGroupRequestTest");
-*/
 
-/*        System.out.println("------------------------------------hifiveTrafficGroupSheetRequestTest");
+       System.out.println("------------------------------------hifiveTrafficGroupSheetRequestTest");
         for (int i = 0;i<10; i++) {
-            long time = System.currentTimeMillis();
+           // long time = System.currentTimeMillis();
             hifiveTrafficGroupSheetRequestTest(client);
-            long time2 = System.currentTimeMillis();
-            System.out.println("hifiveTrafficGroupSheetRequestTest-----------------" + (time2 - time));
+            //long time2 = System.currentTimeMillis();
+            //System.out.println("hifiveTrafficGroupSheetRequestTest-----------------" + (time2 - time));
             Thread.sleep(1000);
         }
-        System.out.println("------------------------------------hifiveTrafficGroupSheetRequestTest");*/
+        System.out.println("------------------------------------hifiveTrafficGroupSheetRequestTest");
 
-/*
         System.out.println("------------------------------------hifiveTrafficSheetMusicRequestTest");
         for (int i = 0;i<10; i++) {
-            long time = System.currentTimeMillis();
+           // long time = System.currentTimeMillis();
             hifiveTrafficSheetMusicRequestTest(client);
-            long time2 = System.currentTimeMillis();
-            System.out.println("hifiveTrafficSheetMusicRequestTest-----------------" + (time2 - time));
+           // long time2 = System.currentTimeMillis();
+            //System.out.println("hifiveTrafficSheetMusicRequestTest-----------------" + (time2 - time));
             Thread.sleep(1000);
         }
-        System.out.println("------------------------------------hifiveTrafficSheetMusicRequestTest");*/
+        System.out.println("------------------------------------hifiveTrafficSheetMusicRequestTest");
 
         //hifiveTagSheetRequestTest(client);
         //HifiveBaseLoginRequest(client);
@@ -348,7 +354,7 @@ public class DefaultClientTest {
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
             HFHQListenResponse response = client.execute(request);
-          //  System.out.println(JSON.toJSON(response));
+            System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
         }
@@ -368,7 +374,7 @@ public class DefaultClientTest {
         request.setAuditionEnd(100);
         try {
             HFHQListenSliceResponse response = client.execute(request);
-            System.out.println(JSON.toJSON(response));
+            //System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
         }
@@ -534,7 +540,7 @@ public class DefaultClientTest {
 
         try {
             HFTrafficGroupSheetResponse response = client.execute(request);
-           // System.out.println(JSON.toJSON(response));
+            System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
         }
@@ -566,7 +572,7 @@ public class DefaultClientTest {
         request.setSheetId(1935L);
         try {
             HFTrafficSheetMusicResponse response = client.execute(request);
-            //System.out.println(JSON.toJSON(response));
+            System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
         }
