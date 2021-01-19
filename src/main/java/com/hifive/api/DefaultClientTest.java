@@ -9,19 +9,20 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) throws InterruptedException {
-        String url = "https://hifive-gateway-pre.hifiveai.com";
-        String appkey = "Ig4Uzegv";
-        String secret = "OtdYWbXr";
+        String url = "https://hifive-gateway-prod.hifiveai.com";
+        String appkey = "5216d02806d5464b943492838b7e4390";
+        String secret = "2d241e8f934d47d5";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        for (int i = 0;i<10; i++) {
+        hifiveHQTrailListen(client);
+/*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();
             hifiveHQListenRequestTest(client);
             //long time2 = System.currentTimeMillis();
             Thread.sleep(1000);
-        }
-        System.out.println("------------------------------------hifiveHQListenRequestTest");
+        }*/
+      /*  System.out.println("------------------------------------hifiveHQListenRequestTest");
         for (int i = 0;i<10; i++) {
 
           //  long time = System.currentTimeMillis();
@@ -62,7 +63,7 @@ public class DefaultClientTest {
             Thread.sleep(1000);
         }
         System.out.println("------------------------------------hifiveTrafficSheetMusicRequestTest");
-
+*/
         //hifiveTagSheetRequestTest(client);
         //HifiveBaseLoginRequest(client);
         //  HifiveBaseLoginRequest(client);
@@ -354,6 +355,19 @@ public class DefaultClientTest {
         request.setAudioRate(AudioFormatEnum.MP3_128.rate);*/
         try {
             HFHQListenResponse response = client.execute(request);
+            System.out.println(JSON.toJSON(response));
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void hifiveHQTrailListen(HFClient client) {
+        HFTrailHQListenRequest request = new HFTrailHQListenRequest();
+        request.setMethod(HFRequest.METHOD_GET);
+        request.setClientId("InstaOpen202012010000360001");
+        request.setMusicId("7867AEFA");
+        try {
+            HFTrailHQListenResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
         } catch (ApiException e) {
             e.printStackTrace();
