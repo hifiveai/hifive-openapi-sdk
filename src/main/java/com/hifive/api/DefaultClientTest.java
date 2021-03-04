@@ -9,12 +9,12 @@ public class DefaultClientTest {
 
 
     public static void main(String[] args) throws InterruptedException {
-        String url = "https://hifive-gateway-prod.hifiveai.com";
-        String appkey = "5216d02806d5464b943492838b7e4390";
-        String secret = "2d241e8f934d47d5";
+        String url = "https://hifive-gateway-demo.hifiveai.com";
+        String appkey = "d82d1baa7b854a619081d17be3cfb744";
+        String secret = "55947003c67e45bdae34aed6655a6113";
         System.out.println("------------------------------------hifiveHQListenRequestTest");
         HFClient client = new DefaultHFClient(url, appkey, secret);
-        hifiveHQTrailListen(client);
+        hifiveSearchMusicRequestTest(client);
 /*        for (int i = 0;i<10; i++) {
 
             //  long time = System.currentTimeMillis();
@@ -235,13 +235,10 @@ public class DefaultClientTest {
         HFSearchMusicRequest request = new HFSearchMusicRequest();
         request.setMethod(HFRequest.METHOD_POST);
         request.setPage(1);
-        request.setPageSize(20);
-        request.setTagIds("123,123");
-        request.setPriceFromCent(1L);
-        request.setPriceToCent(1000000L);
-        request.setBpmFrom(1);
-        request.setBpmTo(100);
-        request.setClientId("1223234343");
+        request.setPageSize(10);
+        request.setTagIds("696,703");
+        request.setNonce("fee23fwy9cef16fsw6387wg7m61uw676");
+        request.setClientId("jisuapi55667788");
         try {
             HFSearchMusicResponse response = client.execute(request);
             System.out.println(JSON.toJSON(response));
@@ -364,7 +361,7 @@ public class DefaultClientTest {
     private static void hifiveHQTrailListen(HFClient client) {
         HFTrailHQListenRequest request = new HFTrailHQListenRequest();
         request.setMethod(HFRequest.METHOD_GET);
-        request.setClientId("InstaOpen202012010000360001");
+        request.setClientId("HOomxI+g0HvxGKofmUVsnw==");
         request.setMusicId("7867AEFA");
         try {
             HFTrailHQListenResponse response = client.execute(request);

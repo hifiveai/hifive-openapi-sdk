@@ -148,6 +148,7 @@ public class DefaultHFClient implements HFClient {
         Long timestamp = request.getTimestamp();// 允许用户设置时间戳
         if (timestamp == null) {
             timestamp = System.currentTimeMillis();
+           // timestamp = 1614064180102L;
         }
         appHeaders.put(Constants.X_HF_TIMESTAMP, timestamp);
         requestHolder.setApplicationHeaders(appHeaders);
