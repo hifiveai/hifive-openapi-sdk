@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
  *   订单绑定作品
  * </p>
  * @author yong.huang
- *@Date:
  **/
 @NoArgsConstructor
 @AllArgsConstructor

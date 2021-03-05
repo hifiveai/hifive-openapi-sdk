@@ -7,7 +7,6 @@ import lombok.Data;
  *  订单状态
  * </p>
  * @author yong.huang
- *@Date:
  **/
 public class OrderStatus extends Order {
 

@@ -11,7 +11,6 @@ import lombok.Data;
  * </p>
  *
  * @author yong.huang
- * @Date: 2020/07/02
  */
 @JsonIgnoreProperties({"coverUrl","waveUrl"})
 public class HFMusicListenSlice extends HFBaseMusicSize {

@@ -8,7 +8,6 @@ import com.hifive.api.internal.mapping.ApiField;
  * </p>
  *
  * @author yong.huang
- * @Date: 2020/07/01$ $
  */
 public class HFMusicSize extends HFBaseMusicSize {
 

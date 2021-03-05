@@ -63,10 +63,12 @@ public class DefaultHFClient implements HFClient {
         this.signMethod = signMethod;
     }
 
+    @Override
     public <T extends HFResponse> T execute(HFRequest<T> request) throws ApiException {
         return execute(request, null);
     }
 
+    @Override
     public <T extends HFResponse> T execute(HFRequest<T> request, String session) throws ApiException {
         HFParser<T> parser = null;
         if (this.needEnableParser) {

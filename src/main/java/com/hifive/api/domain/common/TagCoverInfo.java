@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
  * 包含封面地址的标签
  * </p>
  * @author yong.huang
- *@Date:
  **/
 @AllArgsConstructor
 @NoArgsConstructor

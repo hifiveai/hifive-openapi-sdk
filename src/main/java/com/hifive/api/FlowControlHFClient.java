@@ -32,10 +32,12 @@ public class FlowControlHFClient extends DefaultHFClient {
         this.semaphore = new Semaphore(concurrentNum);
     }
 
+    @Override
     public <T extends HFResponse> T execute(HFRequest<T> request) throws ApiException {
         return this.execute(request, null);
     }
 
+    @Override
     public <T extends HFResponse> T execute(final HFRequest<T> request, final String session) throws ApiException {
         try {
             this.semaphore.acquire();

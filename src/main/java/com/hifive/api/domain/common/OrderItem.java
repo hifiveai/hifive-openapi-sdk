@@ -12,7 +12,6 @@ import java.io.Serializable;
  *  订单dto
  * </p>
  * @author yong.huang
- *@Date:
  **/
 @AllArgsConstructor
 @NoArgsConstructor

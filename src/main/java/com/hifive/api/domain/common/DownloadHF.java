@@ -10,7 +10,6 @@ import lombok.Data;
  * </p>
  *
  * @author yong.huang
- * @Date:
  **/
 public class DownloadHF extends HFBaseDownload {
 

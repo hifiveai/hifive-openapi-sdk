@@ -8,7 +8,6 @@ import java.util.Map;
  * HttpRespInfo
  *
  * @author Jerry.X.He
- * @date 2019/4/29 17:38
  */
 public class HttpRespInfo implements Serializable {
 

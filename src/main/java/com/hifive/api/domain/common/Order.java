@@ -15,7 +15,6 @@ import java.util.List;
  *  订单dto
  * </p>
  * @author yong.huang
- *@Date:
  **/
 @AllArgsConstructor
 @NoArgsConstructor

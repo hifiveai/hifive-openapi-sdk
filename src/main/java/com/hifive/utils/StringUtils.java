@@ -345,6 +345,8 @@ public class StringUtils {
 
     /**
      * 检查对象是否为数字型字符串,包含负数开头的。
+     * @param obj 目标对象
+     * @return 返回结果
      */
     public static boolean isNumeric(Object obj) {
         if (obj == null) {
@@ -367,6 +369,12 @@ public class StringUtils {
         return true;
     }
 
+    /**
+     *
+     * @param source 源
+     * @param charset 编码
+     * @return 返回结果
+     */
     public static String uriDecode(String source, Charset charset) {
         int length = source.length();
         if (length == 0) {
@@ -460,6 +468,8 @@ public class StringUtils {
 
     /**
      * @deprecated
+     * @param locale 本地入参
+     * @return 返回结果
      */
     @Deprecated
     public static String toLanguageTag(Locale locale) {

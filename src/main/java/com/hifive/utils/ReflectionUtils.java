@@ -126,18 +126,25 @@ public class ReflectionUtils {
 
     /**
      * @deprecated
+     * @param method 请求方法
+     * @param target 请求目的
+     * @return 返回结果
+     * @throws SQLException SQL异常
      */
     @Deprecated
-    
     public static Object invokeJdbcMethod(Method method,  Object target) throws SQLException {
         return invokeJdbcMethod(method, target);
     }
 
     /**
      * @deprecated
+     * @param method 请求方法
+     * @param target 请求目的
+     * @param args 入参
+     * @return 返回结果
+     * @throws SQLException SQL异常
      */
     @Deprecated
-    
     public static Object invokeJdbcMethod(Method method,  Object target,  Object... args) throws SQLException {
         try {
             return method.invoke(target, args);

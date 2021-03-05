@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
  *   运营组
  * </p>
  * @author yong.huang
- * @Date:  2020/06/29
  **/
 @AllArgsConstructor
 @NoArgsConstructor

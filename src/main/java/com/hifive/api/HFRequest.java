@@ -50,32 +50,46 @@ public interface HFRequest<T extends HFResponse> {
 
     /**
      * 客户端参数检查，减少服务端无效调用
+     * @throws ApiRuleException 请求异常
      */
     public void check() throws ApiRuleException;
 
 
     /**
      * 添加自定义请求参数
+     * @param key 关键字
+     * @param value  值
      */
     public void putOtherTextParam(String key, String value);
 
     /**
-     * 获取方法
+     * @return 获取方法
      */
     public String getMethod();
 
     /**
-     * clientId
+     * @return  clientId
      */
     public String getClientId();
 
-
+    /**
+     * @return  version
+     */
     public String getVersion();
 
+    /**
+     * @return  nonce
+     */
     public String getNonce();
 
+    /**
+     * @return  authorization
+     */
     public String getAuthorization();
 
+    /**
+     * @return  token
+     */
     public String getToken();
 
 

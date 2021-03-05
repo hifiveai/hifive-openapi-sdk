@@ -8,7 +8,6 @@ import java.io.Serializable;
  * </p>
  *
  * @author yong.huang
- * @Date: 2020/07/28$ $
  */
 public class CreateApiResponse implements Serializable {
 
@@ -18,7 +17,6 @@ public class CreateApiResponse implements Serializable {
      * </p>
      *
      * @author yong.huang
-     * @Date:
      **/
     private String code;
     /**
@@ -27,7 +25,6 @@ public class CreateApiResponse implements Serializable {
      * </p>
      *
      * @author yong.huang
-     * @Date:
      **/
     private String msg;
 
@@ -41,7 +38,6 @@ public class CreateApiResponse implements Serializable {
      * </p>
      *
      * @author yong.huang
-     * @Date:
      **/
     private String taskId;
 

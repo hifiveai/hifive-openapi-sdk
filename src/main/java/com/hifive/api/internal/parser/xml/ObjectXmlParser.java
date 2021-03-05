@@ -20,11 +20,13 @@ public class ObjectXmlParser<T extends HFResponse> implements HFParser<T> {
 		this.clazz = clazz;
 	}
 
+	@Override
 	public T parse(String rsp) throws ApiException {
 		Converter converter = new XmlConverter();
 		return converter.toResponse(rsp, clazz);
 	}
 
+	@Override
 	public Class<T> getResponseClass() {
 		return clazz;
 	}

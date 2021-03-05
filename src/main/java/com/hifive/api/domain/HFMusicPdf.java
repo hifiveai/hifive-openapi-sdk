@@ -6,7 +6,6 @@ import com.hifive.api.internal.mapping.ApiField;
 /**
 
  * @author yong.huang
- * @Date: 2020/07/01
  */
 public class HFMusicPdf extends HFObject {
     @ApiField("id")

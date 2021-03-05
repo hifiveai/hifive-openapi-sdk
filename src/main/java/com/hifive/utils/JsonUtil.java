@@ -58,13 +58,12 @@ public class JsonUtil {
     }
 
     /**
+     * json字符串转换成ArrayList对象集合，保留type
      * @param jsonString 准备转换json
      * @param clazz      集合元素类型
-     * @return
-     * @description json字符串转换成ArrayList对象集合，保留type
+     * @param  <T>      请求结果
+     * @return 返回结果
      * @author paul
-     * @date 2017年8月12日 下午1:28:27
-     * @update 2017年8月12日 下午1:28:27
      * @version V1.0
      */
     public static <T> List<T> fromJsonList(String jsonString, Class<T> clazz) {

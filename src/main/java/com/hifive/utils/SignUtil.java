@@ -11,7 +11,6 @@ import java.util.*;
  * </p>
  *
  * @author yong.huang
- * @Date:
  **/
 public class SignUtil {
 
@@ -19,7 +18,10 @@ public class SignUtil {
     /** -------------------------- 辅助函数  ----------------------------------------------- **/
     /**
      * 封装协议头
-     **/
+     * @param method 请求方法
+     * @param headers 请求头入参
+     * @return 返回结果
+     */
     public static String headersBase64(String method, Map<String, String> headers) {
         StringBuffer buffer = new StringBuffer();
         buffer.append(method).append(" ");
@@ -35,6 +37,11 @@ public class SignUtil {
     }
 
 
+    /**
+     *
+     * @param param 参数
+     * @return 返回结果
+     */
     public static String buildParam(Map<String, String> param) {
         // 字典序排序
         List<String> keys = new ArrayList<>(param.keySet());
